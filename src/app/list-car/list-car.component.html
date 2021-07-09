@@ -1,0 +1,18 @@
+ <form name="myForme">
+  <label>enter number car </label> 
+  <input type="text" name="txtn" [(ngModel)]="c.number" required #n="ngModel" />  <br>
+<div style="color: aqua;" *ngIf=n.errors&&(n.dirty||n.touched)>
+  required filed
+</div>
+  <label>enter model car </label> 
+  <input type="text" name="txtm"  maxlength="10" [(ngModel)]="c.model"  required #c="ngModel"/>  <br>
+  <div style="color:deeppink;" *ngIf=c.dirty||c.touched>
+  <p [hidden]="!c.errors|| !c.errors.required"> required filed</p>
+  </div>
+  <label>enter year car </label>
+  <input type="text" name="txty" [(ngModel)]="c.year"  required #y="ngModel"/><br>
+  <div style="color:chartreuse;" *ngIf=y.dirty||y.touched>
+    <p [hidden]="!y.errors|| !y.errors.required"> required filed</p>
+    <p [hidden]="c.year<2021"> year bahtid enter egain</p> 
+  </div>
+ </form>
