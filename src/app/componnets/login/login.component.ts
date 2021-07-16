@@ -19,7 +19,7 @@ form:FormGroup;
   }
 save(){
   console.log(this.form.value)
-  this.httpClient.get(`http://localhost:62631/api/users?name=${this.form.value["name"]}&password=${this.form.value["Mail"]}`).subscribe(x=>{},x=>{},()=>{})
+  this.httpClient.get(`http://localhost:62631/api/users?name=${this.form.value["name"]}&password=${this.form.value["password"]}`).subscribe(x=>{},x=>{},()=>{})
 
   ///this.httpClient.post(`http://localhost:62631/api/users`,this.form.value).subscribe(x=>{},x=>{},()=>{})
  }
