@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AllempComponent } from './allemp/allemp.component';
 import {HttpClientModule} from '@angular/common/http';
 import { MyDirectiveDirective } from './my-directive.directive';
-import { AaaComponent } from './aaa/aaa.component';
+
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { AaaComponent } from './aaa/aaa.component';
     ListCarComponent,
     AllempComponent,
     MyDirectiveDirective,
-    AaaComponent
+    
   ],
   imports: [
     BrowserModule,
