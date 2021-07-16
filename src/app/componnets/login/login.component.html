@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+<label>שם פרטי</label>
+<input formControlName="name"/>
+<label>מייל </label>
+<input formControlName="password"/>
+<input type="submit"  [disabled]="!form.valid"/>
+</form>
