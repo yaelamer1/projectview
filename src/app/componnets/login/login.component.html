@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="save()">
-<label>שם פרטי</label>
+<p>שם פרטי</p>
 <input formControlName="name"/>
-<label>מייל </label>
+<p>סיסמא</p>
 <input formControlName="password"/>
 <input type="submit"  [disabled]="!form.valid"/>
 </form>

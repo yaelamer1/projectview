@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="signin()">
+  <p>תעודת זהות</p>
+  <input formControlName="id"/> 
+  <p>שם פרטי</p>
+  <input formControlName="name"/>  
+  <p>כתובת מייל</p>
+  <input formControlName="mail"/>  
+  <p>מספר טלפון</p>
+  <input formControlName="phone"/>
+  <p>איזור מגורים</p>
+  <input formControlName="area"/>
+  <p>סיסמא </p>
+  <input formControlName="password"/>
+  <input type="submit"  [disabled]="!form.valid"/>
+  </form>
