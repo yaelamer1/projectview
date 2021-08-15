@@ -11,5 +11,6 @@ export class DbserviceService {
    getallemp(){
      return this.http.get('/api/emptb' );
       
-   }
+   } 
 }
+
