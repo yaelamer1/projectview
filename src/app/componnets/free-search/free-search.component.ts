@@ -8,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class FreeSearchComponent implements OnInit {
 
   constructor() { }
-
+  //הפונקציה לא עובדת לי
+  //להוסיף אפשרויות לסינונים נוספים
+  //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
   ngOnInit() {
   }
-search(){
-  console.log("search");
-
-}
+  search(){
+    console.log("search");
+    //להציג את התוצאות בקומפננטת מוצרים שנמצאו
+  }
+  update(){
+    console.log("update");
+    //להעביר לדף הכניסה (login)
+  }
 }

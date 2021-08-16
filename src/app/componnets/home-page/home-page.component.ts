@@ -8,18 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   constructor() { }
-
+  //הפונקציות לא עובדות לי
   ngOnInit() {
   }
   signin(){
     console.log("signin");
+    //להעביר לדף ההרשמה
   }
   events(){
     console.log("events");
-
+    //להעביר לדף ארגון אירוע
   }
   freeSearch(){
     console.log("freeSearch");
-
+    //להעביר לדף חיפוש חופשי
   }
 }

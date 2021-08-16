@@ -21,7 +21,7 @@ save(){
   console.log(this.form.value);
   this.httpClient.get(`http://localhost:62631/api/users?name=${this.form.value["name"]}&password=${this.form.value["password"]}`)
   .subscribe(x=>{console.log(x)},x=>{},()=>{});
-
+  //איך אפשר לדעת מאיזה דף הגיעו לכניסה כדי להעביר לשם כשהשם קיים?
+  //אם לא קיים להעביר לדף ההרשמה
  }
- 
 }

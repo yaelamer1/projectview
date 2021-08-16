@@ -16,6 +16,8 @@ import { HomePageComponent } from './componnets/home-page/home-page.component';
 import { FreeSearchComponent } from './componnets/free-search/free-search.component';
 import { OrganizeEventComponent } from './componnets/organize-event/organize-event.component';
 import { ProductsFoundComponent } from './componnets/products-found/products-found.component';
+import { EventComponent } from './componnets/event/event.component';
+import { AddEventComponent } from './componnets/add-event/add-event.component';
 
 
 
@@ -30,7 +32,9 @@ import { ProductsFoundComponent } from './componnets/products-found/products-fou
     FreeSearchComponent,
     OrganizeEventComponent,
     HomePageComponent,
-    ProductsFoundComponent
+    ProductsFoundComponent,
+    EventComponent,
+    AddEventComponent
   
     
   ],
