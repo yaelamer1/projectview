@@ -15,12 +15,13 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      id: new FormControl('', [Validators.required]),
+      id: new FormControl('', [Validators.required,Validators.maxLength(9), Validators.minLength(9)]),//איך מחייבים שיהיה 9 בצורה אחרת?
       name: new FormControl('', [Validators.required]),
-      mail: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.required]),
+      mail: new FormControl('', [Validators.required,Validators.email]),
+      phone: new FormControl('', [Validators.required,Validators.maxLength(10)]),//איך מחייבים רק מספרים
       area: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required])
+      password: new FormControl('', [Validators.required])//רק מספרים
+      //כשקיימת סיסמה כזו צריך להודיע למשתמש להחליף סיסמא
     })
   }
   signin(){

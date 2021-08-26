@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class FreeSearchComponent implements OnInit {
 
   constructor() { }
-  //הפונקציה לא עובדת לי
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
   ngOnInit() {
@@ -20,5 +19,6 @@ export class FreeSearchComponent implements OnInit {
   update(){
     console.log("update");
     //להעביר לדף הכניסה (login)
+    //כי זה רק לרשומים
   }
 }
