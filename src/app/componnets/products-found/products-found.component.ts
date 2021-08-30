@@ -9,15 +9,14 @@ import { Product } from 'src/app/class/product';
   styleUrls: ['./products-found.component.css']
 })
 export class ProductsFoundComponent implements OnInit {
-  arr:Product;
+  arr:Product[]=[];
   constructor(private httpClient:HttpClient) { }
-  //לא יודעת איך להציג את מה שחוזר לי מהטבלאות בדפדפן
-  //איך להמיר את מה שחוזר לסוג המערך
   ngOnInit() {
- 
-    this.httpClient.get(`http://localhost:62631/api/product`)
-    // ?name=${this.form.value["name"]}
-    .subscribe(x=>{  console.log(x);},x=>{},()=>{});
+     this.httpClient.get<Product[]>(`http://localhost:62631/api/product`).subscribe(x=>
+     {
+       console.log(x);
+       this.arr=x;
+    },x=>{console.log(x)},()=>{});
     //להציג מתוך טבלת המוצרים את אותו מוצר לפי הסינונים מכל החנויות
     //אם לא קיים להשאיר הודעה שלא קיים
     //איך להציג כאן חיפוש של קומפוננטה אחרת

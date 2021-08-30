@@ -9,14 +9,13 @@ import { Product } from 'src/app/class/product';
   styleUrls: ['./organize-event.component.css']
 })
 export class OrganizeEventComponent implements OnInit {
-arr:Product[]=[];
+arr:List[]=[];
   constructor(private httpClient:HttpClient) { }
-  //לא יודעת איך להציג את מה שחוזר לי מהטבלאות בדפדפן
-  //איך להמיר את מה שחוזר לסוג המערך
   ngOnInit() {
-    // this.arr.map(x=>)
-     this.httpClient.get<Product[]>(`http://localhost:62631/api/lists`).subscribe(x=>{  console.log(x);
-      this.arr=x
+     this.httpClient.get<List[]>(`http://localhost:62631/api/list`).subscribe(x=>
+     {
+       console.log(x);
+       this.arr=x;
     },x=>{console.log(x)},()=>{});
     //איך לעשות שכל אירוע יהיה קישור לדף ארגון אירוע בעצמו
   }
