@@ -18,6 +18,7 @@ import { OrganizeEventComponent } from './componnets/organize-event/organize-eve
 import { ProductsFoundComponent } from './componnets/products-found/products-found.component';
 import { EventComponent } from './componnets/event/event.component';
 import { AddEventComponent } from './componnets/add-event/add-event.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -43,7 +44,8 @@ import { AddEventComponent } from './componnets/add-event/add-event.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(arrPath)
+    RouterModule.forRoot(arrPath),
+    AppRoutingModule
     
   ],
 
