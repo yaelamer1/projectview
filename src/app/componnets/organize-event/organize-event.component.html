@@ -1,5 +1,5 @@
-<ul >
-  <li ngFor="let item in arr">{{item}}</li>
+<ul>
+  <li *ngFor="let item of arr">{{item.Name}}</li>
 </ul>
 <input type="button" value="הוספת אירוע"  (click)="addEvent()"/>
 
