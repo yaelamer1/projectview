@@ -5,13 +5,17 @@ import { LoginComponent } from './componnets/login/login.component';
 import { SigninComponent } from './componnets/signin/signin.component';
 import { HeaderComponent } from './componnets/header/header.component';
 import { FooterComponent } from './componnets/footer/footer.component';
+import { OrganizeEventComponent } from './componnets/organize-event/organize-event.component';
+import { FreeSearchComponent } from './componnets/free-search/free-search.component';
 
 const routes: Routes = [
-  
+  {path:"organize-event" ,component:OrganizeEventComponent},
+  {path:"freeSearch" ,component:FreeSearchComponent},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent,children:[
     {path:'user',component :HeaderComponent},
     {path:"customer", component:FooterComponent}
+
   ]},
   { path: 'home', redirectTo: "login" },
   { path: '**', redirectTo: "login" },
