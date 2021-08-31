@@ -20,6 +20,8 @@ import { EventComponent } from './componnets/event/event.component';
 import { AddEventComponent } from './componnets/add-event/add-event.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { MatSliderModule } from '@angular/material/slider';
+
 
 
 
@@ -45,7 +47,8 @@ import { AppRoutingModule } from './app-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(arrPath),
-    AppRoutingModule
+    AppRoutingModule,
+   // MatSliderModule
     
   ],
 
