@@ -7,9 +7,12 @@ import { HeaderComponent } from './componnets/header/header.component';
 import { FooterComponent } from './componnets/footer/footer.component';
 import { OrganizeEventComponent } from './componnets/organize-event/organize-event.component';
 import { FreeSearchComponent } from './componnets/free-search/free-search.component';
+import { AddEventComponent } from './componnets/add-event/add-event.component';
 
 const routes: Routes = [
   {path:"organize-event" ,component:OrganizeEventComponent},
+    {path:"add-event",component :AddEventComponent},
+  
   {path:"freeSearch" ,component:FreeSearchComponent},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent,children:[
@@ -17,8 +20,8 @@ const routes: Routes = [
     {path:"customer", component:FooterComponent}
 
   ]},
-  { path: 'home', redirectTo: "login" },
-  { path: '**', redirectTo: "login" },
+  // { path: 'home', redirectTo: "login" },
+  // { path: '**', redirectTo: "login" },
 ];
 @NgModule({
   imports: [

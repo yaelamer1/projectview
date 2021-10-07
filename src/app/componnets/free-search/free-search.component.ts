@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/class/product';
 
 @Component({
   selector: 'app-free-search',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./free-search.component.css']
 })
 export class FreeSearchComponent implements OnInit {
-
-  constructor() { }
+  arrp:Product[]=[];
+  constructor(private httpClient:HttpClient) { 
+    
+  }
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
   ngOnInit() {
