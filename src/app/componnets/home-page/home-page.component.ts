@@ -9,21 +9,6 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements OnInit {
 
   constructor(private route:Router) { }
-  //איך לנווט בין הקומפוננטות
   ngOnInit() {
-  }
-  signin(name:string){
-    this.route.navigate([`/${name}`])
-    console.log("signin");
-    //להעביר לדף ההרשמה
-  }
-  events(name:string){
-    this.route.navigate([`/${name}`])
-    console.log("events");
-    //להעביר לדף ארגון אירוע
-  }
-  freeSearch(){
-    console.log("freeSearch");
-    //להעביר לדף חיפוש חופשי
   }
 }

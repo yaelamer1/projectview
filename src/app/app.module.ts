@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 
-import { HeaderComponent } from './componnets/header/header.component';
-import { FooterComponent } from './componnets/footer/footer.component';
 import { LoginComponent } from './componnets/login/login.component';
 import { SigninComponent } from './componnets/signin/signin.component';
 import { RouterModule } from '@angular/router';
@@ -19,6 +17,12 @@ import { ProductsFoundComponent } from './componnets/products-found/products-fou
 import { EventComponent } from './componnets/event/event.component';
 import { AddEventComponent } from './componnets/add-event/add-event.component';
 import { AppRoutingModule } from './app-routing.module';
+//material
+import { MatSliderModule } from '@angular/material/slider';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
+
 
 
 
@@ -27,8 +31,6 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
     LoginComponent,
     SigninComponent,
     FreeSearchComponent,
@@ -36,7 +38,8 @@ import { AppRoutingModule } from './app-routing.module';
     HomePageComponent,
     ProductsFoundComponent,
     EventComponent,
-    AddEventComponent
+    AddEventComponent,
+    
   
     
   ],
@@ -47,7 +50,9 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     RouterModule.forRoot(arrPath),
     AppRoutingModule,
-   // MatSliderModule
+    MatSliderModule,
+    MatButtonModule,
+    MatCardModule
     
   ],
 

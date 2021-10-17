@@ -1,7 +1,12 @@
 <h1>הוספת אירוע</h1>
 <input type="text" placeholder="שם אירוע">
 <p>מה צריך לאירוע?</p>
-<input type="text" placeholder="מוצר">
+<form [formGroup]="form" id="m">
+<input type="text" formControlName="name" placeholder="מוצר">
+</form>
 <input type="button" value="עוד מוצר"  (click)="more()"/>
+<input type="button" value="שמור"  (click)="save()"/>
+
+
 
 

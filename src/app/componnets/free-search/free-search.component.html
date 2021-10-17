@@ -3,6 +3,8 @@
 <input type="button" value="חיפוש"  (click)="search()"/>
 <input type="button" value="עדכון במייל"  (click)="update()"/>
 
-<ul>
-    <li *ngFor="let item of arr">{{item.Name}}</li>
-  </ul>
+<!-- <ul>
+    <li *ngFor="let item of arr">{{item.name}}</li>
+  </ul> -->
+
+  <app-products-found [arr]="arr"></app-products-found>

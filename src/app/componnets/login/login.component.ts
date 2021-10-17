@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-form:FormGroup;
+form:FormGroup=new  FormGroup({});
   constructor(private httpClient:HttpClient) { }
 
   ngOnInit() {

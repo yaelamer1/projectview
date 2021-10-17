@@ -1,12 +1,20 @@
 <form [formGroup]="form" (ngSubmit)="signin()">
   <p>תעודת זהות</p>
+
+  <!-- <input type="text" id="id" class="form-control"
+      formControlName="id" required> -->
   <input formControlName="id"/> 
+  <!-- <div *ngIf="name.errors?.required">
+    Name is required.
+  </div> -->
   <p>שם פרטי</p>
-  <input formControlName="name"/>  
+  <!-- <input formControlName="name"/>   -->
+<input type="text" id="name" class="form-control" #name
+formControlName="name" required>
   <p>כתובת מייל</p>
-  <input formControlName="mail"/>  
+  <input formControlName="Email"/>  
   <p>מספר טלפון</p>
-  <input formControlName="phone"/>
+  <input formControlName="Phon"/>
   <p>איזור מגורים</p>
   <input formControlName="area"/>
   <p>סיסמא </p>

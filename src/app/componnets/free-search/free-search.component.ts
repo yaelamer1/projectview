@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/class/product';
 
@@ -8,15 +9,22 @@ import { Product } from 'src/app/class/product';
   styleUrls: ['./free-search.component.css']
 })
 export class FreeSearchComponent implements OnInit {
-  arrp:Product[]=[];
+  arr:Product[]=[];
+  allProduct:Product[]=[]
   constructor(private httpClient:HttpClient) { 
     
   }
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
   ngOnInit() {
+    this.httpClient.get<Product[]>(`http://localhost:62631/api/product`).subscribe(x=>
+     {
+       console.log(x);
+       this.allProduct=x;
+    },x=>{console.log(x)},()=>{});
   }
   search(){
+     
     console.log("search");
     //להציג את התוצאות בקומפננטת מוצרים שנמצאו
   }
