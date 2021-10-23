@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+//import { NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Routes,RouterModule } from '@angular/router';
 import { LoginComponent } from './componnets/login/login.component';
@@ -8,6 +8,7 @@ import { FreeSearchComponent } from './componnets/free-search/free-search.compon
 import { AddEventComponent } from './componnets/add-event/add-event.component';
 import { EventComponent } from './componnets/event/event.component';
 import { HistoryComponent } from './componnets/history/history.component';
+import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   {path:"organize-event" ,component:OrganizeEventComponent,
