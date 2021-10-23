@@ -4,8 +4,12 @@
 <form [formGroup]="form" id="m">
 <input type="text" formControlName="name" placeholder="מוצר">
 </form>
-<input type="button" value="עוד מוצר"  (click)="more()"/>
-<input type="button" value="שמור"  (click)="save()"/>
+<br><br>
+<button mat-raised-button (click)="more()">עוד מוצר</button>
+<button mat-raised-button (click)="save()">שמור</button>
+ 
+<!--<input type="button" value="עוד מוצר"  (click)="more()"/>
+<input type="button" value="שמור"  (click)="save()"/> -->
 
 
 

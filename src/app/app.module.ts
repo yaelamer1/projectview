@@ -21,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { HistoryComponent } from './componnets/history/history.component';
 
 
 
@@ -39,6 +40,7 @@ import {MatCardModule} from '@angular/material/card';
     ProductsFoundComponent,
     EventComponent,
     AddEventComponent,
+    HistoryComponent,
     
   
     

@@ -1,0 +1,22 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-history',
+  templateUrl: './history.component.html',
+  styleUrls: ['./history.component.css']
+})
+export class HistoryComponent implements OnInit {
+  
+  arr:History[]=[];
+  constructor(private httpClient:HttpClient) { }
+
+  ngOnInit(): void {
+    this.httpClient.get<History[]>(`http://localhost:62631/api/history`).subscribe(x=>
+    {
+      console.log(x);
+      this.arr=x;
+   },x=>{},()=>{});
+  }
+
+}

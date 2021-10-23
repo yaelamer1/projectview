@@ -12,11 +12,12 @@ export class OrganizeEventComponent implements OnInit {
 arr:List[]=[];
   constructor(private httpClient:HttpClient) { }
   ngOnInit() {
+    console.log("event");
      this.httpClient.get<List[]>(`http://localhost:62631/api/lists`).subscribe(x=>
      {
        console.log(x);
        this.arr=x;
-    },x=>{console.log(x)},()=>{});
+    },x=>{},()=>{});
     //איך לעשות שכל אירוע יהיה קישור לדף ארגון אירוע בעצמו
   }
   addEvent(){

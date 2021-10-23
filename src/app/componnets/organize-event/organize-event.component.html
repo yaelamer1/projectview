@@ -1,6 +1,9 @@
 <ul>
-  <li *ngFor="let item of arr">{{item.name}}</li>
+  <a routerLink="/event">  <li *ngFor="let item of arr">{{item.Name}}</li> </a>
 </ul>
+<!-- לחיצה על שם האירוע תעביר לדף של האירוע עם כל רשימת המוצרים ואפשרות להוספת מוצרים -->
 <!-- <input type="button" value="הוספת אירוע"  (click)="addEvent()"/> -->
-    <a routerLink="/add-event"> הוספת אירוע </a>
+    <!-- <a routerLink="/add-event"> הוספת אירוע </a> -->
+    <a mat-raised-button href="/add-event" >הוספת אירוע</a>
+
 

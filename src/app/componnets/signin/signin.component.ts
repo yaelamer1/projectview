@@ -15,8 +15,8 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      id: new FormControl('',this.isTzValid ),//[Validators.required,Validators.maxLength(9), , Validators.minLength(9)]),//איך מחייבים שיהיה 9 בצורה אחרת?
-      name: new FormControl(''),// [this.isTzValid]),
+      id: new FormControl('',[Validators.required,Validators.maxLength(9), Validators.minLength(9)]),//איך מחייבים שיהיה 9 בצורה אחרת?
+      name: new FormControl(''),
       Email: new FormControl('', [Validators.required]),//,Validators.email]),
       Phon: new FormControl('', [Validators.required]),//,Validators.pattern(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/),Validators.maxLength(10)]),//איך מחייבים רק מספרים
       area: new FormControl('', [Validators.required]),
@@ -38,7 +38,7 @@ export class SigninComponent implements OnInit {
     // if(this.form.v)
     console.log(this.form.value);
     this.httpClient.post(`http://localhost:62631/api/users`,this.form.value)
-    .subscribe(x=>{},x=>{},()=>{});
+    .subscribe(x=>{console.log(x)},x=>{},()=>{});
     //לא רושם לי בטבלאות את הפלאפון והמייל
     //צריך להוסיף בדיקות תקינות לפורמ
   }

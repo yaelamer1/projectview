@@ -1,6 +1,7 @@
 <h1>שם האירוע</h1>
 <p>מוצרים:</p>
 <ul>
-  <li *ngFor="let item of arr">{{item.id}}</li>
+  <li *ngFor="let item of arr">{{item.Productld}}</li>
 </ul>
-<input type="button" value="הוספת מוצר"  (click)="addProduct()"/>
+<!-- <input type="button" value="הוספת מוצר"  (click)="addProduct()"/> -->
+<button mat-raised-button (click)="addProduct()">הוספת מוצר</button>

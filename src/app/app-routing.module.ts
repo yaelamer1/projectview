@@ -6,6 +6,8 @@ import { SigninComponent } from './componnets/signin/signin.component';
 import { OrganizeEventComponent } from './componnets/organize-event/organize-event.component';
 import { FreeSearchComponent } from './componnets/free-search/free-search.component';
 import { AddEventComponent } from './componnets/add-event/add-event.component';
+import { EventComponent } from './componnets/event/event.component';
+import { HistoryComponent } from './componnets/history/history.component';
 
 const routes: Routes = [
   {path:"organize-event" ,component:OrganizeEventComponent,
@@ -15,6 +17,8 @@ const routes: Routes = [
   {path:"freeSearch" ,component:FreeSearchComponent},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent},
+  {path:"event" ,component:EventComponent},
+  {path:"history" ,component:HistoryComponent},
   // { path: 'home', redirectTo: "login" },
   // { path: '**', redirectTo: "login" },”
 ];

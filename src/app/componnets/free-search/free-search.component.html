@@ -1,10 +1,13 @@
 
 <input type="text" placeholder="מוצר לחיפוש..." />
-<input type="button" value="חיפוש"  (click)="search()"/>
-<input type="button" value="עדכון במייל"  (click)="update()"/>
+<br><br>
+<!-- <input type="button" value="חיפוש"  (click)="search()"/> -->
+<button mat-raised-button (click)="search()">חיפוש</button>
+<!-- <input type="button" value="עדכון במייל"  (click)="update()"/> -->
 
-<!-- <ul>
-    <li *ngFor="let item of arr">{{item.name}}</li>
-  </ul> -->
+<a mat-raised-button href="/login" >עדכון במייל</a>
+<!-- target="_blank" -->
+<!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
+
 
   <app-products-found [arr]="arr"></app-products-found>

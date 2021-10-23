@@ -2,18 +2,45 @@
 <input type="button" value="ארגון אירוע" (click)="events(login)"/>
 <input type="button" value="הרשמה" (click)="signin()"/> -->
 
-<h1> שרה אור תעשי משהו בחיים שלך ותחשבי על שם לפרוייקט</h1>
-<h2 >Cheap event planning </h2>
+<h1 >Cheap event planning </h1>
 
-<nav>
+
     
-    <a routerLink="/signin"> הרשמה <br> </a>
+<a mat-raised-button href="/signin" >הרשמה</a>
+<a mat-raised-button href="/history" >הסטוריה</a>
+<a mat-raised-button href="/login" >כניסה</a>
+<a mat-raised-button href="/organize-event" >ארגון אירוע</a>
+<a mat-raised-button href="/freeSearch" >חיפוש חופשי</a>
+<br><br>
+
+<!-- <mat-tab-group mat-align-tabs="start">
+  <a mat-raised-button href="/signin"><mat-tab label="First">הרשמה</mat-tab></a>
+  <a mat-raised-button href="/history"><mat-tab label="Second">הסטוריה</mat-tab></a>
+  <a mat-raised-button href="/login"><mat-tab label="Third">כניסה</mat-tab></a>
+  <a mat-raised-button href="/organize-event"><mat-tab label="Fourth">ארגון אירוע</mat-tab></a>
+  <a mat-raised-button href="/freeSearch"><mat-tab label="Fifth">חיפוש חופשי</mat-tab></a>
+  </mat-tab-group>   -->
+
+<!-- <nav> -->
+    <!-- <a routerLink="/signin"> הרשמה <br> </a> -->
+
+    <!-- <a routerLink="/history"> הסטוריה <br> </a>
 
     <a routerLink="/login"> כניסה<br> </a>
 
     <a routerLink="/organize-event"> ארגון אירוע <br></a>
 
-    <a routerLink="/freeSearch">  חיפוש חופשי <br></a>
+    <a routerLink="/freeSearch">  חיפוש חופשי <br></a> -->
     
 
-  </nav>
+  <!-- </nav> -->
+  <div class="example-ripple-container mat-elevation-z4"
+     matRipple
+     [matRippleCentered]="centered"
+     [matRippleDisabled]="disabled"
+     [matRippleUnbounded]="unbounded"
+     [matRippleRadius]="radius"
+     [matRippleColor]="color">
+  Click me
+</div>
+

@@ -22,8 +22,8 @@ export class AddEventComponent implements OnInit {
     mr.setAttribute("type", "text");
     mr.setAttribute("value", "מוצר");  
     mr.setAttribute("formControlName", "name");  
-    //document.getElementById("m").appendChild(br); 
-    //document.getElementById("m").appendChild(mr); 
+    // document.getElementById("m").appendChild(br); 
+    // document.getElementById("m").appendChild(mr); 
     //להוסיף תיבת טקסט נוספת להוספת מוצר - דינאמי מתוך הקוד
   }
   save(){
