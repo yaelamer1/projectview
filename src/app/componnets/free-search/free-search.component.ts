@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/class/product';
 import {MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -15,13 +16,18 @@ import { LoginComponent } from '../login/login.component';
 })
 export class FreeSearchComponent implements OnInit {
   arr:Product[]=[];
-  allProduct:Product[]=[]
+  allProduct:Product[]=[];
+  form: FormGroup=new FormGroup({});
+
   constructor(private httpClient:HttpClient) {//,private route:Router 
     //,public dialog: MatDialog למה זה לא עובד
   }
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
   ngOnInit() {
+    this.form = new FormGroup({
+      UserId: new FormControl('')})
+
     this.httpClient.get<Product[]>(`http://localhost:62631/api/product`).subscribe(x=>
      {
        console.log(x);
@@ -35,10 +41,12 @@ export class FreeSearchComponent implements OnInit {
     var i=0;
     this.allProduct.forEach(element => {
       if (this.filter(element))
-        this.arr[i++]=element; 
+        this.arr[i++]=element;
     });
-     
+    this.httpClient.post(`http://localhost:62631/api/history`,this.form.value)
+    .subscribe(x=>{console.log(x)},x=>{},()=>{});
     console.log("search");
+    console.log(this.form.value);
     //להציג את התוצאות בקומפננטת מוצרים שנמצאו
   }
   filter(e:Product){

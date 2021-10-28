@@ -1,16 +1,11 @@
 <form [formGroup]="form" (ngSubmit)="signin()">
   <p>תעודת זהות</p>
-
-  <!-- <input type="text" id="id" class="form-control"
-      formControlName="id" required> -->
   <input formControlName="id"/> 
   <!-- <div *ngIf="name.errors?.required">
     Name is required.
   </div> -->
   <p>שם פרטי</p>
-  <!-- <input formControlName="name"/>   -->
-<input type="text" id="name" class="form-control" #name
-formControlName="name" required>
+  <input formControlName="name"/>  
   <p>כתובת מייל</p>
   <input formControlName="Email"/>  
   <p>מספר טלפון</p>
@@ -19,7 +14,10 @@ formControlName="name" required>
   <input formControlName="area"/>
   <p>סיסמא </p>
   <input formControlName="password"/>
-  <input type="submit"  [disabled]="!form.valid"/>
+  <!-- <input type="submit"  [disabled]="!form.valid"/> -->
+  <br>
+  <button mat-raised-button type="submit"  [disabled]="!form.valid">שליחה</button>
+
   </form>
 
   <router-outlet></router-outlet>

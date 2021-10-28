@@ -1,5 +1,5 @@
 export class History{
 
-    constructor(public Id: number,public UserId: number,public Productld: number) {
+    constructor(public Id?: number, public UserId?: string, public Productld?: number) {
     }
 }

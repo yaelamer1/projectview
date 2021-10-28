@@ -9,17 +9,22 @@ import { AddEventComponent } from './componnets/add-event/add-event.component';
 import { EventComponent } from './componnets/event/event.component';
 import { HistoryComponent } from './componnets/history/history.component';
 import { NgModule } from '@angular/core';
+import { HomePageComponent } from './componnets/home-page/home-page.component';
+import { AboutComponent } from './componnets/about/about.component';
 
 const routes: Routes = [
   {path:"organize-event" ,component:OrganizeEventComponent,
   // children:[ {path:"add-event",component :AddEventComponent} ] 
   },
   {path:"add-event",component :AddEventComponent},
+  {path:"add-event/:item",component :AddEventComponent},
   {path:"freeSearch" ,component:FreeSearchComponent},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent},
   {path:"event" ,component:EventComponent},
   {path:"history" ,component:HistoryComponent},
+  {path:"home-page" ,component:HomePageComponent},
+  {path:"about" ,component:AboutComponent},
   // { path: 'home', redirectTo: "login" },
   // { path: '**', redirectTo: "login" },”
 ];

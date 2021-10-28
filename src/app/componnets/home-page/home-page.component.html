@@ -2,17 +2,21 @@
 <input type="button" value="ארגון אירוע" (click)="events(login)"/>
 <input type="button" value="הרשמה" (click)="signin()"/> -->
 
-<h1 >Cheap event planning </h1>
+<h1 >Cheap Event - Planning </h1>
 
 
-    
-<a mat-raised-button href="/signin" >הרשמה</a>
-<a mat-raised-button href="/history" >הסטוריה</a>
-<a mat-raised-button href="/login" >כניסה</a>
-<a mat-raised-button href="/organize-event" >ארגון אירוע</a>
-<a mat-raised-button href="/freeSearch" >חיפוש חופשי</a>
-<br><br>
-
+<nav>  
+<a mat-button href="/">
+<span mat-button-wrapper>
+  <img src="logo.png">
+</span></a>
+<a mat-button href="/signin" >הרשמה לאתר</a>
+<a mat-button href="/organize-event" >ארגון אירוע</a>
+<a mat-button href="/freeSearch" >חיפוש חופשי</a>
+<a mat-button href="/about" >אודות</a>
+<a mat-button href="/history" >חיפושים אחרונים</a>
+</nav> 
+<!-- ניסיתי שזה יהיה קבוצה למעלה אבל זה לא עובד -->
 <!-- <mat-tab-group mat-align-tabs="start">
   <a mat-raised-button href="/signin"><mat-tab label="First">הרשמה</mat-tab></a>
   <a mat-raised-button href="/history"><mat-tab label="Second">הסטוריה</mat-tab></a>
@@ -22,19 +26,14 @@
   </mat-tab-group>   -->
 
 <!-- <nav> -->
-    <!-- <a routerLink="/signin"> הרשמה <br> </a> -->
-
-    <!-- <a routerLink="/history"> הסטוריה <br> </a>
-
+    <!-- <a routerLink="/signin"> הרשמה <br> </a>
+     <a routerLink="/history"> הסטוריה <br> </a>
     <a routerLink="/login"> כניסה<br> </a>
-
     <a routerLink="/organize-event"> ארגון אירוע <br></a>
-
     <a routerLink="/freeSearch">  חיפוש חופשי <br></a> -->
-    
-
-  <!-- </nav> -->
-  <div class="example-ripple-container mat-elevation-z4"
+<!-- </nav> -->
+<!-- לא עובד לי איך משתמשים בזה -->
+  <!-- <div class="example-ripple-container mat-elevation-z4"
      matRipple
      [matRippleCentered]="centered"
      [matRippleDisabled]="disabled"
@@ -42,5 +41,5 @@
      [matRippleRadius]="radius"
      [matRippleColor]="color">
   Click me
-</div>
+</div> -->
 

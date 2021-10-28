@@ -1,6 +1,6 @@
-
-<input type="text" placeholder="מוצר לחיפוש..." />
-<br><br>
+<form [formGroup]="form">
+<input formControlName="UserId" type="text" placeholder="מוצר לחיפוש..." />
+</form>
 <!-- <input type="button" value="חיפוש"  (click)="search()"/> -->
 <button mat-raised-button (click)="search()">חיפוש</button>
 <!-- <input type="button" value="עדכון במייל"  (click)="update()"/> -->
@@ -9,5 +9,4 @@
 <!-- target="_blank" -->
 <!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
 
-
-  <app-products-found [arr]="arr"></app-products-found>
+<app-products-found [arr]="arr"></app-products-found>

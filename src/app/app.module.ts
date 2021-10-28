@@ -22,6 +22,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { HistoryComponent } from './componnets/history/history.component';
+import { AboutComponent } from './componnets/about/about.component';
 
 
 
@@ -41,6 +42,7 @@ import { HistoryComponent } from './componnets/history/history.component';
     EventComponent,
     AddEventComponent,
     HistoryComponent,
+    AboutComponent,
     
   
     
