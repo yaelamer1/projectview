@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ListDetails } from 'src/app/class/listDetails';
 
 @Component({
@@ -13,9 +14,10 @@ export class EventComponent implements OnInit {
   //לחיצה על כל מוצר תעביר לדף החיפוש החופשי 
   //שם יהיה אפשר להרחיב את החיפוש ולהוסיף עוד סינונים
   arr:ListDetails[]=[];
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient,private route: ActivatedRoute) { }
   ngOnInit() {
-    //צריך להחזיר רק את המוצרים של אותו אירוע
+     this.route.paramMap.subscribe(x=>console.log(x))
+        //צריך להחזיר רק את המוצרים של אותו אירוע
     //צריך לבדוק מה קוד האירוע (לפי השם שלו או לקבל אותו כשמגיע)
     //ובגט שיחזרו המוצרים  שקוד האירוע שלהם שווה לקוד האירוע הספציפי
      this.httpClient.get<ListDetails[]>(`http://localhost:62631/api/listDetails?ListId=${this.listid}`).subscribe(x=>

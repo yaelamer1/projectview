@@ -38,11 +38,11 @@ export class FreeSearchComponent implements OnInit {
   //   this.dialog.open(LoginComponent);
   // }
   search(){
-    var i=0;
-    this.allProduct.forEach(element => {
-      if (this.filter(element))
-        this.arr[i++]=element;
-    });
+    // var i=0;
+    // this.allProduct.forEach(element => {
+     this.arr= this.allProduct.filter(word => word.Name?.includes(this.form.controls['UserId'].value));
+        // this.arr.push(element);
+    // });
     this.httpClient.post(`http://localhost:62631/api/history`,this.form.value)
     .subscribe(x=>{console.log(x)},x=>{},()=>{});
     console.log("search");

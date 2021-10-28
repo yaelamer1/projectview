@@ -4,7 +4,7 @@
   ואיך מקבלים אותו לקומפוננטה השניה -->
   <!-- <a  routerLink="/event/item.Name"><li *ngFor="let item of arr">{{item.Name}}</li></a> -->
   <!-- עושה לי את כל הקישורים ביחד ולא כל אירוע בנפרד -->
-  <li *ngFor="let item of arr"><a mat-button href="/event">{{item.Name}}</a></li>
+  <li *ngFor="let item of arr"><a mat-button routerLink="/event/{{item.Id}}">{{item.Name}}</a></li>
 
 </ul>
 <!-- לחיצה על שם האירוע תעביר לדף של האירוע עם כל רשימת המוצרים ואפשרות להוספת מוצרים -->

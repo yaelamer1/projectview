@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:"freeSearch" ,component:FreeSearchComponent},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent},
-  {path:"event" ,component:EventComponent},
+  {path:"event/:id",component :EventComponent},
   {path:"history" ,component:HistoryComponent},
   {path:"home-page" ,component:HomePageComponent},
   {path:"about" ,component:AboutComponent},

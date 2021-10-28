@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { History } from 'src/app/class/history';
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
