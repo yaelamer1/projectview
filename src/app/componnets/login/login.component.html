@@ -1,5 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="save()">
-<p>שם פרטי</p>
+<p>מספר זהות/כתובת מייל</p>
 <input formControlName="name"/>
 <p>סיסמא</p>
 <input formControlName="password"/>
@@ -7,4 +7,5 @@
 <button mat-raised-button type="submit"  [disabled]="!form.valid">שליחה</button>
 <!-- <input type="submit"  [disabled]="!form.valid"/> -->
 </form>
+<div>{{stringErr}}</div>
 

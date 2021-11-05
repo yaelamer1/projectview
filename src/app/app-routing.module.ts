@@ -21,10 +21,10 @@ const routes: Routes = [
   {path:"freeSearch" ,component:FreeSearchComponent},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent},
-  {path:"event/:id",component :EventComponent},
-  {path:"event",component :EventComponent,
+  {path:"event/:id",component :EventComponent ,children:[ {path:"product-of-category",component:ProductOfCategoryComponent} ] },
+  {path:"event",component :EventComponent},
   //איך עושים קומפוננטה בתוך קומפוננטה זה לא עובד לי
-  children:[ {path:"product-of-category",component:ProductOfCategoryComponent} ] },
+ 
   {path:"history" ,component:HistoryComponent},
   {path:"home-page" ,component:HomePageComponent},
   {path:"about" ,component:AboutComponent},

@@ -7,6 +7,8 @@ import { Product } from 'src/app/class/product';
 import {MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { FormControl, FormGroup } from '@angular/forms';
+import { User } from 'src/app/class/User';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -16,17 +18,19 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class FreeSearchComponent implements OnInit {
   arr:Product[]=[];
+  user:User|any;
   allProduct:Product[]=[];
   form: FormGroup=new FormGroup({});
 
-  constructor(private httpClient:HttpClient) {//,private route:Router 
+  constructor(private httpClient:HttpClient,private userService:UserService) {//,private route:Router 
     //,public dialog: MatDialog למה זה לא עובד
   }
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
 
   ngOnInit() {
-    
+    this.user=this.userService.getUser();
+    this.userService.eventUser.subscribe(x=>this.user=x);
     this.form = new FormGroup({
       //חייב שיהיה אידי אפילו שהוא ידנטיטי 
       //איך אפשר לעשות מפה מספור?

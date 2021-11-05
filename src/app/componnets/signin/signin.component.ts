@@ -38,7 +38,9 @@ export class SigninComponent implements OnInit {
     // if(this.form.v)
     console.log(this.form.value);
     this.httpClient.post(`http://localhost:62631/api/users`,this.form.value)
-    .subscribe(x=>{console.log(x)},x=>{},()=>{});
+    .subscribe(x=>{
+      
+      console.log(x)},x=>{},()=>{});
     //לא רושם לי בטבלאות את הפלאפון והמייל
     //צריך להוסיף בדיקות תקינות לפורמ
   }

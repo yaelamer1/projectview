@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {HttpClient} from '@angular/common/http'
 import { Location } from '@angular/common';
+import { UserService } from '../../services/user.service'
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ import { Location } from '@angular/common';
 })
 export class LoginComponent implements OnInit {
 form:FormGroup=new  FormGroup({});
-  constructor(private httpClient:HttpClient, private location: Location) { }
+stringErr:string="";
+constructor(private httpClient:HttpClient, private location: Location,private userService:UserService) { }
 
   ngOnInit() {
     this.form=new FormGroup({
@@ -19,10 +21,16 @@ form:FormGroup=new  FormGroup({});
     })
   }
 save(){
-  console.log(this.form.value);
-  this.httpClient.get(`http://localhost:62631/api/users?name=${this.form.value["name"]}&password=${this.form.value["password"]}`)
-  .subscribe(x=>{console.log(x); this.location.normalize("/product-found");},x=>{},()=>{});
-console.log(this.location.historyGo());
+  // console.log(this.form.value);
+  this.httpClient.get(`http://localhost:62631/api/users?userName=${this.form.value["name"]}&pass=${this.form.value["password"]}`)
+  .subscribe(x=>{ console.log(x);
+    this.userService.eventUser.emit(x);
+    // this.location.normalize("/product-found");
+  },x=>{
+    console.log("errr",x)
+this.stringErr="המידע שהוקש שגוי, נא נסה שנית"
+  },()=>{});
+// console.log(this.location.historyGo());
   //איך אפשר לדעת מאיזה דף הגיעו לכניסה כדי להעביר לשם כשהשם קיים?
   //אם לא קיים להעביר לדף ההרשמה
  }

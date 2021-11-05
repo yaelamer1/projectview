@@ -15,22 +15,22 @@ export class EventComponent implements OnInit {
   //לחיצה על כל קטגוריה תראה את המוצרים של כל קטגוריה  
   //ואז לחיצה על כל מוצר תעביר לדף החיפוש החופשי עם אפשרות לסינונים נוספים
   //או תציג את התוצאות של החיפוש מיד
-  arr:ListDetails[]=[];
+  arr:ListDetails|any;
   constructor(private httpClient:HttpClient,private route: ActivatedRoute) { }
   ngOnInit() {
      this.route.paramMap.subscribe(x=>{
        //איך אפשר לגשת לאידי שהגיע בניתוב באיקס 
        //כדי להכניס אותו לליסטאידי ולפי זה לסנן את הקטגוריות שיוצגו
-      console.log(x);
-      this.listid=Number(x);
+      // console.log(x);
+      this.listid=Number(x.get("id"));
       console.log(this.listid);
     })
     //צריך להחזיר רק את המוצרים של אותו אירוע
     //צריך לבדוק מה קוד האירוע (לפי השם שלו או לקבל אותו כשמגיע)
     //ובגט שיחזרו המוצרים  שקוד האירוע שלהם שווה לקוד האירוע הספציפי
-     this.httpClient.get<ListDetails[]>(`http://localhost:62631/api/listDetails?ListId=${this.listid}`).subscribe(x=>
+     this.httpClient.get(`http://localhost:62631/api/listDetails?Id=${this.listid}`).subscribe(x=>
      {
-       console.log(x);
+       console.log("ggggggggggggggggggggg", x);
        this.arr=x;
     },x=>{console.log(x)},()=>{});
   }

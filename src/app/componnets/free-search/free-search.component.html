@@ -8,5 +8,5 @@
 <a mat-raised-button routerLink="/login" >עדכון במייל</a>
 <!-- target="_blank" -->
 <!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
-
+<div *ngIf="!user">אינך רשום עדיין , שים לב החיפוש לא ישמר לך כאישי</div>
 <app-products-found [arr]="arr"></app-products-found>

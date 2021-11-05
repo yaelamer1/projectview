@@ -4,7 +4,7 @@
 <span mat-button-wrapper>
   <img src="logo.png">
 </span></a>
-<a mat-button routerLink="/signin" >הרשמה לאתר</a>
+<a *ngIf="!user" mat-button routerLink="/signin" >הרשמה לאתר</a>
 <a mat-button routerLink="/organize-event" >ארגון אירוע</a>
 <a mat-button routerLink="/freeSearch" >חיפוש חופשי</a>
 <a mat-button routerLink="/about" >אודות</a>
