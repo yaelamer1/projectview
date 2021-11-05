@@ -11,22 +11,25 @@ import { HistoryComponent } from './componnets/history/history.component';
 import { NgModule } from '@angular/core';
 import { HomePageComponent } from './componnets/home-page/home-page.component';
 import { AboutComponent } from './componnets/about/about.component';
+import { ProductOfCategoryComponent } from './componnets/product-of-category/product-of-category.component';
+import { ProductsFoundComponent } from './componnets/products-found/products-found.component';
 
 const routes: Routes = [
-  {path:"organize-event" ,component:OrganizeEventComponent,
-  // children:[ {path:"add-event",component :AddEventComponent} ] 
-  },
+  {path:"organize-event" ,component:OrganizeEventComponent},
   {path:"add-event",component :AddEventComponent},
   {path:"add-event/:item",component :AddEventComponent},
   {path:"freeSearch" ,component:FreeSearchComponent},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent},
   {path:"event/:id",component :EventComponent},
+  {path:"event",component :EventComponent,
+  //איך עושים קומפוננטה בתוך קומפוננטה זה לא עובד לי
+  children:[ {path:"product-of-category",component:ProductOfCategoryComponent} ] },
   {path:"history" ,component:HistoryComponent},
   {path:"home-page" ,component:HomePageComponent},
   {path:"about" ,component:AboutComponent},
-  // { path: 'home', redirectTo: "login" },
-  // { path: '**', redirectTo: "login" },”
+  {path:"product-of-category" ,component:ProductOfCategoryComponent},
+  {path:"product-found" ,component:ProductsFoundComponent},
 ];
 @NgModule({
   imports: [

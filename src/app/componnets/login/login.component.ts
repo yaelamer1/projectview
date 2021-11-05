@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {HttpClient} from '@angular/common/http'
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import {HttpClient} from '@angular/common/http'
 })
 export class LoginComponent implements OnInit {
 form:FormGroup=new  FormGroup({});
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient, private location: Location) { }
 
   ngOnInit() {
     this.form=new FormGroup({
@@ -20,7 +21,8 @@ form:FormGroup=new  FormGroup({});
 save(){
   console.log(this.form.value);
   this.httpClient.get(`http://localhost:62631/api/users?name=${this.form.value["name"]}&password=${this.form.value["password"]}`)
-  .subscribe(x=>{console.log(x)},x=>{},()=>{});
+  .subscribe(x=>{console.log(x); this.location.normalize("/product-found");},x=>{},()=>{});
+console.log(this.location.historyGo());
   //איך אפשר לדעת מאיזה דף הגיעו לכניסה כדי להעביר לשם כשהשם קיים?
   //אם לא קיים להעביר לדף ההרשמה
  }

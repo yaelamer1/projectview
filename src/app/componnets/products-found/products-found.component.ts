@@ -13,7 +13,7 @@ export class ProductsFoundComponent implements OnInit {
   arr:Product[]=[];
   constructor(private httpClient:HttpClient) { }
   ngOnInit() {
-   
+    
     //להציג מתוך טבלת המוצרים את אותו מוצר לפי הסינונים מכל החנויות
     //אם לא קיים להשאיר הודעה שלא קיים
     //איך להציג כאן חיפוש של קומפוננטה אחרת

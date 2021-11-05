@@ -24,9 +24,16 @@ export class FreeSearchComponent implements OnInit {
   }
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
+
   ngOnInit() {
+    
     this.form = new FormGroup({
-      UserId: new FormControl('')})
+      //חייב שיהיה אידי אפילו שהוא ידנטיטי 
+      //איך אפשר לעשות מפה מספור?
+      Id:new FormControl(1),
+      ProductName: new FormControl(''),
+      UserId: new FormControl('')
+    })
 
     this.httpClient.get<Product[]>(`http://localhost:62631/api/product`).subscribe(x=>
      {
@@ -40,13 +47,16 @@ export class FreeSearchComponent implements OnInit {
   search(){
     // var i=0;
     // this.allProduct.forEach(element => {
-     this.arr= this.allProduct.filter(word => word.Name?.includes(this.form.controls['UserId'].value));
+     //this.arr= this.allProduct.filter(word => word.Name?.includes(this.form.controls['ProductName'].value));
         // this.arr.push(element);
     // });
+    //כשאדם לוחץ על חיפוש שומר לו את החיפוש שלו בהיסטוריה 
+   // אבל כשהוא עושה חיפוש הוא עוד לא רשום איך אני אידע כבר משלב החיפוש מה התז שלו
     this.httpClient.post(`http://localhost:62631/api/history`,this.form.value)
     .subscribe(x=>{console.log(x)},x=>{},()=>{});
     console.log("search");
     console.log(this.form.value);
+    //איך להציג את הקומפוננטה מוצרים שנמצאו באותו דף
     //להציג את התוצאות בקומפננטת מוצרים שנמצאו
   }
   filter(e:Product){

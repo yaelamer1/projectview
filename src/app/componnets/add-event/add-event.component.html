@@ -1,14 +1,13 @@
 <h1>הוספת אירוע</h1>
-<input type="text" placeholder="שם אירוע">
+<input [(ngModel)]="eventName" placeholder="שם אירוע">
 <p>מה צריך לאירוע?</p>
-<form [formGroup]="form" id="m">
-<input type="text" formControlName="name" placeholder="מוצר">
-</form>
+<input [(ngModel)]="categoryName" placeholder="קטגוריה">
+<br>
 <button mat-raised-button (click)="more()">עוד מוצר</button>
 <button mat-raised-button (click)="save()">שמור</button>
- 
-<!--<input type="button" value="עוד מוצר"  (click)="more()"/>
-<input type="button" value="שמור"  (click)="save()"/> -->
+
+
+
 
 
 

@@ -1,15 +1,7 @@
 <ul>
-  <!-- אני רוצה לשלוח פרמטר - את השם של האירוע אבל
-  איך אני ניגשת לפני המערך לפריט מתוכו 
-  ואיך מקבלים אותו לקומפוננטה השניה -->
-  <!-- <a  routerLink="/event/item.Name"><li *ngFor="let item of arr">{{item.Name}}</li></a> -->
-  <!-- עושה לי את כל הקישורים ביחד ולא כל אירוע בנפרד -->
   <li *ngFor="let item of arr"><a mat-button routerLink="/event/{{item.Id}}">{{item.Name}}</a></li>
-
 </ul>
 <!-- לחיצה על שם האירוע תעביר לדף של האירוע עם כל רשימת המוצרים ואפשרות להוספת מוצרים -->
-<!-- <input type="button" value="הוספת אירוע"  (click)="addEvent()"/> -->
-    <!-- <a routerLink="/add-event"> הוספת אירוע </a> -->
-    <a mat-raised-button href="/add-event" >הוספת אירוע</a>
+    <a mat-raised-button routerLink="/add-event" >הוספת אירוע</a>
 
 

@@ -16,13 +16,17 @@ import { OrganizeEventComponent } from './componnets/organize-event/organize-eve
 import { ProductsFoundComponent } from './componnets/products-found/products-found.component';
 import { EventComponent } from './componnets/event/event.component';
 import { AddEventComponent } from './componnets/add-event/add-event.component';
+import { HistoryComponent } from './componnets/history/history.component';
+import { AboutComponent } from './componnets/about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 //material
 import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import { HistoryComponent } from './componnets/history/history.component';
-import { AboutComponent } from './componnets/about/about.component';
+import { ProductOfCategoryComponent } from './componnets/product-of-category/product-of-category.component';
+// import { MatTabGroup} from '@angular/material/tabs';
+// import { MatTab} from '@angular/material/tabs';
+
 
 
 
@@ -43,6 +47,7 @@ import { AboutComponent } from './componnets/about/about.component';
     AddEventComponent,
     HistoryComponent,
     AboutComponent,
+    ProductOfCategoryComponent,
     
   
     
