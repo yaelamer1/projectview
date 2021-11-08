@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http'
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { HttpClient } from '@angular/common/http'
 export class SigninComponent implements OnInit {
 
   form: FormGroup=new FormGroup({});
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private userService:UserService) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -39,7 +40,7 @@ export class SigninComponent implements OnInit {
     console.log(this.form.value);
     this.httpClient.post(`http://localhost:62631/api/users`,this.form.value)
     .subscribe(x=>{
-      
+      this.userService.eventUser.emit(x);
       console.log(x)},x=>{},()=>{});
     //לא רושם לי בטבלאות את הפלאפון והמייל
     //צריך להוסיף בדיקות תקינות לפורמ

@@ -19,13 +19,19 @@ import { AddEventComponent } from './componnets/add-event/add-event.component';
 import { HistoryComponent } from './componnets/history/history.component';
 import { AboutComponent } from './componnets/about/about.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductOfCategoryComponent } from './componnets/product-of-category/product-of-category.component';
+
 //material
 import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import { ProductOfCategoryComponent } from './componnets/product-of-category/product-of-category.component';
 // import { MatTabGroup} from '@angular/material/tabs';
 // import { MatTab} from '@angular/material/tabs';
+// import {DataSource} from '@angular/cdk/collections';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import { UpdateMailComponent } from './componnets/update-mail/update-mail.component';
+// import {MatNavListModule} from '@angular/material';
+
 
 
 
@@ -48,6 +54,7 @@ import { ProductOfCategoryComponent } from './componnets/product-of-category/pro
     HistoryComponent,
     AboutComponent,
     ProductOfCategoryComponent,
+    UpdateMailComponent,
     
   
     

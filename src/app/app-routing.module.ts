@@ -13,16 +13,18 @@ import { HomePageComponent } from './componnets/home-page/home-page.component';
 import { AboutComponent } from './componnets/about/about.component';
 import { ProductOfCategoryComponent } from './componnets/product-of-category/product-of-category.component';
 import { ProductsFoundComponent } from './componnets/products-found/products-found.component';
+import { UpdateMailComponent } from './componnets/update-mail/update-mail.component';
 
 const routes: Routes = [
   {path:"organize-event" ,component:OrganizeEventComponent},
   {path:"add-event",component :AddEventComponent},
   {path:"add-event/:item",component :AddEventComponent},
-  {path:"freeSearch" ,component:FreeSearchComponent},
+  {path:"freeSearch" ,component:FreeSearchComponent,children:[ {path:"product-found",component:ProductsFoundComponent} ]},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent},
   {path:"event/:id",component :EventComponent ,children:[ {path:"product-of-category",component:ProductOfCategoryComponent} ] },
   {path:"event",component :EventComponent},
+  {path:"update-mail",component :UpdateMailComponent},
   //איך עושים קומפוננטה בתוך קומפוננטה זה לא עובד לי
  
   {path:"history" ,component:HistoryComponent},

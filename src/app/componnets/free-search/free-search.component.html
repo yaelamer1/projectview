@@ -1,12 +1,9 @@
 <form [formGroup]="form">
 <input formControlName="ProductName" type="text" placeholder="מוצר לחיפוש..." /><!-- [(ngModel)]="nameInput" -->
 </form>
-<!-- <input type="button" value="חיפוש"  (click)="search()"/> -->
-<button mat-raised-button routerLink="/product-found" (click)="search()">חיפוש</button>
-<!-- <input type="button" value="עדכון במייל"  (click)="update()"/> -->
-
-<a mat-raised-button routerLink="/login" >עדכון במייל</a>
-<!-- target="_blank" -->
-<!-- <button mat-button (click)="openDialog()">Launch dialog</button> -->
+<button mat-raised-button routerLink="product-found" (click)="search()">חיפוש</button>
+<a mat-raised-button routerLink="/update-mail" >עדכון במייל</a>
 <div *ngIf="!user">אינך רשום עדיין , שים לב החיפוש לא ישמר לך כאישי</div>
-<app-products-found [arr]="arr"></app-products-found>
+<a *ngIf="!user" mat-button routerLink="/signin">הרשמה</a>
+<app-products-found *ngIf="search" [arr]="arr"></app-products-found>
+
