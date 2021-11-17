@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from 'src/app/class/product';
+import { ProductInShop } from 'src/app/class/productInShop';
 
 @Component({
   selector: 'app-products-found',
@@ -10,7 +11,7 @@ import { Product } from 'src/app/class/product';
 })
 export class ProductsFoundComponent implements OnInit {
   @Input()
-  arr:Product[]=[];
+  arr:ProductInShop[]=[];
   constructor(private httpClient:HttpClient) { }
   ngOnInit() {
     

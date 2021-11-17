@@ -22,7 +22,8 @@ const routes: Routes = [
   {path:"freeSearch" ,component:FreeSearchComponent,children:[ {path:"product-found",component:ProductsFoundComponent} ]},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent},
-  {path:"event/:id",component :EventComponent ,children:[ {path:"product-of-category",component:ProductOfCategoryComponent} ] },
+  {path:"event/:id/:name",component :EventComponent ,children:[ {path:"product-of-category",component:ProductOfCategoryComponent} ] },
+  {path:"event/:id/:name/product-of-category/:id",component :ProductOfCategoryComponent},
   {path:"event",component :EventComponent},
   {path:"update-mail",component :UpdateMailComponent},
   //איך עושים קומפוננטה בתוך קומפוננטה זה לא עובד לי

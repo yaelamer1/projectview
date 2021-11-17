@@ -9,6 +9,7 @@ import { LoginComponent } from '../login/login.component';
 import { FormControl, FormGroup } from '@angular/forms';
 import { User } from 'src/app/class/User';
 import { UserService } from 'src/app/services/user.service';
+import { ProductInShop } from 'src/app/class/productInShop';
 
 
 @Component({
@@ -20,12 +21,12 @@ export class FreeSearchComponent implements OnInit {
   srch:boolean=false;
   arr:Product[]=[];
   user:User|any;
-  allProduct:Product[]=[];
+  allProduct:ProductInShop[]=[];
   form: FormGroup=new FormGroup({});
   static num:number=4;
-  constructor(private httpClient:HttpClient,private userService:UserService) {//,private route:Router 
+  constructor(private httpClient:HttpClient,private userService:UserService) {}//,private route:Router 
     //,public dialog: MatDialog למה זה לא עובד
-  }
+  
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
   ngOnInit() {
@@ -37,7 +38,7 @@ export class FreeSearchComponent implements OnInit {
       UserId: new FormControl(this.user.Id)
     })
 
-    this.httpClient.get<Product[]>(`http://localhost:62631/api/product`).subscribe(x=>
+    this.httpClient.get<ProductInShop[]>(`http://localhost:62631/api/productInShop`).subscribe(x=>
      {
        console.log(x);
        this.allProduct=x;
@@ -53,12 +54,11 @@ export class FreeSearchComponent implements OnInit {
     //     this.arr.push(element);
     // });
     this.srch=true;
-    // this.httpClient.post(`http://localhost:62631/api/history`,this.form.value)
-    // .subscribe(x=>{console.log(x)},x=>{},()=>{});
-    console.log("search", this.user.Id);
-    this.arr=this.allProduct.filter(x=>{x.Name==this.form.controls['ProductName'].value;console.log(this.form.controls['ProductName'].value)});
-    this.arr.filter(x=>console.log(x));
+    this.httpClient.post(`http://localhost:62631/api/history`,this.form.value)
+    .subscribe(x=>{console.log(x)},x=>{},()=>{});
+    // console.log(this.allProduct.filter(x=>{
+    //   x.Name==this.form.controls['ProductName'].value;
+    // }));
   }
-
-
 }
+

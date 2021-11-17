@@ -3,7 +3,6 @@
 </form>
 <button mat-raised-button routerLink="product-found" (click)="search()">חיפוש</button>
 <a mat-raised-button routerLink="/update-mail" >עדכון במייל</a>
-<div *ngIf="!user">אינך רשום עדיין , שים לב החיפוש לא ישמר לך כאישי</div>
-<a *ngIf="!user" mat-button routerLink="/signin">הרשמה</a>
-<app-products-found *ngIf="search" [arr]="arr"></app-products-found>
+<h3 *ngIf="!user">אינך רשום, שים לב החיפוש לא ישמר בהיסטוריית החיפושים</h3>
+<app-products-found *ngIf="srch" [arr]="allProduct"></app-products-found>
 

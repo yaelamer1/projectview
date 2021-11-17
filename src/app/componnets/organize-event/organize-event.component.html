@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let item of arr"><a mat-button routerLink="/event/{{item.Id}}">{{item.Name}}</a></li>
+  <li *ngFor="let item of arr"><a mat-button routerLink="/event/{{item.Id}}/{{item.Name}}">{{item.Name}}</a></li>
 </ul>
 <!-- לחיצה על שם האירוע תעביר לדף של האירוע עם כל רשימת המוצרים ואפשרות להוספת מוצרים -->
     <a mat-raised-button routerLink="/add-event" >הוספת אירוע</a>

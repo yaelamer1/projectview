@@ -1,4 +1,4 @@
 <ul *ngIf="user">
   <li *ngFor="let item of arr"><a mat-button routerLink="/product-found">{{item.ProductName}}</a></li>
 </ul>
-<p *ngIf="!user">שירות לרשומים בלבד</p>
+<h2 *ngIf="!user">שירות לרשומים בלבד</h2>
