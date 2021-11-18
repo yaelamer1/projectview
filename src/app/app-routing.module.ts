@@ -20,6 +20,7 @@ const routes: Routes = [
   {path:"add-event",component :AddEventComponent},
   {path:"add-event/:item",component :AddEventComponent},
   {path:"freeSearch" ,component:FreeSearchComponent,children:[ {path:"product-found",component:ProductsFoundComponent} ]},
+  {path:"freeSearch/:ProductName" ,component:FreeSearchComponent},
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent},
   {path:"event/:id/:name",component :EventComponent ,children:[ {path:"product-of-category",component:ProductOfCategoryComponent} ] },

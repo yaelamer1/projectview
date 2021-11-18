@@ -4,5 +4,5 @@
 <button mat-raised-button routerLink="product-found" (click)="search()">חיפוש</button>
 <a mat-raised-button routerLink="/update-mail" >עדכון במייל</a>
 <h3 *ngIf="!user">אינך רשום, שים לב החיפוש לא ישמר בהיסטוריית החיפושים</h3>
-<app-products-found *ngIf="srch" [arr]="allProduct"></app-products-found>
+<app-products-found *ngIf="srch" [arr]="arr"></app-products-found>
 

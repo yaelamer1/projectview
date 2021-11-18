@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { ThrowStmt } from '@angular/compiler';
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/class/product';
 import {MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
@@ -19,17 +19,21 @@ import { ProductInShop } from 'src/app/class/productInShop';
 })
 export class FreeSearchComponent implements OnInit {
   srch:boolean=false;
-  arr:Product[]=[];
+  arr:ProductInShop[]|any;
   user:User|any;
+  searchName:string|any;
   allProduct:ProductInShop[]=[];
   form: FormGroup=new FormGroup({});
   static num:number=4;
-  constructor(private httpClient:HttpClient,private userService:UserService) {}//,private route:Router 
+  constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute) {}//,private route:Router 
     //,public dialog: MatDialog למה זה לא עובד
   
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
-  ngOnInit() {
+  ngOnInit() {     
+    this.route.paramMap.subscribe(x=>{
+    this.searchName=String(x.get("ProductName"));});
+    console.log(this.searchName);
     this.user=this.userService.getUser();
     this.userService.eventUser.subscribe(x=>this.user=x);
     this.form = new FormGroup({
@@ -37,7 +41,7 @@ export class FreeSearchComponent implements OnInit {
       ProductName: new FormControl(''),
       UserId: new FormControl(this.user.Id)
     })
-
+    this.form.controls['ProductName'].setValue(this.searchName);
     this.httpClient.get<ProductInShop[]>(`http://localhost:62631/api/productInShop`).subscribe(x=>
      {
        console.log(x);
@@ -48,17 +52,14 @@ export class FreeSearchComponent implements OnInit {
   //   this.dialog.open(LoginComponent);
   // }
   search(){
-    // var i=0;
-    // this.allProduct.forEach(element => {
-    //     this.allProduct.filter(word => word.Name?.includes(this.form.controls['ProductName'].value));
-    //     this.arr.push(element);
-    // });
     this.srch=true;
     this.httpClient.post(`http://localhost:62631/api/history`,this.form.value)
     .subscribe(x=>{console.log(x)},x=>{},()=>{});
-    // console.log(this.allProduct.filter(x=>{
-    //   x.Name==this.form.controls['ProductName'].value;
-    // }));
+
+    this.arr=this.allProduct.filter(x=>
+      x.Productld==this.form.controls['ProductName'].value);
+      //x.product?.Name==this.form.controls['ProductName'].value);
+      console.log(this.arr);
   }
 }
 
