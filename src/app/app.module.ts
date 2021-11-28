@@ -30,6 +30,8 @@ import {MatCardModule} from '@angular/material/card';
 // import {DataSource} from '@angular/cdk/collections';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { UpdateMailComponent } from './componnets/update-mail/update-mail.component';
+import { StamComponent } from './componnets/stam/stam.component';
+import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-password.component';
 // import {MatNavListModule} from '@angular/material';
 
 
@@ -55,6 +57,8 @@ import { UpdateMailComponent } from './componnets/update-mail/update-mail.compon
     AboutComponent,
     ProductOfCategoryComponent,
     UpdateMailComponent,
+    StamComponent,
+    ForgotPasswordComponent,
     
   
     

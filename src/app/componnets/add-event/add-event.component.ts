@@ -36,8 +36,7 @@ export class AddEventComponent implements OnInit, OnDestroy {
     //#endregion
   }
   save(){
-    //אני רוצה שרשימת המוצרים יכנסו או כרשימה חדשה או כתוספת על רשימה קיימת
-    // this.httpClient.post(`http://localhost:62631/api/listDetails?name=`,name)
-    // .subscribe(x=>{},x=>{},()=>{});
+    this.httpClient.post(`http://localhost:62631/api/lists`,this.eventName)
+    .subscribe(x=>{},x=>{},()=>{});
   }
 }

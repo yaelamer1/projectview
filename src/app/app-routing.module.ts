@@ -14,6 +14,9 @@ import { AboutComponent } from './componnets/about/about.component';
 import { ProductOfCategoryComponent } from './componnets/product-of-category/product-of-category.component';
 import { ProductsFoundComponent } from './componnets/products-found/products-found.component';
 import { UpdateMailComponent } from './componnets/update-mail/update-mail.component';
+import { StamComponent } from './componnets/stam/stam.component';
+import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-password.component';
+
 
 const routes: Routes = [
   {path:"organize-event" ,component:OrganizeEventComponent},
@@ -26,7 +29,8 @@ const routes: Routes = [
   {path:"event/:id/:name",component :EventComponent ,children:[ {path:"product-of-category",component:ProductOfCategoryComponent} ] },
   {path:"event/:id/:name/product-of-category/:id",component :ProductOfCategoryComponent},
   {path:"event",component :EventComponent},
-  {path:"update-mail",component :UpdateMailComponent},
+  {path:"update-mail/:message/:item",component :UpdateMailComponent},
+  {path:"forgot-password",component :ForgotPasswordComponent},
   //איך עושים קומפוננטה בתוך קומפוננטה זה לא עובד לי
  
   {path:"history" ,component:HistoryComponent},
@@ -34,6 +38,7 @@ const routes: Routes = [
   {path:"about" ,component:AboutComponent},
   {path:"product-of-category" ,component:ProductOfCategoryComponent},
   {path:"product-found" ,component:ProductsFoundComponent},
+
 ];
 @NgModule({
   imports: [

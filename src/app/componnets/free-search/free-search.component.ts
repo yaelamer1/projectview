@@ -4,7 +4,7 @@ import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_c
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/class/product';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 import { FormControl, FormGroup } from '@angular/forms';
 import { User } from 'src/app/class/User';
@@ -22,7 +22,8 @@ export class FreeSearchComponent implements OnInit {
   arr:ProductInShop[]|any;
   user:User|any;
   searchName:string|any;
-  allProduct:ProductInShop[]=[];
+  message:string="update";
+  // allProduct:ProductInShop[]=[];
   form: FormGroup=new FormGroup({});
   static num:number=4;
   constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute) {}//,private route:Router 
@@ -33,7 +34,6 @@ export class FreeSearchComponent implements OnInit {
   ngOnInit() {     
     this.route.paramMap.subscribe(x=>{
     this.searchName=String(x.get("ProductName"));});
-    console.log(this.searchName);
     this.user=this.userService.getUser();
     this.userService.eventUser.subscribe(x=>this.user=x);
     this.form = new FormGroup({
@@ -42,24 +42,30 @@ export class FreeSearchComponent implements OnInit {
       UserId: new FormControl(this.user.Id)
     })
     this.form.controls['ProductName'].setValue(this.searchName);
-    this.httpClient.get<ProductInShop[]>(`http://localhost:62631/api/productInShop`).subscribe(x=>
-     {
-       console.log(x);
-       this.allProduct=x;
-    },x=>{console.log(x)},()=>{});
+    console.log(this.searchName);
+    // this.httpClient.get<ProductInShop[]>(`http://localhost:62631/api/productInShop`).subscribe(x=>
+    //  {
+    //    console.log(x);
+    //    this.allProduct=x;
+    // },x=>{console.log(x)},()=>{});
   }
   // openDialog() {
   //   this.dialog.open(LoginComponent);
   // }
-  search(){
+  search(isSend:boolean){
     this.srch=true;
-    this.httpClient.post(`http://localhost:62631/api/history`,this.form.value)
-    .subscribe(x=>{console.log(x)},x=>{},()=>{});
-
-    this.arr=this.allProduct.filter(x=>
-      x.Productld==this.form.controls['ProductName'].value);
-      //x.product?.Name==this.form.controls['ProductName'].value);
+    const form={...this.form.value }
+    form["SendMail"]=isSend;
+    this.httpClient.post(`http://localhost:62631/api/history`,form)
+    .subscribe(x=>{
+      this.arr=x;
       console.log(this.arr);
+    },x=>{},()=>{});
+
+    // this.arr=this.allProduct.filter(x=>
+    //   x.Productld==this.form.controls['ProductName'].value);
+      //x.product?.Name==this.form.controls['ProductName'].value);
+      
   }
 }
 

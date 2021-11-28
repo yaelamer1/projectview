@@ -122,6 +122,50 @@ form{
     padding: 11px;
     
 }
+div {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+  .fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+    
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
 input{
   color: rgb(0 0 0 / 87%);
   background-color: #d728ca96;
