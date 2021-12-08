@@ -40,7 +40,7 @@ export class FreeSearchComponent implements OnInit {
       Id:new FormControl(FreeSearchComponent.num++),
       ProductName: new FormControl(''),
       UserId: new FormControl(this.user.Id)
-    })
+    });
     this.form.controls['ProductName'].setValue(this.searchName);
     console.log(this.searchName);
     // this.httpClient.get<ProductInShop[]>(`http://localhost:62631/api/productInShop`).subscribe(x=>

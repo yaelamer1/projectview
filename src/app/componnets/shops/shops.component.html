@@ -1,0 +1,16 @@
+<h1>בעל חנות? יש לך מוצרים בזול? </h1>
+<h2>אצלנו המוצרים שלך יכנסו להשוואת המחירים ואם הם באמת יהיו זולים כולם יקנו ממך</h2>
+<form>
+<p>Name of shop</p>
+<input formControlName="nameShop"/>  
+<p>City</p>
+<input formControlName="City"/>  
+<p>Phone</p>
+<input formControlName="Phon"/>
+<br>
+<button mat-raised-button type="submit"  [disabled]="!form.valid">שליחה</button>
+</form>
+<p>לאיזו קטגוריה המוצר שייך?</p>
+<ul>
+    <li *ngFor="let item of arr"><a mat-button routerLink="product-detail-shop/{{item}}">{{item.Name}}</a></li> 
+</ul>

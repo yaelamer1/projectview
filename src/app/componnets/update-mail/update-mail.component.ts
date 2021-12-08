@@ -11,8 +11,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./update-mail.component.css']
 })
 export class UpdateMailComponent implements OnInit {
+  routerLink: string|any;
   user: User | any;
   message: string | any;
+  mmm:string|any;
   item:string|any;  
   mailOrId:string|any;
   form:FormGroup=new FormGroup({});
@@ -33,11 +35,17 @@ export class UpdateMailComponent implements OnInit {
     // });
     this.mailOrId=this.user!=null?this.user.Email:this.item,
     this.item=this.user!=null?this.item:"";
-    this.item=this.user!=null?this.item:"";
     console.log(this.message,this.item,this.mailOrId);
-    this.httpClient.get(`http://localhost:62631/api/mail`,this.message)
-    .subscribe(x=>{
-    },x=>{},()=>{});
+    this.httpClient.get(`http://localhost:62631/api/mail?type=${this.message}&mailOrId=${this.mailOrId}&productName=${this.item}`)
+    .subscribe(x=>{this.mmm=String(x);
+    if(this.message=="password")
+    this.routerLink="/login";
+   
+  },
+      x=>{
+        console.log("err",x);
+        this.mmm=String(x.error.Message);
+      },()=>{});
   }
 
 }

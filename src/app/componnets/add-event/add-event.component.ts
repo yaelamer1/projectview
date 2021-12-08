@@ -3,6 +3,8 @@ import { Route } from '@angular/compiler/src/core';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { Category } from 'src/app/class/category';
+import { ListDetails } from 'src/app/class/listDetails';
 
 
 @Component({
@@ -14,7 +16,7 @@ export class AddEventComponent implements OnInit, OnDestroy {
   categoryName: string = '';
   eventName: string = '';
   [x: string]: any;
-
+  arr:Category|any;
   constructor(private httpClient: HttpClient) { }
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
@@ -22,6 +24,11 @@ export class AddEventComponent implements OnInit, OnDestroy {
   //כשמגיע מלחיצה על הוספת מוצר באירוע שכבר קיים
   //איך לעשות שכל הפרטים לאירוע כבר יהיו על המסך ויוכל לערוך אותם
   ngOnInit() {
+    this.httpClient.get(`http://localhost:62631/api/category`).subscribe(x=>
+    {
+      console.log(x);
+      this.arr=x;
+    },x=>{},()=>{});
   }
   more(){
     //#region להוסיף תיבת טקסט נוספת להוספת מוצר - דינאמי מתוך הקוד

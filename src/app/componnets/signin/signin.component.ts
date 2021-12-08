@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SigninComponent implements OnInit {
 
+  mess:string|any;
   form: FormGroup=new FormGroup({});
   constructor(private httpClient: HttpClient,private userService:UserService) { }
 
@@ -40,7 +41,11 @@ export class SigninComponent implements OnInit {
     this.httpClient.post(`http://localhost:62631/api/users`,this.form.value)
     .subscribe(x=>{
       this.userService.eventUser.emit(x);
-      console.log(x)},x=>{},()=>{});
+      console.log(x)
+      this.mess="ההרשמה בוצעה בהצלחה!!"
+    },x=>{
+      this.mess=String(x.error.Message); 
+    },()=>{});
     //לא רושם לי בטבלאות את הפלאפון והמייל
     //צריך להוסיף בדיקות תקינות לפורמ
   }

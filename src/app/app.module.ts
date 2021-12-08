@@ -32,6 +32,8 @@ import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet'
 import { UpdateMailComponent } from './componnets/update-mail/update-mail.component';
 import { StamComponent } from './componnets/stam/stam.component';
 import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-password.component';
+import { ShopsComponent } from './componnets/shops/shops.component';
+import { ProductDetailShopComponent } from './componnets/product-detail-shop/product-detail-shop.component';
 // import {MatNavListModule} from '@angular/material';
 
 
@@ -59,6 +61,8 @@ import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-pas
     UpdateMailComponent,
     StamComponent,
     ForgotPasswordComponent,
+    ShopsComponent,
+    ProductDetailShopComponent,
     
   
     

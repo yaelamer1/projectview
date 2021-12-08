@@ -16,6 +16,8 @@ import { ProductsFoundComponent } from './componnets/products-found/products-fou
 import { UpdateMailComponent } from './componnets/update-mail/update-mail.component';
 import { StamComponent } from './componnets/stam/stam.component';
 import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-password.component';
+import { ShopsComponent } from './componnets/shops/shops.component';
+import { ProductDetailShopComponent } from './componnets/product-detail-shop/product-detail-shop.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,7 @@ const routes: Routes = [
   {path:"event",component :EventComponent},
   {path:"update-mail/:message/:item",component :UpdateMailComponent},
   {path:"forgot-password",component :ForgotPasswordComponent},
+  {path:"shops",component :ShopsComponent},
   //איך עושים קומפוננטה בתוך קומפוננטה זה לא עובד לי
  
   {path:"history" ,component:HistoryComponent},
