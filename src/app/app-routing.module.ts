@@ -34,6 +34,7 @@ const routes: Routes = [
   {path:"update-mail/:message/:item",component :UpdateMailComponent},
   {path:"forgot-password",component :ForgotPasswordComponent},
   {path:"shops",component :ShopsComponent},
+  {path:"product-detail-shop/:id",component :ProductDetailShopComponent},
   //איך עושים קומפוננטה בתוך קומפוננטה זה לא עובד לי
  
   {path:"history" ,component:HistoryComponent},

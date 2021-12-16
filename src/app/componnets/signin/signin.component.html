@@ -1,19 +1,19 @@
 <form [formGroup]="form" (ngSubmit)="signin()">
-  <h1>Signin</h1>
-  <p>Id</p>
+  <h1>הרשמה</h1>
+  <p>מספר זהות</p>
   <input formControlName="id"/> 
   <!-- <div *ngIf="name.errors?.required">
     Name is required.
   </div> -->
-  <p>Name</p>
+  <p>שם מלא</p>
   <input formControlName="name"/>  
-  <p>Email</p>
+  <p>כתובת מייל</p>
   <input formControlName="Email"/>  
-  <p>Phone</p>
+  <p>מספר טלפון</p>
   <input formControlName="Phon"/>
-  <p>Address</p>
+  <p>כתובת</p>
   <input formControlName="area"/>
-  <p>Password</p>
+  <p>סיסמא לבחירתך</p>
   <input formControlName="password"/>
   <!-- <input type="submit"  [disabled]="!form.valid"/> -->
   <br>

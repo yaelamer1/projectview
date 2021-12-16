@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail-shop',
@@ -8,9 +9,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ProductDetailShopComponent implements OnInit {
   form: FormGroup=new FormGroup({});
-  constructor() { }
-
+  categoryId:number=0;
+  constructor(private route: ActivatedRoute) { }
+  
   ngOnInit(): void {
+    this.route.paramMap.subscribe(x=>{
+    this.categoryId=Number(x.get("id"));})
     this.form = new FormGroup({
       Name: new FormControl('', [Validators.required]),
       Description: new FormControl('', [Validators.required]),
@@ -18,5 +22,8 @@ export class ProductDetailShopComponent implements OnInit {
       Picture: new FormControl('', [Validators.required]),
       Price: new FormControl('', [Validators.required])
     })
+  }
+  save(){
+    
   }
 }

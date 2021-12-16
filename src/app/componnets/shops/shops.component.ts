@@ -15,15 +15,23 @@ export class ShopsComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      nameShop: new FormControl('', [Validators.required]),
-      City: new FormControl('', [Validators.required]),
-      Phon: new FormControl('', [Validators.required,Validators.maxLength(10)])
+      Name: new FormControl('', [Validators.required]),
+      CityId: new FormControl('', [Validators.required]),
+      Phone: new FormControl('', [Validators.required])
     });
     this.httpClient.get(`http://localhost:62631/api/category`).subscribe(x=>
     {
       console.log(x);
       this.arr=x;
     },x=>{},()=>{});
+  }
+  save(){
+    this.httpClient.post(`http://localhost:62631/api/shop`,this.form.value).subscribe(x=>
+    {
+      console.log(x);
+      this.arr=x;
+    },x=>{console.log(x);},()=>{});
+    console.log(this.form.value);
   }
 
 }

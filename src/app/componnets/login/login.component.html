@@ -1,17 +1,17 @@
 <div  *ngIf="myVar">
   <form  class="fadeInDown" [formGroup]="form" (ngSubmit)="save()">
-    <h1>Wellcome to CE-P</h1>
-    <p>Email / Id</p>
+    <h1>ברוך הבא ל CE-P</h1>
+    <p>מספר זהות / כתובת מייל:</p>
     <input formControlName="name" />
-    <p>Password</p>
+    <p>סיסמא:</p>
     <input formControlName="password" />
     <br>
-    <button mat-raised-button type="submit" [disabled]="!form.valid">sumbit</button>
+    <button mat-raised-button type="submit" [disabled]="!form.valid">שליחה</button>
     <p>{{stringErr}}</p>
 
-    <a mat-button routerLink="/signin" (click)="none()">Signin</a>
-    <a mat-button routerLink="/" (click)="none()">Enter as visiter</a>
-    <a mat-button routerLink="/forgot-password" (click)="none()">Forgot Password</a>
+    <a mat-button routerLink="/signin" (click)="none()">הרשמה לאתר</a>
+    <a mat-button routerLink="/" (click)="none()">כניסה כאורח</a>
+    <a mat-button routerLink="/forgot-password" (click)="none()">שכחת סיסמא?</a>
   </form>
 </div>
 
