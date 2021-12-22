@@ -68,8 +68,11 @@ h1{
   font-size: 46px;
     font-family: unset;
 }
-p{
-  font-size: 22px;
+label{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    padding: 9px;
 }
 div{
   display: block; /* Hidden by default */

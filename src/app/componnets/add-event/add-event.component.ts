@@ -4,6 +4,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { Category } from 'src/app/class/category';
+import { Event } from 'src/app/class/event';
 import { ListDetails } from 'src/app/class/listDetails';
 
 
@@ -17,6 +18,7 @@ export class AddEventComponent implements OnInit, OnDestroy {
   eventName: string = '';
   [x: string]: any;
   arr:Category|any;
+  event:Event=new Event("",[]);
   constructor(private httpClient: HttpClient) { }
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
@@ -42,8 +44,21 @@ export class AddEventComponent implements OnInit, OnDestroy {
     // document.getElementById("m").appendChild(mr); 
     //#endregion
   }
+
+
+
+  
   save(){
-    this.httpClient.post(`http://localhost:62631/api/lists`,this.eventName)
+    this.event.Categories = [];
+    this.event.Name="";
+    console.log(this.event);
+    this.arr.forEach(( x:Category ) => {
+      if(x.checked==true){
+        this.event?.Categories?.push((Number)(x.Id));}
+    });
+    this.event.Name=this.eventName;
+    console.log(this.event);
+    this.httpClient.post(`http://localhost:62631/api/lists`,this.event)
     .subscribe(x=>{},x=>{},()=>{});
   }
 }

@@ -20,26 +20,28 @@ import { ProductInShop } from 'src/app/class/productInShop';
 export class FreeSearchComponent implements OnInit {
   srch:boolean=false;
   arr:ProductInShop[]|any;
-  user:User|any;
+  user:User|any=null;
   searchName:string|any;
   message:string="update";
   // allProduct:ProductInShop[]=[];
   form: FormGroup=new FormGroup({});
   static num:number=4;
-  constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute) {}//,private route:Router 
+  constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute) {
+   
+
+  }//,private route:Router 
     //,public dialog: MatDialog למה זה לא עובד
   
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
   ngOnInit() {     
     this.route.paramMap.subscribe(x=>{
-    this.searchName=String(x.get("ProductName"));});
-    this.user=this.userService.getUser();
+    this.searchName=String(x.get("ProductName")||"");});
+     this.user=this.userService.getUser();
+     console.log(this.user?.Id,"this.user?.Id")
     this.userService.eventUser.subscribe(x=>this.user=x);
     this.form = new FormGroup({
-      Id:new FormControl(FreeSearchComponent.num++),
       ProductName: new FormControl(''),
-      UserId: new FormControl(this.user.Id)
     });
     this.form.controls['ProductName'].setValue(this.searchName);
     console.log(this.searchName);
@@ -56,6 +58,8 @@ export class FreeSearchComponent implements OnInit {
     this.srch=true;
     const form={...this.form.value }
     form["SendMail"]=isSend;
+    form["UserId"]=this.user?.Id;
+    console.log(form)
     this.httpClient.post(`http://localhost:62631/api/history`,form)
     .subscribe(x=>{
       this.arr=x;
