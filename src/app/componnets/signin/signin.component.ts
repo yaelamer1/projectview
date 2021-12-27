@@ -23,7 +23,6 @@ export class SigninComponent implements OnInit {
       Phon: new FormControl('', [Validators.required,Validators.maxLength(10)]),//,Validators.pattern("\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4}))")]),
       area: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required])//רק מספרים
-      //כשקיימת סיסמה כזו צריך להודיע למשתמש להחליף סיסמא
     })
   }
   isTzValid(){
@@ -33,10 +32,8 @@ export class SigninComponent implements OnInit {
       const forbidden = control.value.length==9;
       return forbidden ? {forbiddenName: {value: control.value}} : null;
     };
-   
 }
   signin(){
-    // if(this.form.v)
     console.log(this.form.value);
     this.httpClient.post(`http://localhost:62631/api/users`,this.form.value)
     .subscribe(x=>{
@@ -46,7 +43,5 @@ export class SigninComponent implements OnInit {
     },x=>{
       this.mess=String(x.error.Message); 
     },()=>{});
-    //לא רושם לי בטבלאות את הפלאפון והמייל
-    //צריך להוסיף בדיקות תקינות לפורמ
   }
 }

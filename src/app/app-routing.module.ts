@@ -14,7 +14,6 @@ import { AboutComponent } from './componnets/about/about.component';
 import { ProductOfCategoryComponent } from './componnets/product-of-category/product-of-category.component';
 import { ProductsFoundComponent } from './componnets/products-found/products-found.component';
 import { UpdateMailComponent } from './componnets/update-mail/update-mail.component';
-import { StamComponent } from './componnets/stam/stam.component';
 import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-password.component';
 import { ShopsComponent } from './componnets/shops/shops.component';
 import { ProductDetailShopComponent } from './componnets/product-detail-shop/product-detail-shop.component';
@@ -23,7 +22,7 @@ import { ProductDetailShopComponent } from './componnets/product-detail-shop/pro
 const routes: Routes = [
   {path:"organize-event" ,component:OrganizeEventComponent},
   {path:"add-event",component :AddEventComponent},
-  {path:"add-event/:item",component :AddEventComponent},
+  {path:"add-event/:name",component :AddEventComponent},
   {path:"freeSearch" ,component:FreeSearchComponent,children:[ {path:"product-found",component:ProductsFoundComponent} ]},
   {path:"freeSearch/:ProductName" ,component:FreeSearchComponent},
   {path:"login" ,component:LoginComponent},

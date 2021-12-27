@@ -10,11 +10,9 @@ export class UserService {
 
   constructor() {
     this.eventUser.subscribe(x=>{this.User=x
-      console.log("ffff")
+      console.log("user")
     })
    }
-
-
   getUser(){
     return this.User;
   }

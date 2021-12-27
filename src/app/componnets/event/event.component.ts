@@ -1,9 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { List } from 'src/app/class/list';
 import { ListDetails } from 'src/app/class/listDetails';
 import { __param } from 'tslib';
+import { Event } from 'src/app/class/event';
+import { Category } from 'src/app/class/category';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-event',
@@ -11,28 +14,22 @@ import { __param } from 'tslib';
   styleUrls: ['./event.component.css']
 })
 export class EventComponent implements OnInit {
-  listid:number=0;
-  //להציג את כל הקטגוריות של אותו אירוע 
-  //לחיצה על כל קטגוריה תראה את המוצרים של כל קטגוריה  
-  //ואז לחיצה על כל מוצר תעביר לדף החיפוש החופשי עם אפשרות לסינונים נוספים
-  //או תציג את התוצאות של החיפוש מיד
-  arr:ListDetails|any;
-  eventName:string|any;
-  constructor(private httpClient:HttpClient,private route: ActivatedRoute) { }
+  listid: number = 0;
+  arr: Category | any;
+  event: Event = new Event("", []);
+  constructor(private httpClient: HttpClient,private eventService:EventService, private route: ActivatedRoute) { }
   ngOnInit() {
-      this.route.paramMap.subscribe(x=>{
-      this.listid=Number(x.get("id"));
-      this.eventName=String(x.get("name"));
-      console.log(this.listid);
+    this.route.paramMap.subscribe(x => {
+      this.listid = Number(x.get("id"));
+      this.event.Name  = String(x.get("name"));
     })
-     this.httpClient.get(`http://localhost:62631/api/listDetails?Id=${this.listid}`).subscribe(x=>
-     {
-       console.log(x);
-       this.arr=x;
-    },x=>{console.log(x)},()=>{});}
-  addProduct(){
-    console.log("addProduct");
-    //לפתוח את דף הוספת אירוע אך שיהיו בו כבר את שם האירוע וכל המוצרים שלו 
-    //כאילו כדי לערוך את האירוע ותהיה אפשרות למחוק ולהוסיף מוצרים
+    this.httpClient.get<Category[]>(`http://localhost:62631/api/listDetails?Id=${this.listid}`).subscribe(x => {
+      this.arr = x;
+      this.arr.forEach((x: Category) => {
+        this.event.Categories?.push((Number)(x.Id));
+      });
+      this.eventService.emitEvent.emit(this.event);
+    }, x => { console.log(x) }, () => { });
+    
   }
 }

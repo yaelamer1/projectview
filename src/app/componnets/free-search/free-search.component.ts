@@ -25,35 +25,20 @@ export class FreeSearchComponent implements OnInit {
   message:string="update";
   // allProduct:ProductInShop[]=[];
   form: FormGroup=new FormGroup({});
-  static num:number=4;
-  constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute) {
-   
-
-  }//,private route:Router 
-    //,public dialog: MatDialog למה זה לא עובד
+  constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute) {}
   
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
   ngOnInit() {     
     this.route.paramMap.subscribe(x=>{
     this.searchName=String(x.get("ProductName")||"");});
-     this.user=this.userService.getUser();
-     console.log(this.user?.Id,"this.user?.Id")
+    this.user=this.userService.getUser();
     this.userService.eventUser.subscribe(x=>this.user=x);
     this.form = new FormGroup({
       ProductName: new FormControl(''),
     });
     this.form.controls['ProductName'].setValue(this.searchName);
-    console.log(this.searchName);
-    // this.httpClient.get<ProductInShop[]>(`http://localhost:62631/api/productInShop`).subscribe(x=>
-    //  {
-    //    console.log(x);
-    //    this.allProduct=x;
-    // },x=>{console.log(x)},()=>{});
   }
-  // openDialog() {
-  //   this.dialog.open(LoginComponent);
-  // }
   search(isSend:boolean){
     this.srch=true;
     const form={...this.form.value }
@@ -65,11 +50,5 @@ export class FreeSearchComponent implements OnInit {
       this.arr=x;
       console.log(this.arr);
     },x=>{},()=>{});
-
-    // this.arr=this.allProduct.filter(x=>
-    //   x.Productld==this.form.controls['ProductName'].value);
-      //x.product?.Name==this.form.controls['ProductName'].value);
-      
   }
 }
-

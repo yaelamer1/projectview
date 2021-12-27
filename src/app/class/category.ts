@@ -1,5 +1,5 @@
 export class Category{
 
-    constructor(public Id?: number, public Name?: string, public checked?:boolean) {
+    constructor(public Id: number, public Name: string, public checked?:boolean) {
     }
 }

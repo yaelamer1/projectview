@@ -1,6 +1,5 @@
 <ul >
-  <li *ngFor="let item of arr">{{item.Product?.Name}}
-    <!-- <p *ngFor="let i of {{item.Product}}">{{i.Name}}</p> -->
+  <li *ngFor="let item of arr">{{item.Product?.Name}}, {{item.Product?.ProdDate}}, {{item.Product?.Description}}
   </li>
 </ul>     
 <!-- <table mat-table [dataSource]="arr" class="mat-elevation-z8">

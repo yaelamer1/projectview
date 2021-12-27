@@ -18,7 +18,6 @@ export class HistoryComponent implements OnInit {
     this.userService.eventUser.subscribe(x=>this.user=x);
     this.httpClient.get<History[]>(`http://localhost:62631/api/history?UserId=${this.user.Id}`).subscribe(x=>
     {
-      console.log(x);
       this.arr=x;
    },x=>{},()=>{});
   }

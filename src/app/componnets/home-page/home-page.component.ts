@@ -13,13 +13,8 @@ import { LoginComponent } from '../login/login.component';
 export class HomePageComponent implements OnInit {
   user:User|any;
   constructor(private route:Router,private userService:UserService) { }
-  // ,private _bottomSheet: MatBottomSheet
   ngOnInit() {
     this.user=this.userService.getUser();
     this.userService.eventUser.subscribe(x=>this.user=x);
-    
   }
-  // openBottomSheet(): void {
-  //   this._bottomSheet.open(LoginComponent);
-  // }
 }

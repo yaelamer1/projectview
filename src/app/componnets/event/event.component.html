@@ -1,9 +1,8 @@
-<h1>{{eventName}}</h1>
+<h1>{{event.Name}}</h1>
 <p>קטגוריות:</p>
 <ul>
   <li *ngFor="let item of arr"><a mat-button routerLink="product-of-category/{{item.Id}}">{{item.Name}}</a>
-   
   </li>
 </ul>
-<button mat-raised-button (click)="addProduct()">הוספת מוצר</button>
- <router-outlet></router-outlet>
+<a mat-raised-button routerLink="/add-event/true">הוספת מוצר</a>
+
