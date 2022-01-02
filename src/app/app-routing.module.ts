@@ -17,6 +17,8 @@ import { UpdateMailComponent } from './componnets/update-mail/update-mail.compon
 import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-password.component';
 import { ShopsComponent } from './componnets/shops/shops.component';
 import { ProductDetailShopComponent } from './componnets/product-detail-shop/product-detail-shop.component';
+import { UpdateProductShopsComponent } from './componnets/update-product-shops/update-product-shops.component';
+import { EditProductShopsComponent } from './componnets/edit-product-shops/edit-product-shops.component';
 
 
 const routes: Routes = [
@@ -28,7 +30,7 @@ const routes: Routes = [
   {path:"login" ,component:LoginComponent},
   {path:"signin" ,component:SigninComponent},
   {path:"event/:id/:name",component :EventComponent ,children:[ {path:"product-of-category",component:ProductOfCategoryComponent} ] },
-  {path:"event/:id/:name/product-of-category/:id",component :ProductOfCategoryComponent},
+  {path:"event/:id/:name/product-of-category/:id/:name",component :ProductOfCategoryComponent},
   {path:"event",component :EventComponent},
   {path:"update-mail/:message/:item",component :UpdateMailComponent},
   {path:"forgot-password",component :ForgotPasswordComponent},
@@ -41,6 +43,8 @@ const routes: Routes = [
   {path:"about" ,component:AboutComponent},
   {path:"product-of-category" ,component:ProductOfCategoryComponent},
   {path:"product-found" ,component:ProductsFoundComponent},
+  {path:"update-product-shops/:shopId" ,component:UpdateProductShopsComponent},
+  {path:"edit-product-shops/:shopId" ,component:EditProductShopsComponent},
 
 ];
 @NgModule({

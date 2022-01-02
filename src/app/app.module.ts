@@ -35,7 +35,9 @@ import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-pas
 import { ShopsComponent } from './componnets/shops/shops.component';
 import { ProductDetailShopComponent } from './componnets/product-detail-shop/product-detail-shop.component';
 // import {MatNavListModule} from '@angular/material';
-
+import {MatTableModule} from '@angular/material/table';
+import { UpdateProductShopsComponent } from './componnets/update-product-shops/update-product-shops.component';
+import { EditProductShopsComponent } from './componnets/edit-product-shops/edit-product-shops.component';
 
 
 
@@ -63,6 +65,8 @@ import { ProductDetailShopComponent } from './componnets/product-detail-shop/pro
     ForgotPasswordComponent,
     ShopsComponent,
     ProductDetailShopComponent,
+    UpdateProductShopsComponent,
+    EditProductShopsComponent,
     
   
     
@@ -76,10 +80,12 @@ import { ProductDetailShopComponent } from './componnets/product-detail-shop/pro
     AppRoutingModule,
     MatSliderModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
     
   ],
 
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ProductsFoundComponent,ProductOfCategoryComponent]
 })
 export class AppModule { }

@@ -5,14 +5,20 @@
 <p>שם החנות:</p>
 <input formControlName="Name"/>  
 <p>עיר:</p>
-<input formControlName="CityId"/>  
+<input [(ngModel)]="cityName" [ngModelOptions]="{standalone: true}"/>  
 <p>מספר טלפון:</p>
 <input formControlName="Phone"/>
+<!-- <input formControlName="CityId"/> -->
 <br>
 <br>
 <button mat-raised-button type="submit"  [disabled]="!form.valid">שליחה</button>
 </form>
-<p>לאיזו קטגוריה המוצר שייך?</p>
+<br>
+<a mat-raised-button routerLink="/edit-product-shops/shopId">הוספת מוצר</a>
+
+<a mat-raised-button routerLink="/update-product-shops/shopId">עדכון מוצר</a>
+
+<!-- <p>לאיזו קטגוריה המוצר שייך?</p>
 <ul>
     <li *ngFor="let item of arr"><a mat-button routerLink="product-detail-shop/{{item.Id}}">{{item.Name}}</a></li> 
-</ul>
+</ul> -->

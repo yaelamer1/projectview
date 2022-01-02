@@ -1,39 +1,40 @@
-<ul >
-  <li *ngFor="let item of arr">{{item.Product?.Name}}, {{item.Product?.ProdDate}}, {{item.Product?.Description}}
+<!-- <ul >
+  <li *ngFor="let item of dataSource">{{item.Product?.Name}}, {{item.Product?.ProdDate}}, {{item.Product?.Description}}
   </li>
-</ul>     
-<!-- <table mat-table [dataSource]="arr" class="mat-elevation-z8">
-   יש לי שגיאה: -->
-  <!-- לא ניתן להיקשר ל- 'dataSource' מכיוון שהוא אינו מאפיין ידוע של 'טבלה'. -->
-  <!-- זה לא מאפיין של טבלה אבל זה אמור להיות מאפיין של המטריאל וכך הוא שולח לקומפוננטה שלו כמו עם אינפוט -->
+</ul> -->
+ 
+ <!-- <table mat-table [dataSource]="arr" class="mat-elevation-z8">
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Position Column -->
-  <!-- <ng-container matColumnDef="Name">
+  <ng-container matColumnDef="Name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
-  </ng-container>-->
+    <td mat-cell *matCellDef="let element"> {{element.Product?.Name}} </td>
+  </ng-container>
 
-  <!-- Name Column -->
-  <!-- <ng-container matColumnDef="Description">
+  <ng-container matColumnDef="Description">
     <th mat-header-cell *matHeaderCellDef> Description </th>
-    <td mat-cell *matCellDef="let element"> {{element.Description}} </td>
-  </ng-container> -->
+    <td mat-cell *matCellDef="let element"> {{element.Product?.Description}} </td>
+  </ng-container> 
 
-  <!-- Weight Column -->
-  <!-- <ng-container matColumnDef="ProdDate">
+  <ng-container matColumnDef="ProdDate">
     <th mat-header-cell *matHeaderCellDef> ProdDate </th>
-    <td mat-cell *matCellDef="let element"> {{element.ProdDate}} </td>
-  </ng-container> -->
+    <td mat-cell *matCellDef="let element"> {{element.Product?.ProdDate}} </td>
+  </ng-container>
 
-  <!-- Symbol Column -->
-  <!-- <ng-container matColumnDef="Picture">
+  <ng-container matColumnDef="Picture">
     <th mat-header-cell *matHeaderCellDef> Picture </th>
-    <td mat-cell *matCellDef="let element"> {{element.Picture}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.Product?.Picture}} </td>
   </ng-container> -->
 
-  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+  <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
 <!-- </table> -->
+<table *ngFor="let element of arr">
+  <th>שם:</th>
+  <td>{{element.Product?.Name}}</td>  
+  <th>תיאור:</th>
+  <td>{{element.Product?.Description}}</td>  
+  <th>תאריך ייצור:</th>
+  <td>{{element.Product?.ProdDate}}</td>  
+  <th>תמונה:</th>
+  <td>{{element.Product?.Picture}}</td>
+</table>

@@ -14,11 +14,13 @@ export class ProductOfCategoryComponent implements OnInit {
   // dataSource : Product[]|any;
   arr: Product[]=[];
   categoryId:number=0;
+  categoryName:string="";
   constructor(private httpClient:HttpClient,private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(x=>{
     this.categoryId=Number(x.get("id"));
+    this.categoryName=String(x.get("name"));
   })
     this.httpClient.get<Product[]>(`http://localhost:62631/api/product?Id=${this.categoryId}`).subscribe(x=>
     {
