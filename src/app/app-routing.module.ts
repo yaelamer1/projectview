@@ -19,6 +19,7 @@ import { ShopsComponent } from './componnets/shops/shops.component';
 import { ProductDetailShopComponent } from './componnets/product-detail-shop/product-detail-shop.component';
 import { UpdateProductShopsComponent } from './componnets/update-product-shops/update-product-shops.component';
 import { EditProductShopsComponent } from './componnets/edit-product-shops/edit-product-shops.component';
+import { ProductInShopOfCategoryComponent } from './componnets/product-in-shop-of-category/product-in-shop-of-category.component';
 
 
 const routes: Routes = [
@@ -43,8 +44,9 @@ const routes: Routes = [
   {path:"about" ,component:AboutComponent},
   {path:"product-of-category" ,component:ProductOfCategoryComponent},
   {path:"product-found" ,component:ProductsFoundComponent},
-  {path:"update-product-shops/:shopId" ,component:UpdateProductShopsComponent},
+  {path:"update-product-shops" ,component:UpdateProductShopsComponent},
   {path:"edit-product-shops/:shopId" ,component:EditProductShopsComponent},
+  {path:"product-in-shop-of-category/:shopId/:categoryId" ,component:ProductInShopOfCategoryComponent}
 
 ];
 @NgModule({

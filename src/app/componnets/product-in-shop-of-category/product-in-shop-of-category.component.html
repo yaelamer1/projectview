@@ -1,0 +1,3 @@
+<ul>
+    <li *ngFor="let item of arr"><a mat-button routerLink="/edit-product-shops/{{item.ShopId}}" (click)="product(item)">{{item.Product?.Name}}</a></li>
+</ul>

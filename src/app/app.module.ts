@@ -38,6 +38,7 @@ import { ProductDetailShopComponent } from './componnets/product-detail-shop/pro
 import {MatTableModule} from '@angular/material/table';
 import { UpdateProductShopsComponent } from './componnets/update-product-shops/update-product-shops.component';
 import { EditProductShopsComponent } from './componnets/edit-product-shops/edit-product-shops.component';
+import { ProductInShopOfCategoryComponent } from './componnets/product-in-shop-of-category/product-in-shop-of-category.component';
 
 
 
@@ -67,6 +68,7 @@ import { EditProductShopsComponent } from './componnets/edit-product-shops/edit-
     ProductDetailShopComponent,
     UpdateProductShopsComponent,
     EditProductShopsComponent,
+    ProductInShopOfCategoryComponent,
     
   
     
