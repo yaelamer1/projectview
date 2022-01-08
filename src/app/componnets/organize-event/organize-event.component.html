@@ -1,4 +1,9 @@
+<h1>רשימת הארועים שלך</h1>
+<h2>כאן תוכל להעיזר ברשימות מוצרים מוכנות לאירועים שלך</h2>
+<h2>וכן להוסיף אירועים שיעזרו לאחרים</h2>
+<div>
 <ul>
   <li *ngFor="let item of arr"><a mat-button routerLink="/event/{{item.Id}}/{{item.Name}}">{{item.Name}}</a></li>
 </ul>
     <a mat-raised-button routerLink="/add-event" >הוספת אירוע</a>
+</div>

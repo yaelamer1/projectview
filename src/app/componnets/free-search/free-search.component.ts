@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/class/product';
 import { MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/class/User';
 import { UserService } from 'src/app/services/user.service';
 import { ProductInShop } from 'src/app/class/productInShop';
@@ -22,7 +22,7 @@ export class FreeSearchComponent implements OnInit {
   arr:ProductInShop[]|any;
   user:User|any=null;
   searchName:string|any;
-  message:string="update";
+  message:string="askUpdate";
   // allProduct:ProductInShop[]=[];
   form: FormGroup=new FormGroup({});
   constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute) {}
@@ -35,7 +35,7 @@ export class FreeSearchComponent implements OnInit {
     this.user=this.userService.getUser();
     this.userService.eventUser.subscribe(x=>this.user=x);
     this.form = new FormGroup({
-      ProductName: new FormControl(''),
+      ProductName: new FormControl('',[Validators.required]),
     });
     this.form.controls['ProductName'].setValue(this.searchName);
   }

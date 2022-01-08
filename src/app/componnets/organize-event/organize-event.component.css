@@ -1,11 +1,12 @@
-.mat-raised-button{
+.mat-raised-button{ 
+    margin-right: 33px;
     font-family: Guttman-CourMir;
     font-size: 14px;
     font-weight: 500;
     color: #D728CA;
     background: #000;
     box-sizing: border-box;
-    position: relative;
+    position: absolute;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -27,4 +28,14 @@
     overflow: visible;
     
     margin: 10px;
+}
+ul{
+    list-style-type: none;
+}
+div{
+    text-align: center;   
+    width: 200px;
+}
+h1{
+    text-align: center;
 }

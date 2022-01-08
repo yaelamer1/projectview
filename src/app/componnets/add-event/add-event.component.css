@@ -5,7 +5,7 @@
     color: #D728CA;
     background: #000;
     box-sizing: border-box;
-    position: relative;
+    position: absolute;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -27,5 +27,37 @@
     overflow: visible;
    
     margin: 10px;   
-    margin-right: 0px;
+    margin-right: 180px;
+}
+input[type="text"]{
+    color: rgb(0 0 0 / 87%);
+    background-color: #d728ca00;
+      width: 146px;
+      /* font-family: Guttman-CourMir; */
+      padding: 10px;
+      font-optical-sizing: 24;
+      align-items: center;
+      object-position: center;
+      text-align: center;
+      font-size: 22px;
+      margin-right: 60px;
+      margin-bottom: -10px;
+}
+ul{
+    list-style-type: none;
+    font-size: 30px;
+    /* font-family: Guttman-CourMir; */
+    
+}
+input[type="checkbox"] {
+    width: 50px;
+
+
+}
+h1{
+    text-align: center;
+    /* font-family: Guttman-CourMir; */
+}
+div{
+    width: 400px;
 }
