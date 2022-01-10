@@ -1,4 +1,9 @@
-<ul *ngIf="user">
-  <li *ngFor="let item of arr"><a mat-button routerLink="/freeSearch/{{item.ProductName}}">{{item.ProductName}}</a></li>
-</ul>
-<h2 *ngIf="!user">שירות לרשומים בלבד</h2>
+<body>
+  <div class="div1">
+    <ul *ngIf="user">
+      <li *ngFor="let item of arr"><a mat-button routerLink="/freeSearch/{{item.ProductName}}">{{item.ProductName}}</a>
+      </li>
+    </ul>
+    <h2 *ngIf="!user">שירות לרשומים בלבד</h2>
+  </div>
+</body>

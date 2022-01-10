@@ -7,7 +7,6 @@ import { Category } from 'src/app/class/category';
 import { Event } from 'src/app/class/event';
 import { ListDetails } from 'src/app/class/listDetails';
 import { EventService } from 'src/app/services/event.service';
-
 @Component({
   selector: 'app-add-event',
   templateUrl: './add-event.component.html',

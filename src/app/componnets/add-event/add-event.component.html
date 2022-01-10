@@ -1,10 +1,12 @@
-<div>
-<h1>עריכת אירוע</h1>
-<input type="text" [(ngModel)]="this.event.Name" placeholder="שם אירוע">
-<ul>
-  <li *ngFor="let item of arr">
-    <input type="checkbox" [(ngModel)]="item.checked" name="check1">{{item.Name}}
-   </li> 
-</ul>
- <button mat-raised-button (click)="save()">שמור</button>
-</div>
+<body>
+  <div>
+    <h1>עריכת אירוע</h1>
+    <input type="text" [(ngModel)]="this.event.Name" placeholder="שם אירוע">
+    <ul>
+      <li *ngFor="let item of arr">
+        <input type="checkbox" [(ngModel)]="item.checked" name="check1">{{item.Name}}
+      </li>
+    </ul>
+    <button mat-raised-button (click)="save()">שמור</button>
+  </div>
+</body>

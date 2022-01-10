@@ -31,7 +31,13 @@ section {
   }
   body{
     direction: rtl;
-  }
+    height: 160px;
+    width: 100%;
+    background-color: #d1bea9;
+    margin: -19px;
+    margin-right: unset;
+
+}
   /* .mat-raised-button{
     font-family: Guttman-CourMir;
     font-size: 14px;

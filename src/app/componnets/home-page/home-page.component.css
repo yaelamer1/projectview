@@ -1,5 +1,5 @@
-    app-navbar .docs-navbar, app-navbar .docs-navbar-header, nav {
-        background: #000000;
+ app-navbar .docs-navbar, app-navbar .docs-navbar-header, nav {
+        /* background: #d1bea9; */
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -33,7 +33,7 @@
         font-family: Guttman-CourMir;
         font-size: 14px;
         font-weight: 500;
-        color: #D728CA;
+        color: #ffffff;
         background: rgb(0 0 0 / 0%);
     }
     .docs-angular-logo[_ngcontent-pel-c48] {
@@ -43,4 +43,24 @@
     }
     h1{
         text-align: center;
+        margin: 0px;
+        margin-top: 15px;
+        margin-bottom: -40px;
     }
+    img{
+        width: 155px;
+        height: 65x;
+        padding-top: 10px;
+    }
+    .imgh1{
+        width: 26%;
+        height: 85px;
+    }
+    body{
+        background-color: #d1bea9;
+    }  
+    span{
+        padding: unset;
+    }
+
+    

@@ -2,3 +2,12 @@ h2{
     color: red;
     text-align: center;
 }
+body{
+    background-color: #d1bea9;
+}
+div{
+    background-color: #af6b1e;
+    height: 100%;
+    width: 80%;
+    margin-right: 10%;
+}

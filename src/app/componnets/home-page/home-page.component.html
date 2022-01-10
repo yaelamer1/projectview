@@ -1,17 +1,22 @@
-<h1 >Cheap Event - Planning </h1>
-<app-login></app-login>
-<nav>  
-<a mat-button routerLink="/">
-<span mat-button-wrapper>
-  <img src="/assets/image/logo.png">
-</span></a>
-<a *ngIf="!user" mat-button routerLink="/signin" >הרשמה לאתר</a>
-<a mat-button routerLink="/organize-event" >ארגון אירוע</a>
-<a mat-button routerLink="/freeSearch" >חיפוש חופשי</a>
-<a mat-button routerLink="/about" >אודות</a>
-<a *ngIf="user" mat-button routerLink="/history" >חיפושים אחרונים</a>
-<a mat-button routerLink="/shops" >בעלי חנויות</a>
-</nav> 
+<body>
+  <div class="div1">
+    <h1><img class="imgh1" src="/assets/image/l.png"> </h1>
+    <app-login></app-login>
+    <nav>
+      <a mat-button routerLink="/">
+        <span mat-button-wrapper>
+          <img src="/assets/image/l.png">
+        </span>
+      </a>
+      <a *ngIf="!user" mat-button routerLink="/signin">הרשמה לאתר</a>
+      <a mat-button routerLink="/organize-event">ארגון אירוע</a>
+      <a mat-button routerLink="/freeSearch">חיפוש חופשי</a>
+      <a mat-button routerLink="/about">אודות</a>
+      <a *ngIf="user" mat-button routerLink="/history">חיפושים אחרונים</a>
+      <a mat-button routerLink="/shops">בעלי חנויות</a>
+    </nav>
+  </div>
+</body>
 <!-- ניסיתי שזה יהיה קבוצה למעלה אבל זה לא עובד
 <mat-tab-group mat-align-tabs="start">
   <a mat-raised-button routerLink="/signin"><mat-tab label="First">הרשמה</mat-tab></a>

@@ -1,16 +1,20 @@
-<h1>עריכת פרטי מוצר</h1>
-<form [formGroup]="form" (ngSubmit)="save()">
-    <p>שם המוצר:</p>
-    <input formControlName="Name" />
-    <p>תיאור:</p>
-    <input formControlName="Description" />
-    <p>מחיר:</p>
-    <input formControlName="Price" />
-    <p>תאריך ייצור:</p>
-    <input formControlName="ProdDate" /> 
-    <p>תמונה:</p>
-    <input formControlName="Picture" />
-    <br>
-    <br>
-    <button mat-raised-button type="submit" [disabled]="!form.valid">שליחה</button>
-</form>
+<body>
+    <div class="div1">
+        <h1>עריכת פרטי מוצר</h1>
+        <form [formGroup]="form" (ngSubmit)="save()">
+            <p>שם המוצר:</p>
+            <input formControlName="Name" />
+            <p>תיאור:</p>
+            <input formControlName="Description" />
+            <p>מחיר:</p>
+            <input formControlName="Price" />
+            <p>תאריך ייצור:</p>
+            <input formControlName="ProdDate" />
+            <p>תמונה:</p>
+            <input formControlName="Picture" />
+            <br>
+            <br>
+            <button mat-raised-button type="submit" [disabled]="!form.valid">שליחה</button>
+        </form>
+    </div>
+</body>
