@@ -15,6 +15,7 @@ arr:List[]=[];
      this.httpClient.get<List[]>(`http://localhost:62631/api/lists`).subscribe(x=>
      {
        console.log(x);
+       x.forEach(g=>g.Picture==""?g.Picture="green.jpg":g.Picture=g.Picture);
        this.arr=x;
     },x=>{},()=>{});
   }

@@ -1,4 +1,4 @@
-.mat-raised-button{
+/* .mat-raised-button{
     font-family: Guttman-CourMir;
     font-size: 14px;
     font-weight: 500;
@@ -27,7 +27,7 @@
     overflow: visible;
       margin-top: 15px;
       margin-right: 92px;
-}
+} */
 /* form{
     margin: 20px;
 } */
@@ -53,6 +53,10 @@ form{
     text-align: center;
     padding: 11px;
     
+}
+.mat-raised-button {
+  margin-top: 10px;
+    right: 45px;
 }
 input{
   color: rgb(0 0 0 / 87%);
@@ -100,9 +104,3 @@ label{
   animation-name: animatetop;
   animation-duration: 0.4s
 } */
-body{
-  direction: rtl;
-  /* height: 626px; */
-  /* width: 100%; */
-  background-color: #d1bea9;
-}

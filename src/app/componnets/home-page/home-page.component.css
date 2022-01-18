@@ -1,6 +1,6 @@
- app-navbar .docs-navbar, app-navbar .docs-navbar-header, nav {
-        /* background: #d1bea9; */
+    app-navbar .docs-navbar, app-navbar .docs-navbar-header, nav {
         display: flex;
+        position: sticky;
         flex-wrap: wrap;
         align-items: center;
         padding: 8px 16px;
@@ -44,23 +44,51 @@
     h1{
         text-align: center;
         margin: 0px;
-        margin-top: 15px;
         margin-bottom: -40px;
     }
-    img{
+    #logo2{
         width: 155px;
         height: 65x;
         padding-top: 10px;
     }
-    .imgh1{
-        width: 26%;
-        height: 85px;
+    #logo1{
+        width: 200px;
+        height: 80px;
     }
-    body{
-        background-color: #d1bea9;
-    }  
-    span{
-        padding: unset;
+
+    .img{
+        width: 74vw;
+        height: 35vw;
+        align-items: center;
+        border: groove;
+    } 
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
     }
+    
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+@media only screen and (max-width: 600px) {
+    app-navbar .docs-navbar, app-navbar .docs-navbar-header, nav{  
+            display: grid;
+    }
+    h1{
+        display: none;
+    }
+    #logo{
+        display: none;
+    }
+}
 
     

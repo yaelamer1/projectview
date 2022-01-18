@@ -10,23 +10,22 @@ import { Product } from 'src/app/class/product';
   styleUrls: ['./product-of-category.component.css']
 })
 export class ProductOfCategoryComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  // dataSource : Product[]|any;
-  arr: Product[]=[];
-  categoryId:number=0;
-  categoryName:string="";
-  constructor(private httpClient:HttpClient,private route: ActivatedRoute) { }
+  displayedColumns: string[] = ['Name', 'Description', 'ProdDate', 'Picture'];
+
+  arr: Product[] = [];
+  categoryId: number = 0;
+  categoryName: string = "";
+  constructor(private httpClient: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(x=>{
-    this.categoryId=Number(x.get("id"));
-    this.categoryName=String(x.get("name"));
-  })
-    this.httpClient.get<Product[]>(`http://localhost:62631/api/product?Id=${this.categoryId}`).subscribe(x=>
-    {
+    this.route.paramMap.subscribe(x => {
+      this.categoryId = Number(x.get("id"));
+      this.categoryName = String(x.get("name"));
+    })
+    this.httpClient.get<Product[]>(`http://localhost:62631/api/product?Id=${this.categoryId}`).subscribe(x => {
       console.log(x);
-      this.arr=x;
-   },x=>{},()=>{});
+      this.arr = x;
+    }, x => { }, () => { });
   }
 
 }

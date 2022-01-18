@@ -1,4 +1,4 @@
-.mat-raised-button{ 
+/* .mat-raised-button{ 
     margin-right: 33px;
     font-family: Guttman-CourMir;
     font-size: 14px;
@@ -28,17 +28,58 @@
     overflow: visible;
     
     margin: 10px;
-}
+} */
 ul{
     list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
 }
-.div2{
-    text-align: center;   
-    width: 200px;
+img{
+    width: 22vw;
+    height: 18vw;
+    object-fit: cover;
+    border-radius: 15px;
 }
-h1{
+h2{
+    color: white;
     text-align: center;
 }
-body{
-    background-color: #d1bea9;
+.divEvent{
+    width: 22vw;
+    border: groove;
+    margin: 2px;
+    font-size: large;
+    color: white;
+    border-radius: 15px;
+    padding: 3px;
+}
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0px;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0px;
+    border-radius: 4px;
+    overflow: visible;
+}
+li{
+    width: 32%;
+    display: inline;
+}
+.mat-raised-button{
+    margin-right: 65vw;
 }

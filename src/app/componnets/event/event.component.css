@@ -1,4 +1,4 @@
-.mat-raised-button{
+/* .mat-raised-button{
     font-family: Guttman-CourMir;
     font-size: 14px;
     font-weight: 500;
@@ -26,7 +26,11 @@
     border-radius: 4px;
     overflow: visible;
     margin: 10px;
+} */
+ul{
+    list-style-type: none;
+    color: #fff;
 }
-body{
-    background-color: #d1bea9;
+p{
+    color: white;
 }

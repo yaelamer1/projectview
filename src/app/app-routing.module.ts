@@ -20,6 +20,7 @@ import { ProductDetailShopComponent } from './componnets/product-detail-shop/pro
 import { UpdateProductShopsComponent } from './componnets/update-product-shops/update-product-shops.component';
 import { EditProductShopsComponent } from './componnets/edit-product-shops/edit-product-shops.component';
 import { ProductInShopOfCategoryComponent } from './componnets/product-in-shop-of-category/product-in-shop-of-category.component';
+import { OpenComponent } from './componnets/open/open.component';
 
 
 const routes: Routes = [
@@ -46,7 +47,8 @@ const routes: Routes = [
   {path:"product-found" ,component:ProductsFoundComponent},
   {path:"update-product-shops" ,component:UpdateProductShopsComponent},
   {path:"edit-product-shops/:shopId" ,component:EditProductShopsComponent},
-  {path:"product-in-shop-of-category/:shopId/:categoryId" ,component:ProductInShopOfCategoryComponent}
+  {path:"product-in-shop-of-category/:shopId/:categoryId" ,component:ProductInShopOfCategoryComponent},
+  {path:"" ,component:OpenComponent}
 
 ];
 @NgModule({

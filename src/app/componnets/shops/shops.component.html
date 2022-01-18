@@ -1,5 +1,3 @@
-<body>
-    <div class="div1">
         <h1>בעל חנות? יש לך מוצרים בזול? </h1>
         <h2>אצלנו המוצרים שלך יכנסו להשוואת המחירים ואם הם באמת יהיו זולים כולם יקנו ממך</h2>
         <h3>פרטי החנות:</h3>
@@ -7,7 +5,8 @@
             <p>שם החנות:</p>
             <input formControlName="Name" />
             <p>עיר:</p>
-            <input [(ngModel)]="cityName" [ngModelOptions]="{standalone: true}" />
+            <input formControlName="CityName" />
+            <!-- <input [(ngModel)]="City.Name" [ngModelOptions]="{standalone: true}" /> -->
             <p>מספר טלפון:</p>
             <input formControlName="Phone" />
             <br>
@@ -17,5 +16,3 @@
         <br>
         <a mat-raised-button routerLink="/edit-product-shops/shop.shopId">הוספת מוצר</a>
         <a mat-raised-button routerLink="/update-product-shops">עדכון מוצר</a>
-    </div>
-</body>

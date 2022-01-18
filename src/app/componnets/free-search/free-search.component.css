@@ -1,4 +1,4 @@
-.mat-raised-button{
+/* .mat-raised-button{
     font-family: Guttman-CourMir;
     font-size: 14px;
     font-weight: 500;
@@ -27,12 +27,12 @@
     overflow: visible;
     margin: 10px;    
     margin-right: 0px;
-}
+} */
 form{
     margin: 20px;
 }
 input{
-    color: rgb(0 0 0 / 87%);
+    color: #ffff;
     background-color: #d728ca00;
       width: 146px;
       padding: 10px;
@@ -43,8 +43,12 @@ input{
   }
 h3{
     color: red;
-
+    margin: 15px;
 }
-body{
-    background-color: #d1bea9;
+h2{
+    color: white;    
+    margin: 15px;
+}
+.mat-raised-button {
+    margin-right: 20px;
 }

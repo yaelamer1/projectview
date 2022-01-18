@@ -1,13 +1,10 @@
-<body>
-    <div class="div1">
-        <form [formGroup]="form">
-            <input formControlName="ProductName" type="text" placeholder="מוצר לחיפוש..." />
-        </form>
-        <button mat-raised-button routerLink="product-found" (click)="search(false)"
-            [disabled]="!form.valid">חיפוש</button>
-        <button mat-raised-button routerLink="/update-mail/{{message}}/{{searchName}}" (click)="search(true)"
-            [disabled]="!form.valid">עדכון במייל</button>
-        <h3 *ngIf="!user">אינך רשום, שים לב החיפוש לא ישמר בהיסטוריית החיפושים</h3>
-        <app-products-found *ngIf="srch" [arr]="arr"></app-products-found>
-    </div>
-</body>
+<h1>חיפוש חופשי</h1>
+<h2>נא הזן את שם המוצר לחיפוש:</h2>
+<form [formGroup]="form">
+    <input formControlName="ProductName" type="text" placeholder="מוצר לחיפוש..." />
+</form>
+<button mat-raised-button routerLink="product-found" (click)="search(false)" [disabled]="!form.valid">חיפוש</button>
+<button mat-raised-button routerLink="/update-mail/{{message}}/{{searchName}}" (click)="search(true)"
+    [disabled]="!form.valid">עדכון במייל</button>
+<h3 *ngIf="!user">אינך רשום, שים לב החיפוש לא ישמר בהיסטוריית החיפושים</h3>
+<app-products-found *ngIf="srch" [arr]="arr"></app-products-found>

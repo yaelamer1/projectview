@@ -1,6 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
-
-
-
-
-
+h1{
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+.div1{
+    background-color: #b39a7e;
+    min-height: 655px;
+    width: 80%;
+    margin: auto;
+    margin-bottom: -18px;
+}
+body{
+    direction: rtl;
+    background-color: #d1bea9;
+    height: 100%;
+    margin: 0px;
+}  
+.mat-raised-button{
+    font-family: Guttman-CourMir;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    background: #b39a7e;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+      margin-top: 15px;
+      margin-right: 92px;
+}

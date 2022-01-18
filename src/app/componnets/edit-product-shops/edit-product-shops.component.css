@@ -1,9 +1,17 @@
-body{
-    background-color: #d1bea9;
-}  
-div{
-    background-color: #b39a7e;
-    height: 100%;
-    width: 80%;
-    margin-right: 10%;
+.mat-raised-button {
+    margin-right: 20px;
 }
+form{
+    color: #ffff;
+    text-align: center;
+}
+input{
+    color: #ffff;
+    background-color: #d728ca00;
+      width: 146px;
+      padding: 10px;
+      font-optical-sizing: 24;
+      align-items: center;
+      object-position: center;
+      text-align: center;
+  }

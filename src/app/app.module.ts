@@ -30,7 +30,6 @@ import {MatCardModule} from '@angular/material/card';
 // import {DataSource} from '@angular/cdk/collections';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { UpdateMailComponent } from './componnets/update-mail/update-mail.component';
-import { StamComponent } from './componnets/stam/stam.component';
 import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-password.component';
 import { ShopsComponent } from './componnets/shops/shops.component';
 import { ProductDetailShopComponent } from './componnets/product-detail-shop/product-detail-shop.component';
@@ -39,7 +38,8 @@ import {MatTableModule} from '@angular/material/table';
 import { UpdateProductShopsComponent } from './componnets/update-product-shops/update-product-shops.component';
 import { EditProductShopsComponent } from './componnets/edit-product-shops/edit-product-shops.component';
 import { ProductInShopOfCategoryComponent } from './componnets/product-in-shop-of-category/product-in-shop-of-category.component';
-import { TryComponent } from './componnets/try/try.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OpenComponent } from './componnets/open/open.component';
 
 
 
@@ -63,14 +63,13 @@ import { TryComponent } from './componnets/try/try.component';
     AboutComponent,
     ProductOfCategoryComponent,
     UpdateMailComponent,
-    StamComponent,
     ForgotPasswordComponent,
     ShopsComponent,
     ProductDetailShopComponent,
     UpdateProductShopsComponent,
     EditProductShopsComponent,
     ProductInShopOfCategoryComponent,
-    TryComponent,
+    OpenComponent,
     
   
     
@@ -85,7 +84,8 @@ import { TryComponent } from './componnets/try/try.component';
     MatSliderModule,
     MatButtonModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    BrowserAnimationsModule
     
   ],
 

@@ -1,4 +1,4 @@
-.mat-raised-button{
+/* .mat-raised-button{
     font-family: Guttman-CourMir;
     font-size: 14px;
     font-weight: 500;
@@ -28,18 +28,18 @@
    
     margin: 10px;   
     margin-right: 180px;
-}
+} */
 input[type="text"]{
-    color: rgb(0 0 0 / 87%);
+    color:#ffff;
     background-color: #d728ca00;
-      width: 146px;
+      width: 15%;
       /* font-family: Guttman-CourMir; */
       padding: 10px;
       font-optical-sizing: 24;
       align-items: center;
       object-position: center;
       text-align: center;
-      font-size: 22px;
+      font-size: 20px;
       margin-right: 60px;
       margin-bottom: -10px;
 }
@@ -51,22 +51,8 @@ ul{
 }
 input[type="checkbox"] {
     width: 50px;
-
-
 }
-/* h1{
-    text-align: center;
-    /* font-family: Guttman-CourMir; */
-/* }  */
-div{
-    width: 400px;
-}
-body{
-    background-color: #d1bea9;
-}
-div{
-    background-color: #af6b1e;
-    height: 100%;
-    width: 80%;
-    margin-right: 10%;
+.mat-raised-button {
+    margin-top: 0px;
+    margin-right: 5%;
 }

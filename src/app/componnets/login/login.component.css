@@ -1,9 +1,9 @@
 .mat-raised-button{
     font-family: Guttman-CourMir;
-    font-size: 22px;
+    font-size: 1vw;
     font-weight: 500;
-    color: #D728CA;
-    background: hsl(0, 0%, 0%);
+    color: #ffff;
+    background: #b39a7e;
     box-sizing: border-box;
     position: relative;
     -webkit-user-select: none;
@@ -19,95 +19,26 @@
     text-decoration: none;
     vertical-align: baseline;
     text-align: center;
-    margin: 0;
-    min-width: 64px;
-    line-height: 36px;
-    padding: 0 16px;
+    width: 6vw;
+    line-height: 3vw;
+    padding: 0;
     border-radius: 4px;
     overflow: visible;
     margin-top: 15px;
-    margin-right: 92px;
+    margin-right: 10vw;
 }
-/* form{
-    margin: 20px;
-}
-* {box-sizing: border-box}
-
-Full-width input fields
-  input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-Set a style for all buttons
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity:1;
-}
-
-Extra styles for the cancel button
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-Float cancel and signup buttons and add an equal width
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-Add padding to container elements
-.container {
-  padding: 16px;
-}
-
-Clear floats
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-Change styles for cancel button and signup button on extra small screens
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-    width: 100%;
-  }
-} */
 form{
-
     position: relative;
-    background-color: black;
+    background-color: #fffff5;
+    border-radius: 100px;
     margin: auto;
     padding: 0;
-    border: 1px solid #888;
-    width: 50%;
-    color: #D728CA;
+    width: 40vw;
+    height: 30vw;
+    color: #b39a7e;
+    border: #b39a7e;
+    border-style: double;
+    border-width: 10px;
     font-family: Guttman-CourMir;
     font-size: 14px;
     font-weight: 500;
@@ -120,7 +51,6 @@ form{
     object-position: center;
     text-align: center;
     padding: 11px;
-    
 }
 div {
   display: flex;
@@ -129,7 +59,6 @@ div {
   justify-content: center;
   width: 100%;
   min-height: 100%;
-  padding: 20px;
 }
   .fadeInDown {
     -webkit-animation-name: fadeInDown;
@@ -165,23 +94,24 @@ div {
       transform: none;
     }
   }
-  
 input{
-  color: rgb(0 0 0 / 87%);
-  background-color: #d728ca96;
-    width: 146px;
-    padding: 10px;
+    color: #ffff;
+    background-color: #cab8a1;
+    font-size: 2vw;
+    width: 15vw;
+    height: 2vw;
     font-optical-sizing: 24;
     align-items: center;
     object-position: center;
     text-align: center;
 }
 h1{
-  font-size: 46px;
+    font-size: 3vw;
+    color: #b39a7e;
     font-family: unset;
 }
 p{
-  font-size: 22px;
+  font-size: 1.4vw;
 }
 div{
   display: block; /* Hidden by default */
@@ -196,19 +126,15 @@ div{
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-.div-content {
-  position: relative;
-  background-color: black;
-  margin: auto;
-  padding: 0;
-  border: 1px solid #888;
-  width: 50%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
-}
+
 a{
   font-family: Guttman-CourMir;
+}
+@media only screen and (max-width: 500px) {
+  form{
+    height: 60vw;
+  }
+  .mat-raised-button{
+    margin-right: 6vw;
+  }
 }

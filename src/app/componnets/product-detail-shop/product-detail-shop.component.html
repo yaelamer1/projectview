@@ -1,5 +1,3 @@
-<body>
-    <div class="div1">
         <h1>פרטי המוצר:</h1>
         <form [formGroup]="form" (ngSubmit)="save()">
             <p>Name</p>
@@ -14,6 +12,4 @@
             <input formControlName="Price" />
             <br>
             <button mat-raised-button type="submit" [disabled]="!form.valid">שליחה</button>
-        </form>
-    </div>
-</body>
+        </form> 

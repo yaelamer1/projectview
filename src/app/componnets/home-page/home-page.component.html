@@ -1,40 +1,16 @@
-<body>
-  <div class="div1">
-    <h1><img class="imgh1" src="/assets/image/l.png"> </h1>
-    <app-login></app-login>
-    <nav>
-      <a mat-button routerLink="/">
-        <span mat-button-wrapper>
-          <img src="/assets/image/l.png">
-        </span>
-      </a>
-      <a *ngIf="!user" mat-button routerLink="/signin">הרשמה לאתר</a>
-      <a mat-button routerLink="/organize-event">ארגון אירוע</a>
-      <a mat-button routerLink="/freeSearch">חיפוש חופשי</a>
-      <a mat-button routerLink="/about">אודות</a>
-      <a *ngIf="user" mat-button routerLink="/history">חיפושים אחרונים</a>
-      <a mat-button routerLink="/shops">בעלי חנויות</a>
-    </nav>
-  </div>
-</body>
-<!-- ניסיתי שזה יהיה קבוצה למעלה אבל זה לא עובד
-<mat-tab-group mat-align-tabs="start">
-  <a mat-raised-button routerLink="/signin"><mat-tab label="First">הרשמה</mat-tab></a>
-  <a mat-raised-button routerLink="/history"><mat-tab label="Second">הסטוריה</mat-tab></a>
-  <a mat-raised-button routerLink="/login"><mat-tab label="Third">כניסה</mat-tab></a>
-  <a mat-raised-button routerLink="/organize-event"><mat-tab label="Fourth">ארגון אירוע</mat-tab></a>
-  <a mat-raised-button routerLink="/freeSearch"><mat-tab label="Fifth">חיפוש חופשי</mat-tab></a>
-  </mat-tab-group>   -->
-
-<!-- לא עובד לי איך משתמשים בזה
-  <div class="example-ripple-container mat-elevation-z4"
-     matRipple
-     [matRippleCentered]="centered"
-     [matRippleDisabled]="disabled"
-     [matRippleUnbounded]="unbounded"
-     [matRippleRadius]="radius"
-     [matRippleColor]="color">
-  Click me
-</div> -->
-
-<!-- <button mat-raised-button (click)="openBottomSheet()">Open file</button> -->
+<h1><img id="logo1" src="/assets/image/לוגו/logowhite.jpg"> </h1>
+<app-login></app-login>
+<nav>
+  <a mat-button routerLink="/">
+    <span mat-button-wrapper>
+      <img id="logo2" src="/assets/image/לוגו/logowhite.jpg">
+    </span>
+  </a>
+  <a *ngIf="!user" mat-button routerLink="/signin">הרשמה לאתר</a>
+  <a mat-button routerLink="/organize-event">ארגון אירוע</a>
+  <a mat-button routerLink="/freeSearch">חיפוש חופשי</a>
+  <a mat-button routerLink="/about">אודות</a>
+  <a *ngIf="user" mat-button routerLink="/history">חיפושים אחרונים</a>
+  <a mat-button routerLink="/shops">בעלי חנויות</a>
+</nav>
+<button mat-button *ngIf="user" (click)="delete()">הפסקת שליחת המיילים</button>
