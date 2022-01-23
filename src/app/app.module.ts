@@ -6,20 +6,20 @@ import { AppComponent } from './app.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 
-import { LoginComponent } from './componnets/login/login.component';
-import { SigninComponent } from './componnets/signin/signin.component';
+import { LoginComponent } from './componnets/public/login/login.component';
+import { SigninComponent } from './componnets/public/signin/signin.component';
 import { RouterModule } from '@angular/router';
 import { arrPath } from './ArrPath';
-import { HomePageComponent } from './componnets/home-page/home-page.component';
-import { FreeSearchComponent } from './componnets/free-search/free-search.component';
-import { OrganizeEventComponent } from './componnets/organize-event/organize-event.component';
-import { ProductsFoundComponent } from './componnets/products-found/products-found.component';
-import { EventComponent } from './componnets/event/event.component';
-import { AddEventComponent } from './componnets/add-event/add-event.component';
-import { HistoryComponent } from './componnets/history/history.component';
-import { AboutComponent } from './componnets/about/about.component';
+import { HomePageComponent } from './componnets/public/home-page/home-page.component';
+import { FreeSearchComponent } from './componnets/search/free-search/free-search.component';
+import { OrganizeEventComponent } from './componnets/events/organize-event/organize-event.component';
+import { ProductsFoundComponent } from './componnets/search/products-found/products-found.component';
+import { EventComponent } from './componnets/events/event/event.component';
+import { AddEventComponent } from './componnets/events/add-event/add-event.component';
+import { HistoryComponent } from './componnets/public/history/history.component';
+import { AboutComponent } from './componnets/public/about/about.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ProductOfCategoryComponent } from './componnets/product-of-category/product-of-category.component';
+import { ProductOfCategoryComponent } from './componnets/events/product-of-category/product-of-category.component';
 
 //material
 import { MatSliderModule } from '@angular/material/slider';
@@ -29,17 +29,21 @@ import {MatCardModule} from '@angular/material/card';
 // import { MatTab} from '@angular/material/tabs';
 // import {DataSource} from '@angular/cdk/collections';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
-import { UpdateMailComponent } from './componnets/update-mail/update-mail.component';
-import { ForgotPasswordComponent } from './componnets/forgot-password/forgot-password.component';
-import { ShopsComponent } from './componnets/shops/shops.component';
-import { ProductDetailShopComponent } from './componnets/product-detail-shop/product-detail-shop.component';
+import { UpdateMailComponent } from './componnets/events/update-mail/update-mail.component';
+import { ForgotPasswordComponent } from './componnets/public/forgot-password/forgot-password.component';
+import { ShopsComponent } from './componnets/shop/shops/shops.component';
+import { ProductDetailShopComponent } from './componnets/shop/product-detail-shop/product-detail-shop.component';
 // import {MatNavListModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
-import { UpdateProductShopsComponent } from './componnets/update-product-shops/update-product-shops.component';
-import { EditProductShopsComponent } from './componnets/edit-product-shops/edit-product-shops.component';
-import { ProductInShopOfCategoryComponent } from './componnets/product-in-shop-of-category/product-in-shop-of-category.component';
+import { UpdateProductShopsComponent } from './componnets/shop/update-product-shops/update-product-shops.component';
+import { ProductInShopOfCategoryComponent } from './componnets/shop/product-in-shop-of-category/product-in-shop-of-category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OpenComponent } from './componnets/open/open.component';
+import { OpenComponent } from './componnets/public/open/open.component';
+import { DialogOverviewComponent } from './componnets/search/try/dialog/dialog-overview/dialog-overview.component';
+import { DialogComponent } from './componnets/search/try/dialog/dialog.component';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+// import { DialogComponent } from './componnets/dialog/dialog.component';
+// import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 
@@ -67,9 +71,10 @@ import { OpenComponent } from './componnets/open/open.component';
     ShopsComponent,
     ProductDetailShopComponent,
     UpdateProductShopsComponent,
-    EditProductShopsComponent,
     ProductInShopOfCategoryComponent,
     OpenComponent,
+    DialogOverviewComponent,
+    DialogComponent,
     
   
     
@@ -85,6 +90,8 @@ import { OpenComponent } from './componnets/open/open.component';
     MatButtonModule,
     MatCardModule,
     MatTableModule,
+    // MatDialogRef,MatDialog,
+    // MAT_DIALOG_DATA,
     BrowserAnimationsModule
     
   ],

@@ -1,27 +1,51 @@
-h1{
+h1 {
     text-align: center;
     color: rgb(255, 255, 255);
 }
-.div1{
+
+.div1 {
     background-color: #b39a7e;
     min-height: 655px;
     width: 80%;
     margin: auto;
     margin-bottom: -18px;
 }
-body{
+li{
+    display: flex;
+    width: 32%;
+    text-align: center;
+}
+
+input {
+    font-family: Calibri;
+    color: #ffff;
+    background-color: #d728ca00;
+    font-size: 1.5vw;
+    width: 13vw;
+    padding: 0.5vw;
+    height: 2.5vw;
+    font-optical-sizing: 24;
+    align-items: center;
+    object-position: center;
+    text-align: center;
+}
+
+body {
     direction: rtl;
     background-color: #d1bea9;
+    font-family: Calibri;
     height: 100%;
     margin: 0px;
-}  
-.mat-raised-button{
-    font-family: Guttman-CourMir;
+}
+
+.mat-raised-button, .mat-button {
+    /* font-family: Guttman-CourMir; */
     font-size: 14px;
     font-weight: 500;
     color: #ffffff;
     background: #b39a7e;
     box-sizing: border-box;
+    font-family: Calibri;
     position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -42,6 +66,6 @@ body{
     padding: 0 16px;
     border-radius: 4px;
     overflow: visible;
-      margin-top: 15px;
-      margin-right: 92px;
+    margin-top: 15px;
+    margin-right: 92px;
 }

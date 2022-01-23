@@ -1,0 +1,52 @@
+/* .mat-raised-button{
+    font-family: Guttman-CourMir;
+    font-size: 14px;
+    font-weight: 500;
+    color: #D728CA;
+    background: #000;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: none;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+      margin-top: 15px;
+      margin-right: 92px;
+} */
+h1 {
+    text-align: center;
+    color: white;
+}
+.mat-raised-button{
+    margin: 2vw;
+}
+div{
+    width: 95%;
+    margin: auto;
+}
+input {
+    color: #ffff;
+    background-color: #d728ca00;
+    font-size: 1.5vw;
+    width: 146px;
+    padding: 10px;
+    font-optical-sizing: 24;
+    align-items: center;
+    object-position: center;
+    text-align: center;
+}

@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="signin()">
+  <h1>הרשמה</h1>
+  <label>מספר זהות:</label>
+  <input formControlName="id" />
+  <label>שם מלא:</label>
+  <input formControlName="name" />
+  <label>כתובת מייל:</label>
+  <input formControlName="Email" />
+  <label>מספר טלפון:</label>
+  <input formControlName="Phon" />
+  <label>כתובת:</label>
+  <input formControlName="area" />
+  <label>סיסמא לבחירתך:</label>
+  <input formControlName="password" />
+  <br>
+  <button mat-raised-button type="submit" [disabled]="!form.valid">שליחה</button>
+</form>
+<h2>{{mess}}</h2>

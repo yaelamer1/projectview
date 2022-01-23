@@ -1,0 +1,88 @@
+/* .mat-raised-button{ 
+    margin-right: 33px;
+    font-family: Guttman-CourMir;
+    font-size: 14px;
+    font-weight: 500;
+    color: #D728CA;
+    background: #000;
+    box-sizing: border-box;
+    position: absolute;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+    
+    margin: 10px;
+} */
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 22vw;
+    height: 18vw;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+.divEvent {
+    width: 22vw;
+    border: groove;
+    margin: 2px;
+    font-size: large;
+    color: white;
+    border-radius: 15px;
+    padding: 3px;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-raised-button {
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0px;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0px;
+    border-radius: 4px;
+    overflow: visible;
+}
+
+.mat-raised-button {
+    margin-right: 65vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
+}

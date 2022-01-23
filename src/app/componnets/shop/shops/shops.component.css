@@ -1,0 +1,36 @@
+h1, h2, h3 {
+    text-align: center;
+    color: #ffff;
+}
+
+.mat-raised-button {
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+div{
+    text-align: center;
+}
+h5 {
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+}
+
+form {
+    color: #ffff;
+    text-align: center;
+}
+
+/* input {
+    font-family: Calibri;
+    color: #ffff;
+    background-color: #d728ca00;
+    font-size: 1.5vw;
+    width: 13vw;
+    padding: 0.5vw;
+    height: 2.5vw;
+    font-optical-sizing: 24;
+    align-items: center;
+    object-position: center;
+    text-align: center;
+} */

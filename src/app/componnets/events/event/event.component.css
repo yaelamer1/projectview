@@ -1,0 +1,41 @@
+/* .mat-raised-button{
+    font-family: Guttman-CourMir;
+    font-size: 14px;
+    font-weight: 500;
+    color: #D728CA;
+    background: #000;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+    margin: 10px;
+} */
+ul{
+    list-style-type: none;
+    color: #fff;
+}
+p{
+    color: white;   
+    font-size: x-large;
+    margin-right: 30px;
+}
+.mat-raised-button{
+    margin-right: 30px;
+}

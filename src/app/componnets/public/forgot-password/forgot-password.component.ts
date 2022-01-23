@@ -1,0 +1,17 @@
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.css']
+})
+export class ForgotPasswordComponent implements OnInit {
+  mail:string|any;
+  message:string="password";
+  constructor(private httpClient:HttpClient) { }
+  
+  ngOnInit(): void {
+  }
+
+}

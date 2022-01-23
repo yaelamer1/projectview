@@ -1,0 +1,91 @@
+/* .mat-raised-button{
+    font-family: Guttman-CourMir;
+    font-size: 14px;
+    font-weight: 500;
+    color: #D728CA;
+    background: #000;
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+    margin: 10px;    
+    margin-right: 0px;
+} */
+form {
+    margin: 20px;
+}
+/* input {
+    color: #ffff;
+    background-color: #d728ca00;
+    font-size: 1.5vw;
+    width: 146px;
+    padding: 10px;
+    font-optical-sizing: 24;
+    align-items: center;
+    object-position: center;
+    text-align: center;
+} */
+
+h3 {
+    color: red;
+    margin: 15px;
+}
+
+h2 {
+    color: white;
+    margin: 15px;
+}
+
+.mat-raised-button {
+    margin-right: 20px;
+}
+
+li {
+    width: 32%;
+    display: inline;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 22vw;
+    height: 18vw;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.divEvent {
+    width: 22vw;
+    border: groove;
+    margin: 2px;
+    font-size: large;
+    color: white;
+    border-radius: 15px;
+    padding: 3px;
+}
+
+.mat-button {
+    padding: 0px;
+    display: block;
+}

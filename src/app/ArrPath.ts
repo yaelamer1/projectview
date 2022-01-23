@@ -1,6 +1,6 @@
 import { Routes } from "@angular/router";
-import { LoginComponent } from "./componnets/login/login.component";
-import { SigninComponent } from "./componnets/signin/signin.component";
+import { LoginComponent } from "./componnets/public/login/login.component";
+import { SigninComponent } from "./componnets/public/signin/signin.component";
 
 export const arrPath: Routes = [
     {

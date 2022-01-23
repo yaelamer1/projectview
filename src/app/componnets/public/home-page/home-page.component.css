@@ -1,0 +1,104 @@
+    app-navbar .docs-navbar, app-navbar .docs-navbar-header, nav {
+        display: flex;
+        position: sticky;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 8px 16px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .mat-button, .mat-fab, .mat-flat-button, .mat-icon-button, .mat-mini-fab, .mat-raised-button, .mat-stroked-button, .mat-button-wrapper {
+        vertical-align: middle;
+        box-sizing: border-box;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+        display: inline-block;
+        white-space: nowrap;
+        text-decoration: none;
+        vertical-align: baseline;
+        text-align: center;
+        margin: 0;
+        min-width: 64px;
+        line-height: 36px;
+        padding: 0 16px;
+        border-radius: 4px;
+        overflow: visible;
+        font-family: Guttman-CourMir;
+        font-size: 14px;
+        font-weight: 500;
+        color: #ffffff;
+        background: rgb(0 0 0 / 0%);
+    }
+    .docs-angular-logo[_ngcontent-pel-c48] {
+        height: 26px;
+        margin: 0 4px 3px 0;
+        vertical-align: middle;
+    }
+    h1{
+        text-align: center;
+        margin: 0px;
+        margin-bottom: -40px;
+        /* font-family: Yu Gothic UI Semilight;
+        font-family: Yu Gothic;
+        font-family: Webdings;
+        font-family: Tempus Sans ITC;
+        font-family: Segoe Script; 
+        font-family: jura;
+        font-size: xx-large; */
+    }
+    #logo2{
+        width: 155px;
+        height: 65x;
+        padding-top: 10px;
+    }
+    #logo1{
+        width: 200px;
+        height: 80px;
+    }
+    hr{
+        margin-top: -20px;
+        margin-bottom: 20px;
+    }
+    .img{
+        width: 74vw;
+        height: 35vw;
+        align-items: center;
+        border: groove;
+    } 
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+@media only screen and (max-width: 600px) {
+    app-navbar .docs-navbar, app-navbar .docs-navbar-header, nav{  
+            display: grid;
+    }
+    h1{
+        display: none;
+    }
+    #logo{
+        display: none;
+    }
+}
+
+    

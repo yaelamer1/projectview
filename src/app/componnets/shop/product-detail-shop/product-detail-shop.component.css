@@ -1,0 +1,25 @@
+.mat-raised-button {
+    margin-right: 20px;
+}
+
+form {
+    color: #ffff;
+    text-align: center;
+}
+
+input {
+    color: #ffff;
+    background-color: #d728ca00;
+    width: 146px;
+    padding: 10px;
+    font-optical-sizing: 24;
+    align-items: center;
+    object-position: center;
+    text-align: center;
+}
+
+h5 {
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+}
