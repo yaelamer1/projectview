@@ -52,13 +52,14 @@ export class OpenComponent implements OnInit {
     "-photo_csp9190116.jpg",
   ]
   img="green.jpg";
+  img1="green.jpg";
   isOpen:boolean=true;
   constructor() { }
 
   ngOnInit(): void {
     setInterval(()=>{
       this.change();
-    },1500);
+    },5000);
   }
   i=0;
   // toggle() {
@@ -69,6 +70,7 @@ export class OpenComponent implements OnInit {
   // } 
    change(){
     this.img=this.arrImg[this.i++];
+    this.img1=this.arrImg[this.i];
     if (this.i >= this.arrImg.length) 
     {this.i = 0}
   }

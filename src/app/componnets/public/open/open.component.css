@@ -16,6 +16,22 @@
     object-fit: cover;
     margin-bottom: -5px;
 }
+@keyframes Size {
+    from{width: 1px;}
+    to{width: 5000px;}
+}
+.divImg:first-child{
+    animation-name: Size;
+    animation-duration: 3s;
+}
+.imgBackGround1 {
+    /* position: absolute; */
+    /* width: 100%; */
+    height: 30vw;
+    object-fit: cover;
+    margin-bottom: -5px;
+ 
+}
 
 #hr {
     margin-top: 20px;

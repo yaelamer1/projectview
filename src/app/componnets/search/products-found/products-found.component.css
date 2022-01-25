@@ -26,28 +26,31 @@ table {
     width: 90%;
     text-align-last: center;
     direction: rtl;
-    font-size: xx-small;
+    font-size: xx-large;
     border: groove;
     background-color: rgb(209 190 169);
     margin: auto;
 }
+
 /* th.mat-header-cell{
     padding-left: 24px;
     font-size: larger;
     border-left: solid;
 } */
-ul{
+ul {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
 }
-img{
+
+img {
     width: 22vw;
     height: 18vw;
     object-fit: cover;
     border-radius: 15px;
 }
-.divEvent{
+
+.divEvent {
     width: 22vw;
     border: groove;
     margin: 2px;
@@ -56,7 +59,92 @@ img{
     border-radius: 15px;
     padding: 3px;
 }
-.mat-button{
+
+.mat-button {
     padding: 0px;
     display: block;
+}
+
+
+
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+input {
+    background-color: #cab8a1;
+    font-size: 2vw;
+    width: 15vw;
+    height: 2vw;
+    object-position: center;
+}
+
+h1 {
+    font-size: 3vw;
+    color: #b39a7e;
+    font-family: unset;
+}
+
+p {
+    font-size: 1.4vw;
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    display: block;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: #00000017;
+    /* Black w/ opacity */
 }

@@ -19,7 +19,7 @@ import { ProductInShop } from 'src/app/class/productInShop';
 })
 export class FreeSearchComponent implements OnInit {
   srch:boolean=false;
-  arr:ProductInShop[]|any;
+  arr:Product[]|any;
   user:User|any=null;
   searchName:string|any;
   // allProduct:ProductInShop[]=[];

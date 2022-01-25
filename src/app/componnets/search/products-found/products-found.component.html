@@ -1,30 +1,37 @@
-
 <ul>
   <li *ngFor="let item of arr">
     <div class="divEvent">
-    <!-- <a mat-button routerLink="/product-found/item.Product?.Id"> -->
-    <img src="/assets/image/{{item.Product?.Picture}}">
-    <button *ngIf="user" mat-raised-button routerLink="/update-mail/{{message}}/{{item.Product?.Name}}">עדכון במייל</button>
-    <br>
-    {{item.Product?.Name}}
-    <br>
-    {{item.Product?.Description}}
-    <table>
-      <tr>
-        <th>חנות</th>
-        <th>מחיר</th>
-        <th>תאריך ייצור</th>
-        <th>עיר</th>
-        <th>טלפון</th>
-      </tr>
-      <tr *ngFor="let item2 of arr; index as i">
-        <td *ngIf="item.Product?.Id==item2.Product?.Id">{{item2.Shop?.Name}}</td>
-        <td *ngIf="item.Product?.Id==item2.Product?.Id">{{item2.Price}}</td>
-        <td *ngIf="item.Product?.Id==item2.Product?.Id">{{item2.ProdDate}}</td>
-        <td *ngIf="item.Product?.Id==item2.Product?.Id">{{item2.Shop?.CityName}}</td>
-        <td *ngIf="item.Product?.Id==item2.Product?.Id">{{item2.Shop?.Phone}}</td>
-      </tr>
-    </table>
+      <!-- <a mat-button routerLink="/product-found/item.Product?.Id"> -->
+      <img src="/assets/image/{{item.Picture}}">
+      <button *ngIf="user" mat-raised-button routerLink="/update-mail/{{message}}/{{item.Name}}">עדכון
+        במייל</button>
+      <br>
+      <!-- <div *ngIf="!user&&firstTime">x
+        <div>עדיין לא רשום????</div>
+      </div> -->
+      {{item.Name}}
+      <br>
+      {{item.Description}}
+      <a mat-button (click)="none()">השוואת מחירים</a>
+      <div *ngIf="!myVar" class="fadeInDown">
+        <span (click)="none()">x</span>
+        <table>
+          <tr>
+            <th>חנות</th>
+            <th>מחיר</th>
+            <th>תאריך ייצור</th>
+            <th>עיר</th>
+            <th>טלפון</th>
+          </tr>
+          <tr *ngFor="let item2 of item.ProductInShops; index as i">
+            <td >{{item2.Shop?.Name}}</td>
+            <td >{{item2.Price}}</td>
+            <td >{{item2.ProdDate}}</td>
+            <td >{{item2.Shop?.CityName}}</td>
+            <td >{{item2.Shop?.Phone}}</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </li>
 </ul>
