@@ -11,31 +11,31 @@
       </div> -->
       {{item.Name}}
       <br>
-      {{item.Description}}
-      <a mat-button (click)="none()">השוואת מחירים</a>
-      <div *ngIf="!myVar" class="fadeInDown">
-        <span (click)="none()">x</span>
+      <!-- {{item.Description}} -->
+      <a mat-button (click)="none(item.Id)">השוואת מחירים</a>
+      <div (click)="none(-1)" *ngIf="myVar>0&&myVar==item.Id" class="fadeInDown">
         <table>
           <tr>
             <th>חנות</th>
             <th>מחיר</th>
-            <th>תאריך ייצור</th>
+            <th>תיאור</th>
             <th>עיר</th>
             <th>טלפון</th>
           </tr>
           <tr *ngFor="let item2 of item.ProductInShops; index as i">
-            <td >{{item2.Shop?.Name}}</td>
-            <td >{{item2.Price}}</td>
-            <td >{{item2.ProdDate}}</td>
-            <td >{{item2.Shop?.CityName}}</td>
-            <td >{{item2.Shop?.Phone}}</td>
+            <td>{{item2.Shop?.Name}}</td>
+            <td>{{item2.Price}}</td>
+            <td>{{item2.Description}}</td>
+            <td>{{item2.Shop?.CityName}}</td>
+            <td>{{item2.Shop?.Phone}}</td>
           </tr>
         </table>
       </div>
     </div>
   </li>
 </ul>
-
+<!-- <h2>{{err}}</h2> -->
+<h2 >{{massge}}</h2>
 
 <!-- <p *ngIf="isa">לא נמצאו תוצאות </p>
 <table mat-table *ngIf="!isa" [dataSource]="arr" class="mat-elevation-z8">

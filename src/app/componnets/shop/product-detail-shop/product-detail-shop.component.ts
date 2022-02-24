@@ -13,7 +13,7 @@ import { ProductShopService } from 'src/app/services/product-shop.service';
 export class ProductDetailShopComponent implements OnInit {
   form: FormGroup=new FormGroup({});
   product:ProductInShop|any;
-  shopId:number=0;
+  shopId:number|any;
   msg="";
   constructor(private route: ActivatedRoute,private productShopService:ProductShopService,private httpClient: HttpClient) { }
   
@@ -22,18 +22,13 @@ export class ProductDetailShopComponent implements OnInit {
     this.shopId=Number(x.get("shopId"));
   })
     this.form = new FormGroup({
-      Name: new FormControl('', [Validators.required]),
       Description: new FormControl('', [Validators.required]),
-      ProdDate: new FormControl('', [Validators.required]),
-      Picture: new FormControl('', [Validators.required]),
       Price: new FormControl('', [Validators.required])
     })
     this.product = this.productShopService.getProduct();
-    this.form.controls['Name'].setValue(this.product?.Product?.Name);
-    this.form.controls['Description'].setValue(this.product?.Product?.Description);
+    console.log(this.product);
+    this.form.controls['Description'].setValue(this.product?.Description);
     this.form.controls['Price'].setValue(this.product?.Price);
-    this.form.controls['ProdDate'].setValue(this.product?.ProdDate);
-    this.form.controls['Picture'].setValue(this.product?.Product?.Picture);
   }
   save(){
     const form={...this.form.value }

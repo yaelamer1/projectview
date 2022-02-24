@@ -1,14 +1,10 @@
-
 <ul>
         <li *ngFor="let item of arr">
                 <div class="divEvent">
-                        <a mat-button routerLink="/product-detail-shop/{{shopId}}" 
-                        (click)="product(item)"> 
-                                <img src="/assets/image/{{item.Product?.Picture}}">
+                        <a mat-button routerLink="/product-detail-shop/{{shopId}}" (click)="product(item)">
+                                <img src="/assets/image/{{item.Picture}}">
                                 <br>
-                                {{item.Product?.Name}}
-                                <br>
-                                {{item.Product?.Description}}
+                                {{item?.Name}}
                         </a>
                 </div>
         </li>

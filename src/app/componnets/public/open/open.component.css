@@ -2,36 +2,34 @@
     width: 80%;
     border: groove;
     margin: auto;
-    height: 30vw;
-    /* background-repeat: no-repeat;
-    animation-name: example;
-    animation-name: identifier;
+    height: 33vw;
+    /* animation-name: identifier;
     animation-duration: 4s;
     animation-iteration-count: infinite; */
 }
 
 .imgBackGround {
     width: 100%;
-    height: 30vw;
+    height: 33vw;
     object-fit: cover;
     margin-bottom: -5px;
+    display: block;
+    animation-name: identifier;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
-@keyframes Size {
-    from{width: 1px;}
-    to{width: 5000px;}
-}
-.divImg:first-child{
-    animation-name: Size;
+
+/* .imgBackGround1 {
+    position: absolute;
+    width: 100%;
+    height: 33vw;
+    object-fit: cover;
+    margin-bottom: -5px;
+    display: block;
+    animation-name: identifier2;
     animation-duration: 3s;
-}
-.imgBackGround1 {
-    /* position: absolute; */
-    /* width: 100%; */
-    height: 30vw;
-    object-fit: cover;
-    margin-bottom: -5px;
- 
-}
+    animation-iteration-count: infinite;
+} */
 
 #hr {
     margin-top: 20px;
@@ -40,23 +38,45 @@
     bottom: 80px;
 }
 
-@keyframes example {
-
+@keyframes identifier1 {
     from {
-        background-color: red;
+        /* background-color: red; */
+        /* src: url("/assets/image/{{img}}"); */
+        display: none;
+        width: 0%;
+        height: 0%;
     }
 
     to {
-        background-color: yellow;
+        /* background-color: yellow; */
+        /* src: url("/assets/image/{{img}}"); */
+        display: block;
+        width: 100%;
+        height: 100%;
+
     }
 }
 
 @keyframes identifier {
+    0% {
+        opacity: 0.25;
+        /* -webkit-transform: translate3d(0, 0, 0); */
+        /* transform: translate3d(0, 0, 0); */
+    }
+
+    100% {
+        opacity: 1;
+        /* -webkit-transform: none; */
+        /* transform: none; */
+    }
+}
+
+/* @keyframes identifier2 {
     from {
-        background-image: url("/assets/image/{{img}}");
+        display: block;
     }
 
     to {
-        background-image: url("/assets/image/{{img}}");
+        display: none;
     }
-}
+} */

@@ -16,9 +16,12 @@ export class ProductsFoundComponent implements OnInit {
   displayedColumns: string[] = ['Shop', 'City', 'Phone', 'Price', 'ProdDate'];
   @Input()
   arr: Product[] | any;
+  @Input()
+  massge:string="";
   user: User | any;
   message="askUpdate";
-  myVar: boolean = true;
+  myVar: number =-1;
+
 
 
   // msg="";
@@ -29,8 +32,10 @@ export class ProductsFoundComponent implements OnInit {
     //אם לא קיים להשאיר הודעה שלא קיים
     //איך להציג כאן חיפוש של קומפוננטה אחרת
   }
-  none() {
-    this.myVar = !this.myVar;
+  none(Iteem:number) {
+    console.log(this.myVar)
+    this.myVar = Iteem  ;
+    
   }
 }
 

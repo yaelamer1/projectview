@@ -3,7 +3,7 @@
 <form [formGroup]="form">
     <input formControlName="ProductName" type="text" placeholder="מוצר לחיפוש..." />
 </form>
-<button checked  mat-raised-button routerLink="product-found"  (click)="search()" [disabled]="!form.valid">חיפוש</button>
+<button checked  mat-raised-button routerLink="product-found"   (click)="search()" [disabled]="!form.valid">חיפוש</button>
 
 <h3 *ngIf="!user">אינך רשום, שים לב החיפוש לא ישמר בהיסטוריית החיפושים</h3>
-<app-products-found *ngIf="srch" [arr]="arr"></app-products-found>
+<app-products-found *ngIf="srch" [arr]="arr" [massge]="massge"></app-products-found>

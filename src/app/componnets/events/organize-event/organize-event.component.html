@@ -1,15 +1,16 @@
-
-    <h1>רשימת הארועים שלך</h1>
-    <h2>כאן תוכל להעיזר ברשימות מוצרים מוכנות לאירועים שלך</h2>
-    <h2>וכן להוסיף אירועים שיעזרו לאחרים</h2>
-      <ul>
-        <li *ngFor="let item of arr">
-          <div class="divEvent">
-          <a mat-button routerLink="/event/{{item.Id}}/{{item.Name}}">
-          <img src="/assets/image/{{item.Picture}}">
-          <br>
-          {{item.Name}}</a>
-          </div>
-        </li>
-      </ul>
-      <a mat-raised-button routerLink="/add-event">הוספת אירוע</a>
+<h1 >רשימת הארועים שלך</h1>
+<h2 >כאן תוכל להעיזר ברשימות מוצרים מוכנות לאירועים שלך</h2>
+<h2 >וכן להוסיף אירועים שיעזרו לאחרים</h2>
+<ul>
+  <li *ngFor="let item of arr;  index as i;">
+    <div class="divEvent">
+      <!-- *ngIf="i==randArr[0]||i==randArr[1]||i==randArr[2]"
+      *ngIf="!randArr" -->
+      <a mat-button routerLink="/event/{{item.Id}}/{{item.Name}}">
+        <img src="/assets/image/{{item.Picture}}">
+        <br>
+        {{item.Name}}</a>
+    </div>
+  </li>
+</ul>
+<a mat-raised-button routerLink="/add-event">הוספת אירוע</a>

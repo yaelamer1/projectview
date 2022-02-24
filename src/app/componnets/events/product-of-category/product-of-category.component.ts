@@ -10,9 +10,10 @@ import { Product } from 'src/app/class/product';
   styleUrls: ['./product-of-category.component.css']
 })
 export class ProductOfCategoryComponent implements OnInit {
-  displayedColumns: string[] = ['Name', 'Description', 'Picture'];
+  // displayedColumns: string[] = ['Name', 'Description', 'Picture'];
 
-  arr: Product[] = [];
+  arr: Product[] |any;
+  myVar: number = -1;
   categoryId: number = 0;
   categoryName: string = "";
   constructor(private httpClient: HttpClient, private route: ActivatedRoute) { }
@@ -22,10 +23,13 @@ export class ProductOfCategoryComponent implements OnInit {
       this.categoryId = Number(x.get("id"));
       this.categoryName = String(x.get("name"));
     })
-    this.httpClient.get<Product[]>(`http://localhost:62631/api/product?Id=${this.categoryId}`).subscribe(x => {
+    this.httpClient.get<Product[]>(`http://localhost:62631/api/product?categoryId=${this.categoryId}`).subscribe(x => {
       console.log(x);
       this.arr = x;
+      this.arr.sort()
     }, x => { }, () => { });
   }
-
+  none(Iteem:number) {
+    this.myVar = Iteem;
+  }
 }

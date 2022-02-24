@@ -1,8 +1,8 @@
-    <h1>{{categoryName}}</h1>
-    <!-- <table mat-table [dataSource]="arr" class="mat-elevation-z8">
+<h1>{{categoryName}}</h1>
+<!-- <table mat-table [dataSource]="arr" class="mat-elevation-z8">
       איך לעשות שהקישור יהיה על כל השורה ולא רק על כל תא
       <a mat-button routerLink="/freeSearch/{{element.Name}}"> -->
-      <!-- </a> 
+<!-- </a> 
 
       <ng-container matColumnDef="Name">
         <th mat-header-cell *matHeaderCellDef> שם </th>
@@ -29,34 +29,35 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table> -->
-    <!-- <table class="table table-striped" dir="rtl">
-      <thead>
-        <tr>
-          <th scope="col">חנות</th>
-          <th scope="col">עיר</th>
-          <th scope="col">טלפון</th>
-          <th scope="col">מחיר</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of arr">
-          <td>{{item.Name}}</td>
-          <td>{{item.Description}}</td>
-          <td>{{item.ProdDate}}</td>
-          <td><img src="/assets/image/{{item.Picture}}"></td>
-          </tr>
-      </tbody>
-    </table> -->
-    <ul>
-      <li *ngFor="let item of arr">
-        <div class="divEvent">
-        <a mat-button routerLink="/freeSearch/{{item.Name}}">
-        <img src="/assets/image/{{item.Picture}}">
+
+<ul>
+  <li *ngFor="let item of arr">
+    <div class="divEvent">
+      <!-- <a mat-button routerLink="/freeSearch/{{item.Name}}"> -->
+        <img mat-button src="/assets/image/{{item.Picture}}">
         <br>
         {{item.Name}}
-        <br>
-        {{item.Description}}
-      </a>
-        </div>
-      </li>
-    </ul>
+      <!-- </a> -->
+      <br>
+      <a mat-button (click)="none(item.Id)">השוואת מחירים</a>
+      <div (click)="none(-1)" *ngIf="myVar>0&&myVar==item.Id" class="fadeInDown">
+        <table>
+          <tr>
+            <th>חנות</th>
+            <th>מחיר</th>
+            <th>תיאור</th>
+            <th>עיר</th>
+            <th>טלפון</th>
+          </tr>
+          <tr *ngFor="let item2 of item.ProductInShops; index as i">
+            <td>{{item2.Shop?.Name}}</td>
+            <td>{{item2.Price}}</td>
+            <td>{{item2.Description}}</td>
+            <td>{{item2.Shop?.CityName}}</td>
+            <td>{{item2.Shop?.Phone}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </li>
+</ul>

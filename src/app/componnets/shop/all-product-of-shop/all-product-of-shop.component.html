@@ -1,0 +1,19 @@
+<div>
+        <input type="text" [(ngModel)]="Name" placeholder="שם">
+        <input type="text" [(ngModel)]="Description" placeholder="תיאור">
+        <input type="number" [(ngModel)]="Price" placeholder="ממחיר"><br><br>
+        <button mat-raised-button (click)="filter()">סינון</button>
+</div>
+<ul>
+    <li *ngFor="let item of ShowArr">
+            <div class="divEvent">
+                    <a mat-button routerLink="/product-detail-shop/{{shopId}}" (click)="product(item)">
+                            <img src="/assets/image/{{item.Product?.Picture}}">
+                            <br>
+                            {{item.Product?.Name}}
+                            <br>
+                            {{item.Description}}
+                    </a>
+            </div>
+    </li>
+</ul>

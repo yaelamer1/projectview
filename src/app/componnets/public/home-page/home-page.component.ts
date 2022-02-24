@@ -5,6 +5,8 @@ import { UserService } from 'src/app/services/user.service';
 import { MatBottomSheet} from '@angular/material/bottom-sheet';
 import { LoginComponent } from '../login/login.component';
 import { HttpClient } from '@angular/common/http';
+import { ShopService } from 'src/app/services/shop.service';
+import { Shop } from 'src/app/class/shop';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -12,10 +14,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePageComponent implements OnInit {
   user:User|any;
+  shop:Shop|any;
 
-  constructor(private route:Router,private userService:UserService,private httpClient:HttpClient) { }
+  constructor(private route:Router,private userService:UserService,private httpClient:HttpClient, private shopService:ShopService) { }
   ngOnInit() {
-    this.user=this.userService.getUser();
+    this.user = this.userService.getUser();
+    this.shop = this.shopService.getShop();
     this.userService.eventUser.subscribe(x=>this.user=x);
    }
 

@@ -22,6 +22,8 @@ export class FreeSearchComponent implements OnInit {
   arr:Product[]|any;
   user:User|any=null;
   searchName:string|any;
+
+  massge:string="";
   // allProduct:ProductInShop[]=[];
   form: FormGroup=new FormGroup({});
   constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute) {}
@@ -41,12 +43,18 @@ export class FreeSearchComponent implements OnInit {
   }
   search(){
     this.srch=true;
+    this.massge="המערכת מחפשת נתונים בשבילכם"
     const form={...this.form.value }
     form["UserId"]=this.user?.Id;
     console.log(form)
-    this.httpClient.post(`http://localhost:62631/api/history`,form)
+    this.httpClient.post<Product[]>(`http://localhost:62631/api/history`,form)
     .subscribe(x=>{
       this.arr=x;
+      if(x.length)
+      this.massge="";
+      else{
+        this.massge="לא נמצאו תוצאות "
+      }
       console.log(this.arr);
       // this.arr.sort((a:ProductInShop,b:ProductInShop)=>a.ProductId-b.ProductId);
       this.arr.sort()

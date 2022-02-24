@@ -1,22 +1,49 @@
-<h1>בעל חנות? יש לך מוצרים בזול? </h1>
-<h2>אצלנו המוצרים שלך יכנסו להשוואת המחירים ואם הם באמת יהיו זולים כולם יקנו ממך</h2>
-<h3>פרטי החנות:</h3>
-<form [formGroup]="form" (ngSubmit)="save()">
-    <p>שם החנות:</p>
-    <input formControlName="Name" />
-    <p>עיר:</p>
-    <input formControlName="CityName" />
-    <!-- <input [(ngModel)]="City.Name" [ngModelOptions]="{standalone: true}" /> -->
-    <p>מספר טלפון:</p>
-    <input formControlName="Phone" />
+<div *ngIf="!shop">
+  <h1>בעל חנות? יש לך מוצרים בזול? </h1>
+  <h2>אצלנו המוצרים שלך יכנסו להשוואת המחירים ואם הם באמת יהיו זולים כולם יקנו ממך</h2>
+  <h3>פרטי החנות:</h3>
+  <div *ngIf="!myVar">
+    <form [formGroup]="formLogin" (ngSubmit)="saveLogin()">
+      <p>שם החנות:</p>
+      <input formControlName="Name" />
+      <p>סיסמא:</p>
+      <input formControlName="Password" />
+      <br>
+      <button mat-raised-button type="submit" [disabled]="!formLogin.valid">שליחה</button>
+      <br>
+      <a mat-raised-button (click)="signin()">חנות חדשה</a>
+      <p>{{stringErr}}</p>
+    </form>
+  </div>
+  <div *ngIf="myVar">
+    <form [formGroup]="formSignin" (ngSubmit)="saveSignin()">
+      <p>שם החנות:</p>
+      <input formControlName="Name" />
+      <p>עיר:</p>
+      <!-- <mat-autocomplete #auto="matAutocomplete"> -->
+      <div>
+        <mat-select class="select" formControlName="CityId" name="CityId">
+          <mat-option *ngFor="let item of arr" [value]="item.Id">
+            {{item?.Name}}
+          </mat-option>
+        </mat-select>
+      </div>
+      <!-- </mat-autocomplete> -->
+      <p>מספר טלפון:</p>
+      <input formControlName="Phone" />
+      <br>
+      <p>סיסמא:</p>
+      <input formControlName="Password" />
+      <br>
+      <button mat-raised-button type="submit" [disabled]="!formSignin.valid">שליחה</button>
+    </form>
     <br>
-    <br>
-    <button mat-raised-button type="submit" [disabled]="!form.valid">שליחה</button>
-</form>
-<br>
+    <p>{{stringErr}}</p>
+  </div>
+</div>
 <div *ngIf="shop">
-<h5>שלום לבעלי {{shop.Name}} זוהית בהצלחה!</h5>
-<h5>באפשרותך להוסיף מוצר או לעדכן מוצר</h5>
-<a mat-raised-button routerLink="/update-product-shops/{{shop.Id}}/-1">הוספת מוצר</a>
-<a mat-raised-button routerLink="/update-product-shops/{{shop.Id}}/{{shop.Id}}">עדכון מוצר</a>
+  <h5>שלום לבעלי {{shop.Name}} זוהית בהצלחה!</h5>
+  <h5>באפשרותך להוסיף מוצר או לעדכן מוצר</h5>
+  <a mat-raised-button routerLink="/category-for-shop/{{shop.Id}}">הוספת מוצר</a>
+  <a mat-raised-button routerLink="/all-product-of-shop/{{shop.Id}}">עדכון מוצר</a>
 </div>

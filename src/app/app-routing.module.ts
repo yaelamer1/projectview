@@ -17,9 +17,10 @@ import { UpdateMailComponent } from './componnets/events/update-mail/update-mail
 import { ForgotPasswordComponent } from './componnets/public/forgot-password/forgot-password.component';
 import { ShopsComponent } from './componnets/shop/shops/shops.component';
 import { ProductDetailShopComponent } from './componnets/shop/product-detail-shop/product-detail-shop.component';
-import { UpdateProductShopsComponent } from './componnets/shop/update-product-shops/update-product-shops.component';
+import { CategoryForShopComponent } from './componnets/shop/category-for-shop/category-for-shop.component';
 import { ProductInShopOfCategoryComponent } from './componnets/shop/product-in-shop-of-category/product-in-shop-of-category.component';
 import { OpenComponent } from './componnets/public/open/open.component';
+import { AllProductOfShopComponent } from './componnets/shop/all-product-of-shop/all-product-of-shop.component';
 
 
 const routes: Routes = [
@@ -44,8 +45,9 @@ const routes: Routes = [
   {path:"about" ,component:AboutComponent},
   {path:"product-of-category" ,component:ProductOfCategoryComponent},
   {path:"product-found/:productId" ,component:ProductsFoundComponent},
-  {path:"update-product-shops/:shopId/:allOrShop" ,component:UpdateProductShopsComponent},
-  {path:"product-in-shop-of-category/:shopId/:allOrShop/:categoryId" ,component:ProductInShopOfCategoryComponent},
+  {path:"category-for-shop/:shopId" ,component:CategoryForShopComponent},
+  {path:"all-product-of-shop/:shopId" ,component:AllProductOfShopComponent},
+  {path:"product-in-shop-of-category/:shopId/:categoryId" ,component:ProductInShopOfCategoryComponent},
   {path:"" ,component:OpenComponent}
 
 ];

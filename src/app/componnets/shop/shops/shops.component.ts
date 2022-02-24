@@ -1,9 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 import { Category } from 'src/app/class/category';
 import { City } from 'src/app/class/city';
 import { Shop } from 'src/app/class/shop';
+import { ShopService } from 'src/app/services/shop.service';
+
 
 @Component({
   selector: 'app-shops',
@@ -11,27 +14,69 @@ import { Shop } from 'src/app/class/shop';
   styleUrls: ['./shops.component.css']
 })
 export class ShopsComponent implements OnInit {
-  form: FormGroup=new FormGroup({});
-  shop:Shop|any;
-  
-  constructor( private httpClient: HttpClient) { }
+
+  myControl = new FormControl();
+  formLogin: FormGroup = new FormGroup({});
+  formSignin: FormGroup = new FormGroup({});
+  arr: City[] = [];
+  shop: Shop | any;
+  myVar: boolean = false;
+  stringErr: string = "";
+  constructor(private httpClient: HttpClient, private shopService: ShopService) { }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      Id: new FormControl('', ),
+    this.httpClient.get<City[]>(`http://localhost:62631/api/cities`)
+    .subscribe(x => {
+      this.arr = x;
+    }, x => { console.log(x); }, () => { });
+    this.formLogin = new FormGroup({
+      Name: new FormControl('', [Validators.required]),
+      Password: new FormControl('', [Validators.required])
+    })
+    this.formSignin = new FormGroup({
       Name: new FormControl('', [Validators.required]),
       CityId: new FormControl('',),
-      CityName: new FormControl('',),
-      Phone: new FormControl('', [Validators.required])
+      Phone: new FormControl('', [Validators.required]),
+      Password: new FormControl('', [Validators.required])
     });
-  }
-  save(){
-    this.httpClient.post(`http://localhost:62631/api/shop`,this.form.value).subscribe(x=>
-    {
-      this.shop=x;
-      console.log(x);
-    },x=>{console.log(x);},()=>{});
-    console.log(this.form.value);
+    this.shop = this.shopService.getShop();
+    // if (this.shop != null) {
+    //   this.form.controls['Name'].setValue(this.shop.Name);
+    //   this.form.controls['CityId'].setValue(this.shop.CityId);
+    //   this.form.controls['Phone'].setValue(this.shop.Phone);
+    // }
   }
 
+  saveLogin() {
+    this.httpClient.get(`http://localhost:62631/api/shop?Name=${this.formLogin.value["Name"]}
+    &Password=${this.formLogin.value["Password"]}`)
+    .subscribe(x => {
+      console.log(x);
+      this.stringErr = "";
+      this.shopService.emitShop.emit(x);
+      console.log(x);
+      this.shop = this.shopService.getShop();
+    }, x => {
+      console.log("errr", x)
+      this.stringErr = "המידע שהוקש שגוי, נא נסה שנית"
+    }, () => { });
+  }
+  saveSignin() {
+    this.httpClient.post(`http://localhost:62631/api/shop`, this.formSignin.value).subscribe(x => {
+      this.shopService.emitShop.emit(x);
+      console.log(x);
+      this.shop = this.shopService.getShop();
+      this.stringErr="ההרשמה בוצעה בהצלחה!!"
+
+    }, x => { 
+      console.log(x); 
+      this.stringErr=String(x.error.Message); 
+
+    }, () => { });
+  }
+  signin() {
+    this.myVar = true;
+  }
 }
+
+

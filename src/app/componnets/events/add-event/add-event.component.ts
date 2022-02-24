@@ -7,6 +7,7 @@ import { Category } from 'src/app/class/category';
 import { Event } from 'src/app/class/event';
 import { ListDetails } from 'src/app/class/listDetails';
 import { EventService } from 'src/app/services/event.service';
+import { NavigationService } from 'src/app/services/navigation.service';
 @Component({
   selector: 'app-add-event',
   templateUrl: './add-event.component.html',
@@ -18,7 +19,7 @@ export class AddEventComponent implements OnInit {
   arr: Category | any;
   event: Event = new Event("", []);
   isAddProduct:boolean=false;
-  constructor(private httpClient: HttpClient, private route: ActivatedRoute,private eventService:EventService) { }
+  constructor(private httpClient: HttpClient, private route: ActivatedRoute,private eventService:EventService,private navigation: NavigationService) { }
 
   currentEvent(e: Event) {
     this.event = e;
@@ -31,7 +32,10 @@ export class AddEventComponent implements OnInit {
       this.arr = x;
       if (this.isAddProduct) {
         this.event=this.eventService.getEvent();
+        var i=0;
         this.event.Categories?.forEach((x) => {
+          console.log(x);
+          
           this.arr[x - 1].checked = true;
         })
       }
@@ -44,6 +48,8 @@ export class AddEventComponent implements OnInit {
       }
     });
     this.httpClient.post(`http://localhost:62631/api/lists`, this.event)
-      .subscribe(x => { }, x => { }, () => { });
+      .subscribe(x => {
+        this.navigation.back()
+       }, x => { }, () => { });
   }
 }

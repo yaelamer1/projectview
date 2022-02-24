@@ -35,13 +35,16 @@ import { ShopsComponent } from './componnets/shop/shops/shops.component';
 import { ProductDetailShopComponent } from './componnets/shop/product-detail-shop/product-detail-shop.component';
 // import {MatNavListModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
-import { UpdateProductShopsComponent } from './componnets/shop/update-product-shops/update-product-shops.component';
+import { CategoryForShopComponent } from './componnets/shop/category-for-shop/category-for-shop.component';
 import { ProductInShopOfCategoryComponent } from './componnets/shop/product-in-shop-of-category/product-in-shop-of-category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OpenComponent } from './componnets/public/open/open.component';
 import { DialogOverviewComponent } from './componnets/search/try/dialog/dialog-overview/dialog-overview.component';
 import { DialogComponent } from './componnets/search/try/dialog/dialog.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { MatOption, MatOptionModule } from '@angular/material/core';
+import { AllProductOfShopComponent } from './componnets/shop/all-product-of-shop/all-product-of-shop.component';
 // import { DialogComponent } from './componnets/dialog/dialog.component';
 // import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -70,11 +73,12 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
     ForgotPasswordComponent,
     ShopsComponent,
     ProductDetailShopComponent,
-    UpdateProductShopsComponent,
+    CategoryForShopComponent,
     ProductInShopOfCategoryComponent,
     OpenComponent,
     DialogOverviewComponent,
     DialogComponent,
+    AllProductOfShopComponent,
     
   
     
@@ -92,7 +96,9 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
     MatTableModule,
     // MatDialogRef,MatDialog,
     // MAT_DIALOG_DATA,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSelectModule,MatOptionModule
+    
     
   ],
 

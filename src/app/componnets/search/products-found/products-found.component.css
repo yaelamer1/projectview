@@ -23,10 +23,10 @@
     border-radius: 15px;
 } */
 table {
-    width: 90%;
+    width: 90vw;
     text-align-last: center;
     direction: rtl;
-    font-size: xx-large;
+    font-size: 2.5vw;
     border: groove;
     background-color: rgb(209 190 169);
     margin: auto;
@@ -109,7 +109,10 @@ h1 {
     color: #b39a7e;
     font-family: unset;
 }
-
+h2 {
+    color: white;
+    margin: 15px;
+}
 p {
     font-size: 1.4vw;
 }

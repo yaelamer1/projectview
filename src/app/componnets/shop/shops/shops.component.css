@@ -1,25 +1,18 @@
-h1, h2, h3 {
+h1, h2, h3,h5,form,div {
     text-align: center;
     color: #ffff;
 }
 
 .mat-raised-button {
-    margin-right: 10px;
-    margin-bottom: 15px;
-}
-div{
-    text-align: center;
+    margin-top:10px;
 }
 h5 {
-    color: white;
     font-size: xx-large;
-    text-align: center;
+}
+p{
+  font-size: large;
 }
 
-form {
-    color: #ffff;
-    text-align: center;
-}
 
 /* input {
     font-family: Calibri;
@@ -34,3 +27,34 @@ form {
     object-position: center;
     text-align: center;
 } */
+.select{
+  width: 1vw;
+  background-color: #b39a7e;
+
+}
+.mat-select-panel, .mat-option{
+  color: white;
+  text-align: center;
+  background-color: #b39a7e;
+}
+.mat-select-panel{
+
+  overflow-y: clip;
+  background-color: #b39a7e;
+}
+  
+
+h1 {
+  font-size: 3vw;
+  
+  font-family: unset;
+} */
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}

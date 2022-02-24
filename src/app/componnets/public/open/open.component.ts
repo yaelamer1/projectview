@@ -47,19 +47,22 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
 })
 export class OpenComponent implements OnInit {
   arrImg = [
+    "1.jpg",
+    "0D7A4149.jpg",
+    "0D7A3960.jpg",
     "green.jpg",
-    "תכנון-שנתי.jpg",
-    "-photo_csp9190116.jpg",
   ]
   img="green.jpg";
-  img1="green.jpg";
+  // img1="green.jpg";
   isOpen:boolean=true;
+  // randArr:number[]=[];
   constructor() { }
 
   ngOnInit(): void {
+    // this.randArr=[5,7,2];
     setInterval(()=>{
       this.change();
-    },5000);
+    },2000);
   }
   i=0;
   // toggle() {
@@ -70,7 +73,7 @@ export class OpenComponent implements OnInit {
   // } 
    change(){
     this.img=this.arrImg[this.i++];
-    this.img1=this.arrImg[this.i];
+    // this.img1=this.arrImg[this.i];
     if (this.i >= this.arrImg.length) 
     {this.i = 0}
   }

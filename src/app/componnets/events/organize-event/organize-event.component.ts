@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { List } from 'src/app/class/list';
 import { Product } from 'src/app/class/product';
 
@@ -10,12 +10,14 @@ import { Product } from 'src/app/class/product';
 })
 export class OrganizeEventComponent implements OnInit {
 arr:List[]=[];
+@Input()
+  randArr:number[]=[];
   constructor(private httpClient:HttpClient) { }
   ngOnInit() {
      this.httpClient.get<List[]>(`http://localhost:62631/api/lists`).subscribe(x=>
      {
        console.log(x);
-       x.forEach(g=>g.Picture==""?g.Picture="green.jpg":g.Picture=g.Picture);
+       x.forEach(g=>g.Picture==null?g.Picture="green.jpg":g.Picture=g.Picture);
        this.arr=x;
     },x=>{},()=>{});
   }
