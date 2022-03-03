@@ -30,7 +30,11 @@ p{
 .select{
   width: 1vw;
   background-color: #b39a7e;
-
+  overflow-y: clip;
+  background-color: #b39a7e;
+  color: white;
+  text-align: center;
+  background-color: #b39a7e;
 }
 .mat-select-panel, .mat-option{
   color: white;
@@ -57,4 +61,11 @@ h1 {
 
 .example-full-width {
   width: 100%;
+}
+.mat-autocomplete-panel .mat-option.mat-selected {
+  color: #fafafa;
+}
+
+.mat-autocomplete-panel .mat-option.mat-selected{
+  background: #b39a7ede;
 }

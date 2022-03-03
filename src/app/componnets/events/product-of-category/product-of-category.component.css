@@ -28,10 +28,9 @@
         font-size: large;
         color: white;
         border-radius: 15px;
+        align-items: center;
         padding: 3px;
     }
-
-
 
     .mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-raised-button {
         box-sizing: border-box;
@@ -47,15 +46,16 @@
         display: inline-block;
         white-space: nowrap;
         text-decoration: none;
-        /* vertical-align: baseline; */
+        vertical-align: baseline;
         text-align: center;
         margin: 0px;
+        width: 7vw;
         min-width: 64px;
         line-height: 36px;
         padding: 0px;
         border-radius: 4px;
         overflow: visible;
-        display: block;
+        /* display: block; */
     }
 
     @-webkit-keyframes fadeInDown {

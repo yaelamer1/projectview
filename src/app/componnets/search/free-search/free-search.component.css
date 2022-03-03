@@ -44,13 +44,105 @@ form {
 } */
 
 h3 {
-    color: red;
-    margin: 15px;
+    color: rgba(255, 7, 7, 0.418);
+    margin: 200px;
+    font-variant-caps: all-petite-caps;
+    font-size: x-large;
 }
 
 h2 {
     color: white;
     margin: 15px;
+}
+@-webkit-keyframes scale {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+div{
+    text-align: center;
+}
+@keyframes scale {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+        transform: scale(2.5);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInDown {
+    -webkit-animation-name: scale;
+    animation-name: scale;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    display: block;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: #00000017;
+    /* Black w/ opacity */
+}
+div{ 
+    position: relative;
+    /* background-color: #fffff5; */
+    /* border-radius: 100px; */
+    margin: auto;
+    padding: 0;
+    /* width: 40vw; */
+    /* height: 30vw; */
+    /* color: #b39a7e; */
+    /* border: #b39a7e; */
+    /* border-style: double; */
+    /* border-width: 10px; */
+    font-family: Guttman-CourMir;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    align-items: center;
+    object-position: center;
+    text-align: center;
+    padding: 11px;
+
 }
 
 .mat-raised-button {

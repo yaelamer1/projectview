@@ -21,6 +21,7 @@ import { CategoryForShopComponent } from './componnets/shop/category-for-shop/ca
 import { ProductInShopOfCategoryComponent } from './componnets/shop/product-in-shop-of-category/product-in-shop-of-category.component';
 import { OpenComponent } from './componnets/public/open/open.component';
 import { AllProductOfShopComponent } from './componnets/shop/all-product-of-shop/all-product-of-shop.component';
+import { AutocompleteAutoActiveFirstOptionExample } from './componnets/search/try/dialog/dialog.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,7 @@ const routes: Routes = [
   {path:"category-for-shop/:shopId" ,component:CategoryForShopComponent},
   {path:"all-product-of-shop/:shopId" ,component:AllProductOfShopComponent},
   {path:"product-in-shop-of-category/:shopId/:categoryId" ,component:ProductInShopOfCategoryComponent},
+  // {path:"" ,component:AutocompleteAutoActiveFirstOptionExample}
   {path:"" ,component:OpenComponent}
 
 ];

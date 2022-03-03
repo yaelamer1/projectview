@@ -1,32 +1,31 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
-export interface DialogData {
-    animal: string;
-    name: string;
-  }
+import {Component, OnInit} from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+
+/**
+ * @title Highlight the first autocomplete option
+ */
 @Component({
   selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.css']
+  templateUrl: 'dialog.component.html',
+  styleUrls: ['dialog.component.css'],
 })
-export class DialogComponent implements OnInit {
-    animal: string | undefined;
-    name: string | undefined;
-  
-    constructor() {}
-    ngOnInit(): void {}
-    // openDialog(): void {
-    //   const dialogRef = this.dialog.open(DialogOverviewComponent, {
-    //     width: '250px',
-    //     data: {name: this.name, animal: this.animal}
-    //   });
-  
-    //   dialogRef.afterClosed().subscribe(result => {
-    //     console.log('The dialog was closed');
-    //     this.animal = result;
-    //   });
-    // }
-  
+export class AutocompleteAutoActiveFirstOptionExample implements OnInit {
+  myControl = new FormControl();
+  options: string[] = ['One', 'Two', 'Three'];
+  filteredOptions!: Observable<string[]>;
 
+  ngOnInit() {
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value)),
+    );
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
 }

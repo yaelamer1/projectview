@@ -146,16 +146,16 @@ a {
   color: #b39a7e;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   form {
     height: 60vw;
   }
 }
-@media only screen and (max-width: 1200px) {
+/* @media only screen and (max-width: 1200px) {
   form {
     height: 36vw;
-  }
+  } */
   /* a{
     background-color: #fffff5;
   } */
-}
+/* } */

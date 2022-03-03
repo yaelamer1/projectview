@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DialogComponent } from './dialog.component';
+import { AutocompleteAutoActiveFirstOptionExample } from './dialog.component';
 
-describe('DialogComponent', () => {
-  let component: DialogComponent;
-  let fixture: ComponentFixture<DialogComponent>;
+describe('AutocompleteAutoActiveFirstOptionExample', () => {
+  let component: AutocompleteAutoActiveFirstOptionExample;
+  let fixture: ComponentFixture<AutocompleteAutoActiveFirstOptionExample>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DialogComponent ]
+      declarations: [ AutocompleteAutoActiveFirstOptionExample ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DialogComponent);
+    fixture = TestBed.createComponent(AutocompleteAutoActiveFirstOptionExample);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

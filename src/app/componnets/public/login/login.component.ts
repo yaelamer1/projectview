@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http'
 import { Location } from '@angular/common';
 import { UserService } from '../../../services/user.service'
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { Router } from '@angular/router';
+import { OpenComponent } from '../open/open.component';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,7 @@ export class LoginComponent implements OnInit {
   myVar: boolean = true;
   form: FormGroup = new FormGroup({});
   stringErr: string = "";
-  constructor(private httpClient: HttpClient, private location: Location, private userService: UserService) { }
+  constructor(private httpClient: HttpClient, private location: Location, private userService: UserService, private router:Router) { }
   ngOnInit() {
     this.form = new FormGroup({
       name: new FormControl('', [Validators.required]),
@@ -28,6 +30,7 @@ export class LoginComponent implements OnInit {
       .subscribe(x => {
         console.log(x);
         this.userService.eventUser.emit(x);
+        this.router.navigateByUrl("/");
         this.none();
         this.stringErr = "";
       }, x => {

@@ -1,6 +1,9 @@
-<h1>{{mmm}}</h1>
-<a mat-raised-button routerLink="{{routerLink}}">הזדהות מחדש</a>
-<div *ngIf="err">
-        <input [(ngModel)]="mailOrId">
-        <button mat-raised-button (click)="func()">שלח שוב</button>
+<div >
+<!-- <div class="fadeInDown"> -->
+        <h1 *ngIf="user">בקשתך לעדכון על ירידת מחיר התקבלה בהצלחה</h1>
+        <h1 *ngIf="user">הודעה מסודרת תישלח לך למייל</h1>
+        <h1 *ngIf="!user">{{mmm}}</h1>
+        <a mat-raised-button *ngIf="!user&&!err" routerLink="{{routerLink}}">הזדהות מחדש</a>
+        <input *ngIf="err&&!user" [(ngModel)]="mailOrId">
+        <button *ngIf="err&&!user" mat-raised-button (click)="func()">שלח שוב</button>
 </div>

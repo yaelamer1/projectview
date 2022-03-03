@@ -39,11 +39,14 @@ import { CategoryForShopComponent } from './componnets/shop/category-for-shop/ca
 import { ProductInShopOfCategoryComponent } from './componnets/shop/product-in-shop-of-category/product-in-shop-of-category.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OpenComponent } from './componnets/public/open/open.component';
-import { DialogOverviewComponent } from './componnets/search/try/dialog/dialog-overview/dialog-overview.component';
-import { DialogComponent } from './componnets/search/try/dialog/dialog.component';
+// import { DialogOverviewComponent } from './componnets/search/try/dialog/dialog-overview/dialog-overview.component';
+import { AutocompleteAutoActiveFirstOptionExample } from './componnets/search/try/dialog/dialog.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { MatOption, MatOptionModule } from '@angular/material/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
+
 import { AllProductOfShopComponent } from './componnets/shop/all-product-of-shop/all-product-of-shop.component';
 // import { DialogComponent } from './componnets/dialog/dialog.component';
 // import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -76,8 +79,9 @@ import { AllProductOfShopComponent } from './componnets/shop/all-product-of-shop
     CategoryForShopComponent,
     ProductInShopOfCategoryComponent,
     OpenComponent,
-    DialogOverviewComponent,
-    DialogComponent,
+    // DialogOverviewComponent,
+    AutocompleteAutoActiveFirstOptionExample,
+    // DialogComponent,
     AllProductOfShopComponent,
     
   
@@ -94,6 +98,7 @@ import { AllProductOfShopComponent } from './componnets/shop/all-product-of-shop
     MatButtonModule,
     MatCardModule,
     MatTableModule,
+    MatAutocompleteModule,
     // MatDialogRef,MatDialog,
     // MAT_DIALOG_DATA,
     BrowserAnimationsModule,

@@ -3,7 +3,23 @@
 <form [formGroup]="form">
     <input formControlName="ProductName" type="text" placeholder="מוצר לחיפוש..." />
 </form>
-<button checked  mat-raised-button routerLink="product-found"   (click)="search()" [disabled]="!form.valid">חיפוש</button>
+<button checked mat-raised-button routerLink="product-found" (click)="search()" [disabled]="!form.valid">חיפוש</button>
+<!-- כדי שלחיצה על האנטר תעבוד צריך שתהיה לחיצה לפני בקליק כדי שהשליטה תהיה עליו -->
+<!-- <button checked  mat-raised-button routerLink="product-found" (keyup.enter)="onEnter()"  [disabled]="!form.valid">חיפוש</button> -->
+<!-- <div (click)="none()" *ngIf="!user&&!myVar" class="fadeInDown">
+    <div >
+        <h3>אינך רשום, שים לב החיפוש לא ישמר בהיסטוריית החיפושים</h3>
+        <button mat-raised-button routerLink="signin" (click)="none()">הרשמה</button>
+        <button mat-raised-button (click)="none()">ביטול</button>
+    </div>
+</div> -->
+<div (click)="none()" *ngIf="!user&&!myVar"  class="fadeInDown">
 
-<h3 *ngIf="!user">אינך רשום, שים לב החיפוש לא ישמר בהיסטוריית החיפושים</h3>
+    <h3>אינך רשום!
+        <br>
+        שים לב החיפוש לא ישמר בהיסטוריית החיפושים
+        <br>
+        וכן לא תוכל לקבל עדכון על ירידת מחיר
+    </h3>
+</div>
 <app-products-found *ngIf="srch" [arr]="arr" [massge]="massge"></app-products-found>

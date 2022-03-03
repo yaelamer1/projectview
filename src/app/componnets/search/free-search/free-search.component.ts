@@ -22,11 +22,12 @@ export class FreeSearchComponent implements OnInit {
   arr:Product[]|any;
   user:User|any=null;
   searchName:string|any;
+  myVar: boolean = false;
 
   massge:string="";
   // allProduct:ProductInShop[]=[];
   form: FormGroup=new FormGroup({});
-  constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute) {}
+  constructor(private httpClient:HttpClient,private userService:UserService,private route: ActivatedRoute, private router:Router) {}
   
   //להוסיף אפשרויות לסינונים נוספים
   //להוסיף דיב שבו תוצג קןמפוננטת התוצאות
@@ -40,6 +41,7 @@ export class FreeSearchComponent implements OnInit {
     });
     this.form.controls['ProductName'].setValue(this.searchName);
     // window.open("two.html", "", "toolbar = no, location = yes, directories = no, status = no, menubar = no, scrollbars = no, resizable = no, width = 400, height = 400");
+    // const my=setTimeout(this.none, 5000);
   }
   search(){
     this.srch=true;
@@ -58,7 +60,12 @@ export class FreeSearchComponent implements OnInit {
       console.log(this.arr);
       // this.arr.sort((a:ProductInShop,b:ProductInShop)=>a.ProductId-b.ProductId);
       this.arr.sort()
+      this.router.navigate(["product-found"]);
     },x=>{},()=>{});
     
+  }
+  none() {
+   
+    this.myVar = !this.myVar; 
   }
 }

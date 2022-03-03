@@ -16,19 +16,20 @@
     </form>
   </div>
   <div *ngIf="myVar">
+    <!-- <div> -->
     <form [formGroup]="formSignin" (ngSubmit)="saveSignin()">
       <p>שם החנות:</p>
       <input formControlName="Name" />
       <p>עיר:</p>
       <!-- <mat-autocomplete #auto="matAutocomplete"> -->
       <div>
-        <mat-select class="select" formControlName="CityId" name="CityId">
-          <mat-option *ngFor="let item of arr" [value]="item.Id">
-            {{item?.Name}}
-          </mat-option>
-        </mat-select>
+        <input type="text"  mat-form-field appearance="fill" matInput formControlName="CityName" [matAutocomplete]="auto" >
+        <mat-autocomplete class="select" autoActiveFirstOption #auto="matAutocomplete"  name="CityId">
+            <mat-option *ngFor="let item of arr" [value]="item.Name">
+              {{item?.Name}}
+            </mat-option>
+        </mat-autocomplete>
       </div>
-      <!-- </mat-autocomplete> -->
       <p>מספר טלפון:</p>
       <input formControlName="Phone" />
       <br>

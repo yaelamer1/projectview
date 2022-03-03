@@ -35,6 +35,8 @@
     <div class="divEvent">
       <!-- <a mat-button routerLink="/freeSearch/{{item.Name}}"> -->
         <img mat-button src="/assets/image/{{item.Picture}}">
+        <button *ngIf="user" mat-raised-button routerLink="/update-mail/{{message}}/{{item.Name}}">עדכון
+          במייל</button>
         <br>
         {{item.Name}}
       <!-- </a> -->

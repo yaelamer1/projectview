@@ -7,6 +7,7 @@
         flex-direction: row;
         justify-content: space-around;
     }
+
     .mat-button, .mat-fab, .mat-flat-button, .mat-icon-button, .mat-mini-fab, .mat-raised-button, .mat-stroked-button, .mat-button-wrapper {
         vertical-align: middle;
         box-sizing: border-box;
@@ -36,12 +37,14 @@
         color: #ffffff;
         background: rgb(0 0 0 / 0%);
     }
+
     .docs-angular-logo[_ngcontent-pel-c48] {
         height: 26px;
         margin: 0 4px 3px 0;
         vertical-align: middle;
     }
-    h1{
+
+    h1 {
         text-align: center;
         margin: 0px;
         margin-bottom: -40px;
@@ -53,52 +56,68 @@
         font-family: jura;
         font-size: xx-large; */
     }
-    #logo2{
+
+    #logo2 {
         width: 155px;
         height: 65x;
         padding-top: 10px;
     }
-    #logo1{
-        width: 200px;
-        height: 80px;
+
+    #logo1 {
+        width: 40vw;
+        height: 5vw;
+
     }
-    hr{
+
+    hr {
         margin-top: -20px;
         margin-bottom: 20px;
     }
-    .img{
+
+    .img {
         width: 74vw;
         height: 35vw;
         align-items: center;
         border: groove;
-    } 
-    .fade {
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: 1.5s;
-      animation-name: fade;
-      animation-duration: 1.5s;
     }
-    
-    @-webkit-keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-    
-    @keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-    
-@media only screen and (max-width: 600px) {
-    app-navbar .docs-navbar, app-navbar .docs-navbar-header, nav{  
-            display: grid;
-    }
-    h1{
-        display: none;
-    }
-    #logo{
-        display: none;
-    }
-}
 
-    
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        app-navbar .docs-navbar, app-navbar .docs-navbar-header, nav {
+            display: grid;
+        }
+
+        h1 {
+            display: none;
+        }
+
+        #logo {
+            display: none;
+        }
+    }

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 import { Category } from 'src/app/class/category';
 import { City } from 'src/app/class/city';
 import { Shop } from 'src/app/class/shop';
@@ -22,6 +23,7 @@ export class ShopsComponent implements OnInit {
   shop: Shop | any;
   myVar: boolean = false;
   stringErr: string = "";
+  filteredOptions!: Observable<string[]>;
   constructor(private httpClient: HttpClient, private shopService: ShopService) { }
 
   ngOnInit(): void {
@@ -35,18 +37,24 @@ export class ShopsComponent implements OnInit {
     })
     this.formSignin = new FormGroup({
       Name: new FormControl('', [Validators.required]),
-      CityId: new FormControl('',),
+      CityName: new FormControl('',[Validators.required]),
       Phone: new FormControl('', [Validators.required]),
       Password: new FormControl('', [Validators.required])
     });
     this.shop = this.shopService.getShop();
-    // if (this.shop != null) {
-    //   this.form.controls['Name'].setValue(this.shop.Name);
-    //   this.form.controls['CityId'].setValue(this.shop.CityId);
-    //   this.form.controls['Phone'].setValue(this.shop.Phone);
-    // }
+    this.filteredOptions = this.formSignin.value['CityName'].valueChanges.pipe(
+      startWith(''),
+      map((value: string) => this._filter(value)),
+    );
   }
+  //סינון להשלמה אוטומטית
+  private _filter(value: string): City[] {
+    const filterValue = value.toLowerCase();
 
+    this.arr=this.arr.filter(option => option.toLowerCase().includes(filterValue));
+    return this.arr;
+  }
+  //שמירה של ההזדהות
   saveLogin() {
     this.httpClient.get(`http://localhost:62631/api/shop?Name=${this.formLogin.value["Name"]}
     &Password=${this.formLogin.value["Password"]}`)
@@ -61,6 +69,7 @@ export class ShopsComponent implements OnInit {
       this.stringErr = "המידע שהוקש שגוי, נא נסה שנית"
     }, () => { });
   }
+  //שמירה של ההרשמה
   saveSignin() {
     this.httpClient.post(`http://localhost:62631/api/shop`, this.formSignin.value).subscribe(x => {
       this.shopService.emitShop.emit(x);
@@ -74,6 +83,7 @@ export class ShopsComponent implements OnInit {
 
     }, () => { });
   }
+  //ההצגה של ההרשמה
   signin() {
     this.myVar = true;
   }

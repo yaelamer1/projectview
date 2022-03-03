@@ -12,6 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UpdateMailComponent implements OnInit {
   routerLink: string | any;
+  myVar: boolean = false;
   err=false;
   user: User | any;
   message: string | any;
@@ -54,5 +55,9 @@ export class UpdateMailComponent implements OnInit {
         console.log("err", x);
         this.mmm = String(x);
       }, () => { });
+  }
+  none() {
+   
+    this.myVar = !this.myVar; 
   }
 }
